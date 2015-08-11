@@ -1,0 +1,33 @@
+uses	math;
+var	i,j,n:longint;
+	s:string;
+	p:array[0..100] of longint;
+procedure pk;
+var	i,mx,id:longint;
+begin
+	mx:=0;
+	id:=0;
+	for i:=1 to n-1 do begin
+		if mx>i then
+			p[i]:=min(p[2*id-i],mx-i)
+		else
+			p[i]:=1;
+		while s[i+p[i]]=s[i-p[i]] do inc(p[i]);
+		if p[i]+i>mx then begin
+			mx:=p[i]+i;
+			id:=i;
+		end;
+	end;
+end;
+begin
+	assign(input,'1.in');reset(input);
+	//assign(output,'.out');rewrite(output);
+
+	readln(s);
+	n:=length(s);
+	pk;
+	for i:=0 to n do write(s[i],' ');
+	writeln;
+	for i:=0 to n do write(p[i],' ');
+	writeln;
+end.

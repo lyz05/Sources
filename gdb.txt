@@ -1,0 +1,24 @@
+gdb [程序名]		即可快速绑定程序
+file			打开文件
+run			运行文件
+break [行号]		设置断点
+info break [n]		查看断点，n表示断点号
+continue		恢复程序运行
+step			F7，单步跟踪，进入函数
+next			F8，单步追踪，不进入函数
+list [行号][函数]	打印程序源代码
+path			设定程序运行路径
+watch[变量]		当变量值有变化时停住程序
+bt			call stack，栈查询
+print[语言表达式]	一次查看
+jump[行号]		F4
+finish			退出函数
+
+b			断点
+r			run
+t b			看断点
+d[断点号][行号]		删除断点
+c[次数]			继续
+disp[变量名]		
+d[编号]			disp
+unt			f4

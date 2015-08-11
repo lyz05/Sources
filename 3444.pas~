@@ -1,0 +1,80 @@
+const	mo=2147483647;maxq=110000;
+var	a,b,mi,tot:array[0..maxq] of int64;
+	tmp:array[0..60] of integer;
+	i,j,q:longint;
+	t,m,ans:int64;
+procedure init;
+var	k1,k2,k3,k4,i:longint;
+	t:int64;
+begin
+	readln(q,a[1],b[1],k1,k2,k3,k4,M);
+	for i:=2 to q do begin			//mod mo
+		a[i]:=(int64(a[i-1])*k1+k2) mod 11111123111111;
+		b[i]:=(int64(b[i-1])*k3+k4) mod 11111123111111;
+	end;
+	for i:=1 to q do begin
+		a[i]:=a[i] mod M+1;
+		b[i]:=b[i] mod M+1;
+		if a[i]>b[i] then
+		begin
+			t:=a[i];
+			a[i]:=b[i];
+			b[i]:=t;
+		end;
+	end;
+end;
+procedure prepar;
+begin
+        mi[0]:=1;
+        for i:=1 to 50 do
+        begin
+                mi[i]:=mi[i-1]*2;
+                tot[i]:=tot[i-1]+mi[i-1]*i;
+        end;
+end;
+function sum(x:int64):int64;
+var	i,k:longint;
+	j,num:int64;
+begin
+	if x<=1 then exit(0);
+	sum:=0;
+	dec(x);
+	for i:=1 to 50 do 
+		if x<tot[i] then break;
+	dec(i);
+	j:=x-tot[i];
+	num:=mi[i]+j div (i+1)-1;
+	j:=j mod (i+1);
+	for i:=1 to 50 do begin
+		if mi[i-1]>num then break;
+		sum:=(sum+(num+1) div mi[i]*mi[i-1]) mod mo;
+		if (num+1) mod mi[i]>mi[i-1] then 
+			sum:=(sum+(num+1) mod mi[i]-mi[i-1]) mod mo;
+	end;
+	inc(num);
+	k:=0;
+	while num<>0 do begin
+		inc(k);
+		tmp[k]:=num mod 2;
+		num:=num div 2;
+	end;
+	for i:=k downto k-j+1 do
+		if tmp[i]=1 then inc(sum);
+end;
+begin
+        assign(input,'digit.in');reset(input);
+        assign(output,'digit.out');rewrite(output);
+
+	prepar;
+	init;
+
+	ans:=0;
+	t:=1;
+	for i:=1 to q do begin
+		ans:=(ans+t*((sum(b[i])-sum(a[i]-1)+mo)mod mo)) mod mo;
+		t:=(t*7) mod mo;
+	end;
+	writeln(ans);
+
+        close(input);close(output);
+end.
