@@ -1,4 +1,4 @@
-#忽略一些文件
+#忽略一些文件追加
 *.exe
 *.cpp~
 *.pas~
@@ -6,5 +6,9 @@
 .*fuse*
 .in
 .out
+.in~
+.out~
+.txt~
 .ans
 .lnk
+fp.*
