@@ -1,4 +1,10 @@
+#忽略一些文件
 *.exe
 *.cpp~
 *.pas~
 *.o
+.*fuse*
+.in
+.out
+.ans
+.lnk
