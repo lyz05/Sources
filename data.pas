@@ -1,3 +1,14 @@
+program oj3484;
+var	i,j,k,m,n,c:longint;
+begin
+	randomize;
+	n:=random(100);
+	for i:=1 to n do write(chr(random(26)+1+ord('a')-1));
+	writeln;
+	n:=random(5);
+	for i:=1 to n do write(chr(random(26)+1+ord('a')-1));
+	writeln;
+end.
 program oj3478;
 var	i,j,k,m,n,c:longint;
 begin
