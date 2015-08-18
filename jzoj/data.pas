@@ -2,7 +2,7 @@ program oj3493;
 var	i,j,k,m,n,c:longint;
 begin
 	randomize;
-	n:=random(200)+100;
+	n:=random(100);
 	writeln(n);
 	for i:=1 to n do writeln(random(2*10000)-10000,' ',random(2*10000)-10000);
 end.

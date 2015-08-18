@@ -39,8 +39,8 @@ begin
 	if i<r then qsort(a1,i,r);
 end;
 begin
-	//assign(input,'3493.in');reset(input);
-	//assign(output,'.out');rewrite(output);
+	assign(input,'triangle.in');reset(input);
+	//assign(output,'triangle.out');rewrite(output);
 	
 	readln(n);
 	for i:=1 to n do readln(a[i,1],a[i,2]);

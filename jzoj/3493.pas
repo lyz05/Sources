@@ -13,8 +13,8 @@ begin
 	judge:=judge and (dis(j,i)+dis(i,k)>dis(j,k));
 end;
 begin
-	//assign(input,'3493.in');reset(input);
-	//assign(output,'.out');rewrite(output);
+	//assign(input,'triangle.in');reset(input);
+	//assign(output,'triangle.out');rewrite(output);
 	
 	readln(n);
 	for i:=1 to n do readln(a[i,1],a[i,2]);

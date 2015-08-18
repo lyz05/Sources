@@ -65,8 +65,8 @@ begin
 	writeln(ans);
 end;
 begin
-	assign(input,'3494.in');reset(input);
-	//assign(output,'.out');rewrite(output);
+	assign(input,'segment.in');reset(input);
+	assign(output,'segment.out');rewrite(output);
 	readln(n);
 	for i:=1 to n do begin
 		read(q[i,1],q[i,2],q[i,3]);
@@ -92,5 +92,5 @@ begin
 			2:query(q[i,2],q[i,3]);
 		end;
 	end; 
-	//close(input);close(output);
+	close(input);close(output);
 end.
