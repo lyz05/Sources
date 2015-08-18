@@ -21,6 +21,14 @@ LL C(int n,int m)
 	return fac[n] * power(fac[m] * fac[n-m] % mo , mo - 2) % mo;
 }
 
+int judge(int x)
+{
+	if (x==1) 
+	{
+		
+	}
+}
+
 int main()
 {
 	freopen("3489.in","r",stdin);
