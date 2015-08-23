@@ -66,6 +66,11 @@ void add(int x,int y,int z)
 	e[x] = tot;
 }
 
+int judge()
+{
+	
+}
+
 int main()
 {
 	freopen("2933.in","r",stdin);
@@ -99,5 +104,6 @@ int main()
 			tmp += d[work(ID)][i];
 			ans = min(ans,tmp);
 		}
+
 	printf("%lld\n",ans);
 }
