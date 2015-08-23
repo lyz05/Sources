@@ -5,6 +5,8 @@ type	node=record
 	arr=array[1..2*maxn] of longint;
 var	i,n,sum,ret,x,y,z,t,kk:longint;
 	q:array[1..maxn,1..4] of longint;
+	id:arr;
+	p:array[0..2*maxn] of boolean;
 	h:array[1..hamo] of node;
 	a:arr;
 	len,d:array[1..hamo] of longint;
@@ -40,6 +42,7 @@ begin
 	if l<j then qsort(a1,l,j);
 	if i<r then qsort(a1,i,r);
 end;
+
 
 procedure maketree(x,l,r:longint);
 var	mid:longint;
