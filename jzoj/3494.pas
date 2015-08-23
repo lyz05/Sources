@@ -8,7 +8,7 @@ var	i,n:longint;
 	q:array[1..maxn,1..4] of longint;
 	id:arr;
 	p:array[0..2*maxn] of boolean;
-function power(x:int64;y:longint):int64;
+function pow(x,y:int64):int64;
 begin
 	power:=1;
 	while y<>0 do begin
@@ -35,38 +35,10 @@ begin
 	if l<j then qsort(a1,l,j);
 	if i<r then qsort(a1,i,r);
 end;
-procedure change(cmd,x,y,w:longint);
-var	i:longint;
-	flag:boolean;
-begin
-	flag:=false;
-	for i:=1 to id[0]-1 do begin
-		if a[i].st=x then flag:=true;
-		if flag then begin
-			if cmd=0 then a[i].val:=(a[i].val*power(w,a[i].len)) mod mo
-			else	a[i].val:=power(a[i].val,w);
-		end;
-		if a[i].st+a[i].len=y then exit;
-	end;
-end;
-procedure query(x,y:longint);
-var	i:longint;
-	flag:boolean;
-	ans:int64;
-begin
-	flag:=false;ans:=1;
-	for i:=1 to id[0]-1 do begin
-		if a[i].st=x then flag:=true;
-		if flag then begin
-			ans:=(ans*a[i].val) mod mo;
-		end;
-		if a[i].st+a[i].len=y then break;
-	end;
-	writeln(ans);
-end;
 begin
 	assign(input,'segment.in');reset(input);
 	assign(output,'segment.out');rewrite(output);
+	
 	readln(n);
 	for i:=1 to n do begin
 		read(q[i,1],q[i,2],q[i,3]);
