@@ -1,4 +1,4 @@
-#忽略一些文件追加
+﻿#忽略一些文件追加
 *.exe
 *.cpp~
 *.pas~
@@ -23,3 +23,4 @@ fp.*
 /jzoj/*.in~
 /jzoj/*.out~
 /jzoj/*.txt~
+/jzoj/*.swp
