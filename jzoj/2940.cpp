@@ -8,31 +8,12 @@ struct node
 {
 	int x,y,z;
 } a[N];
-struct node1
-{
-	int y,next;
-} h[2*N];
-int T,tot,ans,n;
-int e[N],f[N];
+
+int T,tot,n;
+long long f[N],size[N];
+long long ans;
 
 bool cmp(node x,node y) {return x.z<y.z;}
-
-void add(int x,int y)
-{
-	tot ++;
-	h[tot].y = y;
-	h[tot].next = e[x];
-	e[x] = tot;
-}
-
-bool judge(int x,int y)
-{
-	for (int i = e[x];i;i = h[i].next)
-	{
-		if (h[i].y==y) return 1;
-	}
-	return 0;
-}
 
 int gf(int x)
 {
@@ -43,26 +24,17 @@ int gf(int x)
 	}
 }
 
-bool link(int x,int y,bool p)
+void link(int x,int y,int z)
 {
 	int i=gf(x),j=gf(y);
 	if (i!=j) 
 	{
-		if (p) f[i] = j;
-		return 1;
-	} else return 0;
+		ans += (size[i]*size[j]-1)*(z+1);
+		size[j] += size[i];
+		f[i] = j;
+	}
 }
 
-void work(int sum)
-{
-	for (int i=1;i<=n;i ++)
-		for (int j=i+1;j<=n;j ++)
-			if (!link(i,j,0) && !judge(i,j)) 
-			{
-				add(i,j);add(j,i);
-				ans += sum;
-			}
-}
 
 int main()
 {
@@ -71,11 +43,9 @@ int main()
 	scanf("%d",&T);
 	while (T --)
 	{
-		memset(h,0,sizeof h);
-		memset(e,0,sizeof e);
 		ans = 0;tot = 0;
 		scanf("%d",&n);
-		for (int i=1;i<=n;i ++) f[i] = i;
+		for (int i=1;i<=n;i ++) f[i] = i , size[i] = 1;
 		for (int i=1;i<n;i ++)
 		{
 			int x,y,z;
@@ -83,15 +53,13 @@ int main()
 			a[i].x = x, a[i].y = y, a[i].z = z;
 		}
 		sort(a + 1,a + n,cmp);
-		a[n].z = a[n-1].z+1;
+		//a[n].z = a[n-1].z+1;
 		for (int i=1;i<n;i++)
 		{
 			ans += a[i].z;
-			link(a[i].x,a[i].y,1);
-			add(a[i].x,a[i].y);add(a[i].y,a[i].x);
-			if (a[i].z<a[i+1].z) work(a[i].z+1);
+			link(a[i].x,a[i].y,a[i].z);
 		}
-		printf("%d\n",ans);
+		printf("%lld\n",ans);
 	}
 	return 0;
 }

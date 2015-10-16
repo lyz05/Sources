@@ -1,3 +1,10 @@
+program oj42220;
+var	i,j,k,m,n,t:longint;
+begin
+	randomize;
+	m:=1;k:=10000000;
+	writeln(i,' ',m,' ',k);
+end.
 program oj3493;
 var	i,j,k,m,n,c:longint;
 begin
