@@ -1,3 +1,21 @@
+program d297;
+uses	math;
+var	i,j,k,m,n,t,t1,t2:longint;
+begin
+	randomize;
+	n:=100000;m:=100000;
+	writeln(n,' ',m);
+	k:=min(n,m);
+	for i:=1 to k do write(random(500000000),' ');
+	writeln;
+	T:=100000;
+	writeln(T);
+	for i:=1 to T do 
+	begin
+		t1:=random(k-1)+1;t2:=t1+random(k-t1-1)+1;
+		writeln(t1,' ',t2,' ',random(500000000));
+	end;
+end.
 program oj42220;
 var	i,j,k,m,n,t:longint;
 begin
