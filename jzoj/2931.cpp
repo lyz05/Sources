@@ -1,34 +1,48 @@
 #include <cstdio>
-#include <algorithm>
 #include <cstring>
+#include <algorithm>
+#include <set>
 using namespace std;
+typedef long long LL;
 
+const LL INF = 1LL<<60LL;
 const int N = 100000+5;
-int n,l,w[N],h[N],f[N];
+LL tot = 0,L,beg;
+int n,q[2*N+500];
+LL h[N],w[N],f[N];
+multiset <LL> tree;
 int main()
 {
 	freopen("2931.in","r",stdin);
-	scanf("%d%d",&n,&l);
-	for (int i=1;i<=n;i++) 
-	{
-		scanf("%d%d",h + i,w + i);
-		w[i] += w[i-1];
-	}
-
-	memset(f,125,sizeof f);
-	f[0] = 0;
+	int l=0,r=-1,pos=1;
+	tree.clear(); tree.insert(INF);
+	scanf("%d%lld",&n,&L);
 	for (int i=1;i<=n;i++)
 	{
-		int maxx = h[i];
-		for (int j=i-1;j>=0;j--)
+		scanf("%lld%lld",h + i,w + i);
+		tot += w[i];
+		while (tot>L) tot -= w[pos++];
+		while (l<=r && h[i]>=h[q[r]])
 		{
-			if (w[i]-w[j]>l) break;
-			f[i] = min(f[i],f[j]+maxx);
-			maxx = max(maxx,h[j]);
+			if (l<r)
+			{
+				tree.erase(f[q[r-1]]+h[q[r]]);	
+			}
+			r --;
 		}
+		q[++ r] = i;
+		if (l<r)
+			tree.insert(f[q[r-1]]+h[q[r]]);
+		while (q[l]<pos)
+		{
+			if (l<r) tree.erase(f[q[l]]+h[q[l+1]]);
+			l ++;
+		}
+		f[i] = f[pos-1]+h[q[l]];
+		beg = *tree.begin();
+		if (f[i]>beg) f[i] = beg;
 	}
-	printf("%d\n",f[n]);
-
+	printf("%lld\n",f[n]);
 	return 0;
-}
 
+}
