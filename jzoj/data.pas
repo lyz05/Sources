@@ -1,3 +1,14 @@
+program P3394;
+uses	math;
+var	i,j,k,m,n,t,t1,t2:longint;
+begin
+	randomize;
+	n:=random(18)+1;
+	m:=random(100000000)+1;
+	writeln(n,' ',m);
+	for i:=1 to n do writeln(random(m)+1);
+end.
+
 program d297;
 uses	math;
 var	i,j,k,m,n,t,t1,t2:longint;

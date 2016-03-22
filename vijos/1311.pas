@@ -2,24 +2,23 @@ var	i,j,k,m,n,ans:longint;
 	v:array[1..10] of longint;
 	s:array[1..10] of string;
 	ch:char;
-procedure dfs(x,l:longint);
+procedure dfs(now:ansistring);
 var	i,j,len:longint;
 	s1,s2:string;
 begin
-	if v[x]>2 then exit;
-	if l>ans then ans:=l;
+	len:=length(now);
+	if len>ans then 
+		ans := len;
 
-	len:=length(s[x]);
-	for j:=1 to len-1 do begin
-		s1:=copy(s[x],len-j+1,j);
-		for i:=1 to n do begin
-			if j=length(s[i]) then continue;
-			s2:=copy(s[i],1,j);
-			if s1=s2 then begin
-				inc(v[i]);
-				dfs(i,l+length(s[i])-j);
-				dec(v[i]);
-			end;
+	for i:=1 to n do 
+	if (v[i]<2) then 
+	for j:=2 to length(now) do begin
+		s1:=copy(now,j,length(now));
+		s2:=copy(s[i],1,length(now)-j+1);
+		if s1=s2 then begin
+			inc(v[i]);
+			dfs(now+copy(s[i],length(now)-j+2,length(s[i])));
+			dec(v[i]);
 		end;
 	end;
 end;
@@ -33,7 +32,7 @@ begin
 	for i:=1 to n do 
 		if s[i][1]=ch then begin
 			v[i]:=1;
-			dfs(i,length(s[i]));
+			dfs(s[i]);
 			v[i]:=0;
 		end;
 	writeln(ans);
