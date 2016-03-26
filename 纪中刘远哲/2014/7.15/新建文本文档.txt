@@ -1,0 +1,81 @@
+10110101101011010110101
+
+1011010110110101101101011011010110110
+1010
+
+1
+10
+10 1
+101 10
+10110 101
+10110101 10110
+1011010110110 10110101
+1 3 8
+5
+010
+111
+
+01
+11
+01
+
+111
+010
+
+10
+11
+10
+
+
+1
+111101
+2 4 6 7 8 9 10 12 
+1 1 2 3 5 8 13 f 数列长度
+0 1 1 2 3 5 8  ft1的个数
+const
+nn=92;  //进行92次的数列扩展后，数列长度就会超过给定的数据范围,
+var
+f,ft:array[0..nn] of int64;
+q,i,j,l1,l2:longint;
+a,b:qword;
+procedure prapre;{预处理}
+    var i:longint;
+    begin
+      f[0]:=1;f[1]:=1;
+      ft[0]:=0;ft[1]:=1;
+      for i:=2 to nn do
+        begin
+          f[i]:=f[i-1]+f[i-2];
+          ft[i]:=ft[i-1]+ft[i-2];
+        end;
+    end;
+function find(a:int64;ll:longint):int64;{求这个数列的前a个有多少个1}
+    begin
+      if a=0 then exit(0);
+      find:=0;
+      if a=f[ll] then find:=ft[ll] else
+      if a<=f[ll-1] then find:=find(a,ll-1) 
+                    else find:=ft[ll-1]+find(a-f[ll-1],ll-2);
+    end;
+begin
+assign(input,'infinit.in');reset(input);
+assign(output,'infinit.out');rewrite(output);
+  prapre;
+  readln(q);
+  for i:=1 to q do
+    begin
+      readln(a,b);
+      writeln(find(b,nn)-find(a-1,nn));
+    end;
+close(input);close(output);
+end.
+
+0 1
+0 2
+1
+4 3 3
+0 1
+0 2
+3 2
+1 3 3
+3 3 3

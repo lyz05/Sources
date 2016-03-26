@@ -1,0 +1,57 @@
+const    maxn=65535 ;
+var      h,a:array[ 0..maxn + 100 ] of Longint ;
+         n: Longint ;
+
+procedure qsort(l,r: Longint );
+var      i,j , m:Longint ;
+begin
+         i := l ; j := r ; m := a[ ( i + j ) >> 1 ] ;
+         repeat
+             while a[ i ] < m do inc( i );
+             while a[ j ] > m do dec( j );
+             if i <= j then
+             begin
+                 a[ 0 ] := a[ i ] ; a[ i ] := a[ j ] ; a[ j ] := a[ 0 ] ;
+                 inc( i ); dec( j );
+             end;
+         until i > j ;
+         if i < r then qsort( i , r );
+         if j > l then qsort( l , j );
+end;
+
+procedure init;
+var      i                : Longint ;
+begin
+         readln( n );
+         for i := 1 to n do read( a[ i ] );
+         readln;
+         qsort( 1 , n );
+end;
+
+procedure make( l , r , fa : Longint );
+var      mid              : Longint ;
+begin
+         if l >= r then exit;
+         mid := ( l + r + 1 ) >> 1 ;
+         h[ fa << 1 ] := a[ mid ] ;
+         make( mid + 1 , r , fa << 1 );
+         h[ fa << 1 + 1 ] := a[ l ] ;
+         make( l + 1 , mid - 1 , fa << 1 + 1 );
+end;
+
+procedure main;
+var      i , j            : Longint ;
+begin
+         h[ 1 ] := a[ 1 ] ;
+         make( 2 , n , 1 );
+         for i := 1 to n - 1 do write( h[ i ] , ' ' );
+         writeln( h[ n ] );
+end;
+
+begin
+assign(input,'lazy.in');reset(input);
+assign(output,'lazy.out');rewrite(output);
+         init;
+         main;
+close(output);
+end.
