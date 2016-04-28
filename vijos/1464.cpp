@@ -9,7 +9,7 @@ int main()
 	freopen("1464.in","r",stdin);
 	//freopen("1464.out","w",stdout);
 
-	scanf("")
+	scanf("");
 
 	return 0;
 }
