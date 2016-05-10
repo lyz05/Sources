@@ -1,0 +1,12 @@
+begin
+	//assign(input,'.in');reset(input);
+	//assign(output,'.out');rewrite(output);
+
+	//close(input);close(output);
+end.
+
+9|5|9|98
+2|1|9|45
+2|3|4|51
+9|9|7|98
+7|4|0|83

@@ -1,0 +1,128 @@
+const maxn=30000;maxm=500;mo=maxn;minmo=999999992;
+type node=record
+		h1,cnt:longint;
+		s:string;
+	end;
+var	n,m,p,q,i,j,k,h1,len1,len2:longint;
+	h:array[0..maxn] of node;
+	s:string;
+        s1,s2:array[0..maxn] of string;
+procedure add(h1:longint;s:string;tot:longint);
+begin
+	h[tot].h1:=h1;
+	h[tot].cnt:=1;
+	h[tot].s:=s;
+end;
+procedure hash(h1:longint;s:string);
+var i:longint;
+begin
+	i:=h1 mod mo;
+	while true do begin
+		if h[i].h1=h1 then begin
+			inc(h[i].cnt);
+			exit;
+		end;
+		if h[i].cnt=0 then break;
+		if i=maxn then i:=-1;
+		inc(i);
+	end;
+	add(h1,s,i);
+end;
+procedure printf(x:string);		//change
+begin
+	writeln(x);
+	halt;
+end;
+function print(i:longint):string;
+begin
+	exit(h[i].s);
+end;
+function pd(s1,s2:string):boolean;
+var     ss:string;
+        i:longint;
+begin
+	ss:='';
+	for i:=1 to m do
+		if s1[i]='Y' then ss:=ss+'N' else ss:=ss+'Y';
+	if s2=ss then exit(true) else exit(false);
+end;
+begin
+	readln(n,m,p,q);
+	for i:=1 to n do begin
+		h1:=0;s:='';
+		readln(s);
+		for j:=1 to m do begin
+			if s[j]='Y' then k:=1 else k:=2;
+			h1:=(h1*2+k) mod minmo;
+		end;
+		hash(h1,s);
+	end;
+	for i:=0 to maxn do begin
+		if (h[i].cnt=p) and (p<>0) then begin
+			inc(len1);
+			s1[len1]:=print(i);
+		end;
+		if (h[i].cnt=q) and (q<>0) then begin
+			inc(len2);
+			s2[len2]:=print(i);
+		end;
+	end;
+
+	if n=p then begin
+		s1[1]:=print(h1 mod mo);
+		printf(s1[1]);
+	end;
+	if n=q then begin
+		s2[1]:='';
+		s1[1]:=print(h1 mod mo);
+		for i:=1 to m do
+			if s1[1][i]='Y' then s2[1]:=s2[1]+'N' else s2[1]:=s2[1]+'Y';
+		printf(s2[1]);
+	end;
+	if (p>0) and (q>0) then begin
+		for i:=1 to len1 do
+			for j:=1 to len2 do begin
+				if pd(s1[i],s2[i]) then begin
+					printf(s1[i]);
+				end;
+			end;
+		
+	end;
+	if (q=0) and (len1=1) then begin
+		printf(s1[1]);
+	end;
+	if (p=0) and (len2=1) then begin
+		s1[1]:='';
+		for i:=1 to m do
+			if s2[1][i]='Y' then s1[1]:=s1[1]+'N' else s1[1]:=s1[1]+'Y';
+		printf(s1[1]);
+	end;
+	writeln(-1);
+end.
+input
+2 2 2 0
+YY
+YY
+
+3 3 2 1
+NNY
+YYN
+NNY
+
+3 3 1 0
+YYY
+NNY
+YNY
+
+2 2 0 0
+YY
+YN
+
+output
+YY
+
+NNY
+
+-1
+
+-1

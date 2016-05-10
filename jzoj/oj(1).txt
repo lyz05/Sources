@@ -1,0 +1,26 @@
+RQ题号：62 150 270 274 278 499
+jzoj: 	外网：http://61.142.113.109:8080/
+	内网：http://172.16.0.132
+jzoj题号：	1772* 1789+ 1843* 1960+ 1979* 2290* 2292
+		2503* 2961 3461* 3462* 3467 3470 | 3474 
+		3476+ 3477 3499 3508 3510 3530 3535 3542
+		3548 3589 2399 2401 2402   
+*较难 +较易 !看看
+noip 2009 2010 普及组
+http://blog.sina.com.cn/s/blog_6d111e10010185g3.html
+http://zhidao.baidu.com/link?url=AJFYN8dIWlkUCbQIHqVPAzDo6T5WB2i2dY_ndu7C_MZIn7IgaGlc7JSbLAFDvUMcLZLdMkx_LFcRt-O6Qz99wq
+
+
+RMQ问题：1960
+
+problem:
+1.n与a互质则n与n-a互质
+2.欧拉函数算法
+3.3928	error
+4.spfa
+\\10.0.3.47
+\\172.16.0.241
+user:teacher
+password:jzlaoshi
+
+2.6 

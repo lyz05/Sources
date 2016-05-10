@@ -1,0 +1,37 @@
+uses math;
+const 	maxn=100;
+var 	i,j,k,m,n,ti,tmp,ans:longint;
+	t,w:array[1..maxn] of longint;
+	p:array[1..maxn] of boolean;
+procedure dfs(deep,time:longint);
+var i:longint;
+begin
+	if time=ti then begin
+		if tmp>ans then ans:=tmp;
+		//exit;
+	end;
+	if deep>n then begin
+		exit;
+	end;
+	for i:=0 to 1 do begin
+		if i=0 then begin
+			if t[deep]<=time then continue;
+			p[deep]:=true;
+			inc(tmp,w[deep]);
+				dfs(deep+1,time+1);
+                        p[deep]:=false;
+                        dec(tmp,w[deep]);
+		end else begin
+				dfs(deep+1,time);
+		end;
+	end;
+end;
+begin
+	readln(n);
+	for i:=1 to n do begin
+		readln(t[i],w[i]);
+		if t[i]>ti then ti:=t[i];
+	end;
+	dfs(1,0);
+	writeln(ans);
+end.
