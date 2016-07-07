@@ -4,20 +4,34 @@
 #include <cmath>
 using namespace std;
 
-void work(int a,int b)
+typedef long long LL;
+int d,a,b;
+LL n;
+
+LL half()
 {
-	if (a==b) return 1;
-	if (b-a>0) p = 1;else p = -1;
-	return abs(b-a)/d;
+	LL L = a,R = a+d*n,ret = 0;
+	while (L<=R)
+	{
+		LL mid = (L+R)/2;
+		LL t = (mid-a)/d+((mid-a)%d != 0);
+		if (b+(n-t)*d>=mid) 
+		{
+			L = mid + 1;
+			ret = mid;
+		}else R = mid - 1;
+	}
+	return ret;
 }
 
 int main()
 {
 	freopen("4303.in","r",stdin);
-	//freopen("4303.out","w",stdout);
+	//freopen("mountain.out","w",stdout);
 
-	scanf("%d %d %d %d",&n,&d,&a,&b);
-	len = work(a,b);
+	scanf("%lld %d %d %d",&n,&d,&a,&b);
+	n --;
+	printf("%lld\n",half());
 
 	return 0;
 }
