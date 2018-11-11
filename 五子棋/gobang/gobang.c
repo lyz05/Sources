@@ -5,16 +5,9 @@
  @version v1.3 
 */
 
-/****************************************************************************
- *
-* Header Files
-*
-****************************************************************************/
-//#include "types.h"
 #include "gobang_main.h"
 #include <time.h>
 #include <sys/time.h>
-#include <stdlib.h>
 /*
 版本说明:
 1、实现了极大极小值搜索,没加beta裁剪等优化.
@@ -31,7 +24,7 @@ chess_queue gRecord;
 #endif
 
 /*初始化棋盘*/
-static void gobang_init(void);
+//static void gobang_init(void);
 /*极大值层*/
 static int max_alphabeta(s8 depth, chess_t chess, s32 alpha, s32 beta);
 /*极小层*/	
@@ -46,21 +39,22 @@ static int AI_play_chess(Boolean isFirst);
 /*赢棋检测*/
 Boolean is_win(u8 x, u8 y, u8 color);
 /*打印棋盘*/
-void print_chess_board(void);
+//void print_chess_board(void);
 
 //入口函数
-int main()
+int main()								//OK
 {
 	freopen("gobang.in","r",stdin);
 	freopen("gobang.out","w",stdout);
 	//printf("**************gobang v1.0***************\n");
 	//printf("input:x y play chess \n");
 	//printf("***************************************\n\n");
-	gobang_init();
+	//gobang_init();
 	//printf("请指定AI棋子颜色，0代表白子，1代表黑子\n");
 	int tmp;
 	scanf("%d",&tmp);
 	 
+	//黑白棋转换 
 	if (tmp==1) 
 	{
 		AIChessColor = BLACE;
@@ -94,7 +88,8 @@ int main()
     ret = hum_play_chess(x,y,ret);
     if (GO_WIN == ret)   //胜利
     {
-        printf("Humber win!\n");
+    	return GO_OK;
+        //printf("Humber win!\n");
         //print_chess_board();
     }
     //print_chess_board();
@@ -103,7 +98,8 @@ int main()
     if (tmp) ret = AI_play_chess(TRUE); else ret = AI_play_chess(FALSE);
     if (GO_WIN == ret)      //胜利,打印棋盘,退出去
     {
-        printf("AI win!\n");
+    	return GO_OK;
+        //printf("AI win!\n");
         //print_chess_board();
     }
     //print_chess_board();
@@ -113,7 +109,7 @@ int main()
 /*
 玩家下棋
 */
-static int hum_play_chess(int x,int y,int ret)
+static int hum_play_chess(int x,int y,int ret)//OK
 {
     //printf("play chess:");
     //ret = scanf("%d %d", &x, &y);
@@ -143,25 +139,26 @@ static int hum_play_chess(int x,int y,int ret)
     return GO_OK;
 }
 /*AI下棋*/
-static int AI_play_chess(Boolean isFirst)
+static int AI_play_chess(Boolean isFirst)//OK
 {
     chess_t chess;
     chess.x = 0;
     chess.y = 0;
-    struct timeval start_t, end_t;
+    //struct timeval start_t, end_t;
     //long use_time = 0;          //us
     //double use_time_sec = 0;
     if (isFirst)    //棋盘空的下棋,随机一个中间的子.(空子队列生成不了)
     {
+    	//randomize(time(0));
     	chess.x =(int)(rand()%5) + 5;
         chess.y =(int)(rand()%5) + 5; 
     }
     else
     {
         //printf("Waiting AI...\n");
-        gettimeofday(&start_t, NULL);
+        //gettimeofday(&start_t, NULL);
         chess_ai_minmax_alphabeta(&chess, gDeep);
-        gettimeofday(&end_t, NULL);
+        //gettimeofday(&end_t, NULL);
         //use_time = 1000000*(end_t.tv_sec - start_t.tv_sec)+(end_t.tv_usec - start_t.tv_usec);
     }
     printf("%d %d\n",chess.x+1,chess.y+1);
@@ -175,55 +172,55 @@ static int AI_play_chess(Boolean isFirst)
 }
 
 /*初始化*/
-static void gobang_init(void)
-{
-    u8 i, j;
-#if DEBUG
-    gRecord.len = gDeep;
-#endif
-    //AIChessColor = BLACE;                //配置为AI执黑子
-    //humChessColor = WHITE;
-    for (i=0; i<M_SIZE; i++)        
-    {
-        for (j=0; j<M_SIZE; j++)
-        {
-            gBoard[i][j] = SPACE;       //棋盘初始化
-        }
-    }  
-}
+//static void gobang_init(void)				//OK
+//{
+//    u8 i, j;
+//#if DEBUG
+//    gRecord.len = gDeep;
+//#endif
+//    //AIChessColor = BLACE;                //配置为AI执黑子
+//    //humChessColor = WHITE;
+//    for (i=0; i<M_SIZE; i++)        
+//    {
+//        for (j=0; j<M_SIZE; j++)
+//        {
+//            gBoard[i][j] = SPACE;       //棋盘初始化
+//        }
+//    }  
+//}
 
 /*打印棋盘*/
-void print_chess_board(void)
-{
-    u8 i, j;
-    printf("   ");
-    for (i=0; i<M_SIZE; i++)
-    {
-        printf("%x ", i+1);
-    }
-    printf("\n  -------------------------------\n");
-    for (j=0; j<M_SIZE; j++)
-    {
-        
-        if (j<9)
-        {
-            printf("\n%d |", j+1);
-        }
-        else
-        {
-            printf("\n%d|", j+1);
-        }
-        for (i=0; i<M_SIZE; i++)
-        {
-            printf("%d ", gBoard[j][i]);
-        }
-        printf("|%d", j+1);
-    }
-    printf("\n  -------------------------------\n");
-}
+//void print_chess_board(void)
+//{
+//    u8 i, j;
+//    printf("   ");
+//    for (i=0; i<M_SIZE; i++)
+//    {
+//        printf("%x ", i+1);
+//    }
+//    printf("\n  -------------------------------\n");
+//    for (j=0; j<M_SIZE; j++)
+//    {
+//        
+//        if (j<9)
+//        {
+//            printf("\n%d |", j+1);
+//        }
+//        else
+//        {
+//            printf("\n%d|", j+1);
+//        }
+//        for (i=0; i<M_SIZE; i++)
+//        {
+//            printf("%d ", gBoard[j][i]);
+//        }
+//        printf("|%d", j+1);
+//    }
+//    printf("\n  -------------------------------\n");
+//}
 
 /*判断是否胜利*/
-Boolean is_win(u8 x, u8 y, u8 color)
+Boolean is_win(u8 x, u8 y, u8 color)//OK
 {
 	int count = 0;
 	int i,j;
@@ -301,7 +298,7 @@ Boolean is_win(u8 x, u8 y, u8 color)
 }
 
 /*计分表,依据连子个数(bumber)和两端的空子个数(empty)*/
-static u32 score_table(u8 number, u8 empty)
+static u32 score_table(u8 number, u8 empty)//OK
 {
     if (number >= 5)
     {
@@ -314,7 +311,7 @@ static u32 score_table(u8 number, u8 empty)
             return ALIVE4;
 		}
         else if (empty==1)
-		{			
+		{
             return DIE4;
 		}
     }
@@ -349,7 +346,7 @@ static u32 score_table(u8 number, u8 empty)
 
 
 /*正斜线、反斜线、横、竖，均转成一维数组来计算*/
-static u32 count_score(u8 n[], u8 chessColor)
+static u32 count_score(u8 n[], u8 chessColor)//OK
 {   
     u8 i = 1;           //n[0]已经提前计算
 	u8 empty = 0;       //空的位子
@@ -383,7 +380,7 @@ static u32 count_score(u8 n[], u8 chessColor)
 				number = 0;
             }
         }
-        else
+        else//(n[i]!=chesscolor && n[i]!=SPACE)
 		{
 			scoretmp += score_table(number, empty);
 			empty = 0;
@@ -396,7 +393,7 @@ static u32 count_score(u8 n[], u8 chessColor)
 }
 
 /*把当前局势所有连线都存到一维数组,然后算一遍分数*/
-static s32 evaluate_board(void)//评估函数，评估局势
+static s32 evaluate_board(void)//评估函数，评估局势//OK
 {
 	u32 AIScore=0;
 	u32 humScore=0;
@@ -474,7 +471,7 @@ static s32 evaluate_board(void)//评估函数，评估局势
 }
 
 /*是否有邻居:两步之内是否有子存在(不论是对手还是自己的子都可以)*/
-static Boolean has_neighbors(int x, int y)
+static Boolean has_neighbors(int x, int y)//OK
 {
 	int s = 2;	//两步之内有子
 	u8 i = 0, j = 0;
@@ -487,8 +484,8 @@ static Boolean has_neighbors(int x, int y)
 }
 
 //还可以优化:将目标空子们先进行估分，然后排序,因为alpha-beta剪枝依赖于空子顺序.
-/*产生空子序列(可以下子的空位)*/		
-static void generate_point(chess_queue *queue)	
+/*产生空子序列(可以下子的空位)*/
+static void generate_point(chess_queue *queue)	//OK
 {
     int i,j,k = 0;
 	for (i=0; i<M_SIZE; i++)
