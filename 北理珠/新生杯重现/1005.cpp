@@ -4,12 +4,12 @@ using namespace std;
 
 const int N = 1000+5;
 char s[N];
-int ans[N/4+5];
+int ans[N];
 
 int main()
 {
 	freopen("1005.in","r",stdin);
-	while (scanf("%s",s) != EOF)
+	while (gets(s) != NULL)
 	{
 		int len = strlen(s),tot = 0,cnt=0,now=0;
 		for (int i=len-1;i>=0;i --,cnt ++)
