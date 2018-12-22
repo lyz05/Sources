@@ -1,19 +1,22 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#include<conio.h>			//密码输入 
-#include<io.h>				//文件存在检测 
+#include<conio.h>			//密码输入
+#include<io.h>			//文件存在检测
+#define NUM 100				//学生最大值
+#define CNUM 10				//学院最大值
+#define SNUM 3				//性别信息最大值
 
 typedef struct c{
 	int id;
 	char name[32];
 }Cinfo;
-//学院信息 
+//学院信息
 typedef struct gd{
 	int id;
 	char name[16];
 }Sinfo;
-//性别信息 
+//性别信息
 typedef struct stu{
 	int id;
 	char name[16];
@@ -21,19 +24,12 @@ typedef struct stu{
 	int cid;				//学院代码
 	int score[10];			//10门成绩
 	float ave;				//平均成绩 
-	//int nm;				//成绩名次 
+	//int nm;				//成绩名次
 }STU;
 //学生信息 
 
 typedef int (*CompareMethod)(STU x,STU y);
-//CompareMethod 比较方式函数指针 
-
-char filenameStu[]="data1\\Stu_Info3.txt",filenameC[]="data1\\C_Info1.txt",filenameS[]="data1\\S_Info2.txt",filenamePsd[]="data1\\psd.txt";
-Cinfo c[10];
-Sinfo s[3];
-STU stu[100],re[100];						//学生信息，返回的学生信息
-int para[100];
-int num = 0,cnum = 0,snum = 0;				//学生总数,学院总数，性别总数 
+//CompareMethod 比较方式函数指针
 
 void menu1();
 void menu2();
@@ -42,8 +38,9 @@ void menu4();
 void menu5();
 void menu6();
 void menu7();
-void menu8();
+void menu8();								//菜单显示
 void menu0();
+//目录信息
 int error();								//未读入文件检测 
 void init();								//系统初始化&密码检测 
 void printStu(STU stu);
@@ -65,28 +62,33 @@ int findName(STU x[], int num, char name[], STU re[]);
 //根据给定的name，从num个x中找出同名，并依次存放到re中，函数返回找到的人数
 int ModifyStuinfo(STU x[], int num, int id, char filename[]);
 //根据给定的学生学号修改该学生的信息
-int JudgePsd(char psd[]);
+int JudgePsd(char psd[],char filename[]);
 //判断密码正确性
 int ModifyPsd(char psd[],char filename[]);
 //修改密码，返回修改是否成功
 char* encodeInp(char *input);
 //对密码进行加密 
 void InputPsd(char psd[]);
-//密码输入函数 
+//密码输入函数
+int InputNum(int *num);
+//从stdin中读入一个数字，返回成功与否 
+
+char filenameStu[]="data1\\Stu_Info3.txt",filenameC[]="data1\\C_Info1.txt",filenameS[]="data1\\S_Info2.txt",filenamePsd[]="data1\\psd.txt";
+Cinfo c[CNUM];
+Sinfo s[SNUM];
+STU stu[NUM],re[NUM];						//学生信息，返回的学生信息
+int para[NUM];
+int num = 0,cnum = 0,snum = 0;				//学生总数,学院总数，性别总数 
 
 int main()
 {
 	init();									//密码检测 
 	menu8();
-	char s[100];
 	int n;
 	while (1)
 	{
-		fflush(stdin); 
 		printf("请输入要进行的模块:");
-    	gets(s);
-    	if (s[0]=='\0') continue;						//接收到换行
-    	sscanf(s,"%d",&n); 
+		if (!InputNum(&n)) continue;
 		switch (n)
 		{
 			case 1:	menu1(); break;
@@ -98,8 +100,7 @@ int main()
 			case 7:	menu7(); break;
 			case 8:	menu8(); break;
 			case 0:	menu0(); break;
-			case -'0':continue;
-			default:printf("输入有误！\n");
+			default:printf("错误：输入有误！请重新输入\n");
 		}
 	}
 	return 0;
@@ -107,12 +108,8 @@ int main()
 
 int error()
 {
-	if (num==0) 
-	{
-		printf("错误：你还未读入相关信息，请先进行原始文件读取\n");
-		return 1;
-	}
-	return 0;
+	if (num==0) printf("错误：你还未读入相关信息，请先进行原始文件读取\n");
+	return (num==0);
 } 
 
 void menu0()
@@ -122,19 +119,18 @@ void menu0()
 
 void menu1()
 {
-	int tmp;
-	if (inputStu(stu,&tmp,filenameStu))
-		printf("读入学生信息成功，共读入%d个信息\n",tmp),num = tmp;
+	if (inputStu(stu,&num,filenameStu))
+		printf("读入学生信息成功，共读入%d个信息\n",num);
 	else
-		printf("读入学生信息失败\n");
-	if (inputCinfo(c,&tmp,filenameC))
-		printf("读入学院信息成功，共读入%d个信息\n",tmp),cnum = tmp;
+		printf("错误：读入学生信息失败\n");
+	if (inputCinfo(c,&cnum,filenameC))
+		printf("读入学院信息成功，共读入%d个信息\n",cnum);
 	else
-		printf("读入学院信息失败\n"); 
-	if (inputSinfo(s,&tmp,filenameS)) 
-		printf("读入性别信息成功，共读入%d个信息\n",tmp),snum = tmp;
+		printf("错误：读入学院信息失败\n"); 
+	if (inputSinfo(s,&snum,filenameS)) 
+		printf("读入性别信息成功，共读入%d个信息\n",snum);
 	else
-		printf("读入性别信息失败\n");
+		printf("错误：读入性别信息失败\n");
 }
 
 void menu2()
@@ -143,6 +139,7 @@ void menu2()
 	sortStudents(stu,para,num,sortByName);
 	int i;
 	for (i=0;i<num;i ++) printStu(stu[para[i]]);
+	menu8();
 }
 
 void menu3()
@@ -151,6 +148,7 @@ void menu3()
 	sortStudents(stu,para,num,sortByAve);
 	int i;
 	for (i=0;i<num;i ++) printStu(stu[para[i]]);
+	menu8();
 }
 
 void menu4()
@@ -164,22 +162,17 @@ void menu4()
 	{
 		int n;
 		printf("请输入学院代码:");
-		if (scanf("%d",&n)!=1) 
-		{
-			while(getchar()!='\n');					//清除缓冲区数据 
-			printf("输入有误！请重新输入！\n");
-			continue;
-		}
+		if (!InputNum(&n)) continue;
 		for (i=0;i<cnum && c[i].id!=n;i ++);
-		if (i==cnum) 
+		if (i==cnum)									//未在学院结构体中找到相应的数字 
 		{
-			printf("输入有误！请重新输入！\n");
+			printf("错误：输入有误！请重新输入\n");
 			continue;
 		}
 		for (i=0;i<num;i ++) 
 			if (stu[i].cid==n)
 				printStu(stu[i]); 
-		break; 
+		break;
 	}
 	menu8();
 }
@@ -205,7 +198,7 @@ void menu6()
 	int tot = findName(stu,num,s,re);
 	if (tot==0) 
 	{
-		printf("未找到该学生！\n");
+		printf("错误：未找到该学生！\n");
 	} else 
 	{
 		int i;
@@ -217,11 +210,11 @@ void menu7()
 {
 	fflush(stdin);
 	char old[100],new[2][100];
-	if (!JudgePsd("")) 
+	if (!JudgePsd("",filenamePsd)) 
 	{
 		printf("请输入旧密码：");
 		InputPsd(old);
-		if (!JudgePsd(old))
+		if (!JudgePsd(old,filenamePsd))
 		{
 			printf("错误：密码错误！\n");
 			return; 
@@ -244,7 +237,7 @@ void menu7()
 
 void init()
 {
-	if (!JudgePsd("")) 
+	if (!JudgePsd("",filenamePsd)) 
 	{
 		char s[100];
 		while (1)
@@ -253,7 +246,7 @@ void init()
 			//gets(s);
 			InputPsd(s);
 			if (s[0]=='\0') continue;
-			if (!JudgePsd(s))
+			if (!JudgePsd(s,filenamePsd))
 			{
 				printf("错误：密码错误！\n");
 				continue; 
@@ -418,13 +411,15 @@ int findName(STU x[], int num, char name[], STU re[])
 
 int ModifyStuinfo(STU x[], int num, int id, char filename[])
 {
+	int flag = 0;
 	FILE *fp;
 	if ((fp = fopen(filename,"r+"))==NULL) return 0;
 	seekPos(fp);
 	char s[500];
 	
 	//fprintf(fp,"%d",20);
-	fgets(s,sizeof s,fp);//忽略总数 
+	fgets(s,sizeof s,fp);									//忽略总数 
+	fseek(fp,0,SEEK_CUR);									//转为写操作 
 	int i,j,n;
 	for (i=0;i<num;i ++)
 	{
@@ -450,32 +445,34 @@ int ModifyStuinfo(STU x[], int num, int id, char filename[])
 			{
 				for (j=0,x[i].ave=0;j<10;j ++) x[i].ave += x[i].score[j];
 				x[i].ave /= 10;
-			}//重算平均分 
-			//文件操作 
-			fseek(fp,0,SEEK_CUR);
-			fprintf(fp,"%d %s %d %d ",x[i].id,x[i].name,x[i].sid,x[i].cid);
-			if (ferror(fp)) return 0;
-			//printf("%d %s %d %d",stu[i].id,stu[i].name,stu[i].sid,stu[i].cid); 
-			for (j=0;j<10;j ++)
-			{
-				fprintf(fp,"%d ",x[i].score[j]);
-				if (ferror(fp)) return 0;
-				//printf("%d ",stu[i].score[j]);
-			}
+			}//重算平均分 	
 			printf("修改后：\n");
 			printStu(x[i]);
-			if (fclose(fp)==EOF) return 0;
-			return 1;
+			flag = 1;
 		}
-		fgets(s,sizeof s,fp);
+		//文件操作
+		fprintf(fp,"%d %s %d %d ",x[i].id,x[i].name,x[i].sid,x[i].cid);
+		//printf("%d\n",ferror(fp));
+		if (ferror(fp)) return 0;
+		//printf("%d %s %d %d",stu[i].id,stu[i].name,stu[i].sid,stu[i].cid); 
+		for (j=0;j<10;j ++)
+		{
+			fprintf(fp,"%d ",x[i].score[j]);
+			if (ferror(fp)) return 0;
+			//printf("%d ",stu[i].score[j]);
+		}
+		fprintf(fp,"\n");
+		if (ferror(fp)) return 0;
+		//fgets(s,sizeof s,fp);
 	}
-	printf("找不到学号为%d的学生\n",id);
-	return 0;
+	if (fclose(fp)==EOF) return 0;
+	if (!flag)
+		printf("找不到学号为%d的学生\n",id);
+	return flag;
 }
 
-int JudgePsd(char psd[])
+int JudgePsd(char psd[],char filename[])
 {
-	char filename[]="data\\psd.txt";
 	char data[100]={}; 
 	char *encode = encodeInp(psd);
 	if (access(filename,F_OK)==-1) return 1;	//空密码 
@@ -483,7 +480,7 @@ int JudgePsd(char psd[])
 	if (fp==NULL)
 	{
 		printf("错误：打开文件失败！\n");
-		return;
+		return 0;
 	}
 	fgets(data,sizeof data,fp);
 	if (fclose(fp)==EOF) return 0;
@@ -498,14 +495,13 @@ int ModifyPsd(char psd[],char filename[])
 	if (fp==NULL)
 	{
 		printf("错误：打开文件失败！\n");
-		return;
+		return 0;
 	}
 	fputs(encode,fp);
 	if (ferror(fp)) return 0;
 	if (fclose(fp)==EOF) return 0;
 	return 1;
 }
-
 
 char* encodeInp(char *input)
 {
@@ -557,3 +553,18 @@ void seekPos(FILE *fp)
 		break;
 	}
 } 
+
+int InputNum(int *num)
+{
+	char s[100];
+	fflush(stdin); 
+    gets(s);
+	if (s[0]=='\0')	return 0;						//接收到换行
+    if (sscanf(s,"%d",num)!=1)						//接收到非数字
+	{
+		printf("输入有误！请重新输入！\n");
+		return 0;
+	}
+	return 1;
+}
+//从stdin中读入一个数字，返回成功与否 

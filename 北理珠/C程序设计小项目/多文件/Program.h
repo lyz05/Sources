@@ -29,6 +29,7 @@ typedef int (*CompareMethod)(STU x,STU y);
 //CompareMethod 比较方式函数指针 
 
 
+
 void menu2();
 void menu4();
 void menu5();
@@ -41,6 +42,7 @@ void init();								//系统初始化&密码检测
 void printStu(STU stu);
 void seekPos(FILE *fp);
 //过滤文件中最顶部的注释 
+
 
 
 int sortByName(STU x, STU y);
@@ -58,7 +60,6 @@ char* encodeInp(char *input);
 void InputPsd(char psd[]);
 //密码输入函数 
 
-
 //yrf
 void menu1();
 int inputStu(STU stu[], int *num, char filename[]);    
@@ -67,9 +68,10 @@ int inputCinfo(Cinfo x[], int *num, char filename[]);
 //从文件名filename读num个学院信息到数组x,成功返回真，失败返回假
 int inputSinfo(Sinfo x[], int *num, char filename[]);
 //从文件名filename读num个性别信息到数组x,成功返回真，失败返回假
+//function 1
 void menu3();
 int sortByAve(STU x, STU y);
 //根据平均成绩排序
 void sortStudents(STU *s, int *para, int num,CompareMethod cm);
 //对num个学生按照指定比较方式排序
-
+//function 3
