@@ -34,6 +34,21 @@ para[i] 1 2 3 4 5 6 7 8
 para[i] 4 3 2 5 6 7 1 8
 i       0 1 2 3 4 5 6 7 
 */
+
+void sortStudents(STU *s, int *para, int num, CompareMethod cmp)
+{
+	int i,j,tmp;
+	for(i=0;i<num;i++) para[i]=i;
+	//平行数组初始化 
+	for(i=0;i<num;i++)
+	    for(j=i+1;j<num;j++)
+	    	if(cmp(s[para[i]],s[para[j]])){  
+				tmp = para[i];
+				para[i] = para[j];
+				para[j] = tmp;	
+			}
+}
+
 void menu6()
 {
 	if (error()) return;
