@@ -101,19 +101,6 @@ void printStu(STU stu)
 	printf("Æ½¾ù·Ö£º%f\n\n",stu.ave);
 }
 
-
-
-
-
-
-
- 
-
-
-
-
-
-
 void seekPos(FILE *fp)
 {
 	char c,s[100];
