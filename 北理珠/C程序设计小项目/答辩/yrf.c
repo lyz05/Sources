@@ -140,19 +140,5 @@ int inputSinfo(Sinfo x[], int *num, char filename[])
 	return 1;
 } 
 
-void sortStudents(STU *s, int *para, int num, CompareMethod cmp)
-{
-	int i,j,tmp;
-	for(i=0;i<num;i++) para[i]=i;
-	//平行数组初始化 
-	for(i=0;i<num;i++)
-	    for(j=i+1;j<num;j++)
-	    	if(cmp(s[para[i]],s[para[j]])){  
-				tmp = para[i];
-				para[i] = para[j];
-				para[j] = tmp;	
-			}
-}
-
 int sortByAve(STU x, STU y) {return x.ave < y.ave;}
 
