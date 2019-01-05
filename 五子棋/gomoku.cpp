@@ -1,16 +1,18 @@
 #include<cstdio>
+#include<cstring>
+#include<cstdlib>
 #include<iostream>
 using namespace std;
 
 const int N = 15;
-const char name[3][3] = {"\0","°×","ºÚ"};	//Æå×ÓÃû×Ö
-int map[N+1][N+1];							//ÆåÅÌ
+const char name[3][10] = {"\0","ï¿½ï¿½","ï¿½ï¿½"};	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+int map[N+1][N+1];							//ï¿½ï¿½ï¿½ï¿½
 
-void print_chess_board();					//´òÓ¡ÆåÅÌ
-void init();								//ÓÎÏ·³õÊ¼»¯
-void work();								//ÓÎÏ·Ö÷³ÌÐò
-int is_win(int x,int y,int color);			//ÅÐ¶ÏÑÕÉ«colorµÄÂä×ÓÓÚ(x,y)ÊÇ·ñÓ®Æå
-bool check(int x);							//¼ì²âÆå×Ó×ø±êÔ½½ç
+void print_chess_board();					//ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½ï¿½
+void init();								//ï¿½ï¿½Ï·ï¿½ï¿½Ê¼ï¿½ï¿½
+void work();								//ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+int is_win(int x,int y,int color);			//ï¿½Ð¶ï¿½ï¿½ï¿½É«colorï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(x,y)ï¿½Ç·ï¿½Ó®ï¿½ï¿½
+bool check(int x);							//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½
 
 int main()
 {
@@ -24,7 +26,7 @@ bool check(int x)
 	return ((x<0) || (x>=N));
 }
 
-void print_chess_board()						//´òÓ¡ÆåÅÌ
+void print_chess_board()						//ï¿½ï¿½Ó¡ï¿½ï¿½ï¿½ï¿½
 {
 	for (int j=0;j<=N;j ++) printf("%-3d",j);
 	puts("");
@@ -44,7 +46,7 @@ int is_win(int x,int y,int color)
 	int count = 0;
 	int i,j;
 	int size = 15;
-	//É¨ÃèÐÐ
+	//É¨ï¿½ï¿½ï¿½ï¿½
 	for (i=(x-4>0?x-4:0); (i<=x+4)&&(i<size); i++) 
 	{
 		if (color == (map[i][y]))
@@ -60,7 +62,7 @@ int is_win(int x,int y,int color)
 			count = 0;
 		}
 	}
-	//É¨ÃèÁÐ
+	//É¨ï¿½ï¿½ï¿½ï¿½
 	count = 0;
 	for (j=(y-4>0?y-4:0); (j<=y+4)&&(j<size); j++) 
 	{
@@ -77,7 +79,7 @@ int is_win(int x,int y,int color)
 			count = 0;
 		}
 	}
-	//É¨ÃèÕýÐ±Ïß(\)
+	//É¨ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½(\)
 	count = 0;
 	for (i=x-4,j=y-4;(i<=x+4)&&(i<size)&&(j<=y+4)&&(j<size); i++,j++) 
 	{
@@ -95,7 +97,7 @@ int is_win(int x,int y,int color)
 			count = 0;
 		}
 	}
-	//É¨Ãè·´Ð±Ïß(/)
+	//É¨ï¿½è·´Ð±ï¿½ï¿½(/)
 	count = 0;
 	for (i=x-4,j=y+4;(i<=x+4)&&(i<size)&&(j>=y-4)&&(j>=0); i++,j--) 
 	{
@@ -118,42 +120,42 @@ int is_win(int x,int y,int color)
 
 void init()
 {
-	printf("»¶Ó­Ê¹ÓÃÎå×ÓÆå³ÌÐò\n");
-	printf("ÓÎÏ·ÖÐ0´ú±íÎÞÆå£¬1´ú±íºÚÆå£¬2´ú±í°×Æå\n");
+	printf("ï¿½ï¿½Ó­Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
+	printf("ï¿½ï¿½Ï·ï¿½ï¿½0ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½å£¬1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½å£¬2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\n");
 	printf("********************\n");
 }
 
 int judge()								
 {
-	int board[3*N][2];					//¼ÇÂ¼±ß½ç×ø±ê
+	int board[3*N][2];					//ï¿½ï¿½Â¼ï¿½ß½ï¿½ï¿½ï¿½ï¿½ï¿½
 	int sum[3][N+1];
-	//±ß½ç³õÊ¼»¯
+	//ï¿½ß½ï¿½ï¿½Ê¼ï¿½ï¿½
 	for (int i=1;i<=N;i ++) board[i][0] = N-i+1,board[i][1] = 1;
 	for (int i=N+1;i<=2*N-1;i ++) board[i][0] = 1,board[i][1] = i-N+1;
 	for (int i=2*N;i<=3*N-2;i ++) board[i][0] = i-2*N+2,board[i][1] = N;
-	//É¨ÃèÐÐ
+	//É¨ï¿½ï¿½ï¿½ï¿½
 	for (int i=1;i<=N;i ++)
 	{
 		memset(sum,0,sizeof sum);
 		for (int j=1;j<=N;j ++)
 		{
-			int now = map[i][j];		//µ±Ç°Æå×ÓµÄÑÕÉ«
+			int now = map[i][j];		//ï¿½ï¿½Ç°ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½É«
 			sum[now][j] += sum[now][j-1]+1;
 			if (now!=0 && sum[now][j]>=5) return now;
 		}
 	}
-	//É¨ÃèÁÐ
+	//É¨ï¿½ï¿½ï¿½ï¿½
 	for (int j=1;j<=N;j ++)
 	{
 		memset(sum,0,sizeof sum);
 		for (int i=1;i<=N;i ++)
 		{
-			int now = map[i][j];		//µ±Ç°Æå×ÓµÄÑÕÉ«
+			int now = map[i][j];		//ï¿½ï¿½Ç°ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½É«
 			sum[now][i] += sum[now][i-1]+1;
 			if (now!=0 && sum[now][i]>=5) return now;
 		}
 	}
-	/*É¨Ãè¡°\¡±*/
+	/*É¨ï¿½è¡°\ï¿½ï¿½*/
 	for (int i=1;i<=2*N-1;i ++)
 	{
 		memset(sum,0,sizeof sum);
@@ -165,7 +167,7 @@ int judge()
 			if (now!=0 && sum[now][cnt]>=5) return now;
 		}
 	}
-	/*É¨Ãè¡°/¡±*/
+	/*É¨ï¿½è¡°/ï¿½ï¿½*/
 	for (int i=N;i<=3*N-2;i++)
 	{
 		memset(sum,0,sizeof sum);
@@ -182,7 +184,7 @@ int judge()
 
 void work()
 {
-	printf("Çë°´ÈÎÒâ¼ü¿ªÊ¼ÓÎÏ·£¡\n");
+	printf("ï¿½ë°´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ï·ï¿½ï¿½\n");
 	system("pause");
 	memset(map,0,sizeof map);
 	for (int tot=1;;tot++)
@@ -193,11 +195,11 @@ void work()
 		int x,y,flag;
 		print_chess_board();
 		if (flag=judge()) {
-			printf("ÓÎÏ·½áÊø£¡%s×Ó»ñÊ¤£¡\n",name[flag]);
+			printf("ï¿½ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½%sï¿½Ó»ï¿½Ê¤ï¿½ï¿½\n",name[flag]);
 			return;
 		}
-		printf("µ±Ç°ÎªµÚ%dÂÖ,ÏÖÔÚÂÖµ½%s×ÓÏÂÆå",tot,name[now]);
-		printf("ÇëÊäÈëÄãÒªÏÂÆåµÄ×ø±ê£¬ÓÃ¿Õ¸ñ¸ô¿ª\n");
+		printf("ï¿½ï¿½Ç°Îªï¿½ï¿½%dï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½%sï¿½ï¿½ï¿½ï¿½ï¿½ï¿½",tot,name[now]);
+		printf("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ê£¬ï¿½Ã¿Õ¸ï¿½ï¿½ï¿½ï¿½\n");
 		scanf("%d%d",&x,&y);
 		map[x][y] = now;
 		//for (int k=1;k<=10;k ++) printf("\b");
