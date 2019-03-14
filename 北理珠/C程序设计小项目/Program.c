@@ -512,13 +512,13 @@ char* encodeInp(char *input)
 	int enc1,enc2,enc3,enc4;
 	int i=0,tot = 0;
 	while (i < strlen(input)){
-		chr1 = input[i++];
-		chr2 = input[i++];
-		chr3 = input[i++];
-		enc1 = chr1 >> 2;
-		enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
-		enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
-		enc4 = chr3 & 63;
+		chr1 = input[i++];//12345678
+		chr2 = input[i++];//12345678
+		chr3 = input[i++];//12345678
+		enc1 = chr1 >> 2;//123456
+		enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);//781234
+		enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);//567812
+		enc4 = chr3 & 63;//345678
 		if(chr2==0)
 		{
 			enc3 = enc4 = 64;
