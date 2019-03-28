@@ -1,0 +1,62 @@
+判断题：
+题号：12663
+while,do-while和for语句中条件判断只能是关系表达式或逻辑表达式.
+答案：错误
+
+
+题号：12666
+若有如下定义和语句 int k=10;while(k=1)k=k-1;则循环体执行10次
+答案：错误
+
+
+题号：12677
+在while循环中允许使用嵌套循环,可以嵌套while和for循环语句.
+答案：正确
+
+
+题号：12673
+已知a=3,b=4,c=5.则逻辑表达式a+b>c && b==c值为0.
+答案：正确
+
+
+题号：12661
+continue语句对于while和do-while循环来说,意味着转去计算While表达式.
+答案：正确
+
+
+选择题：
+题号：11462
+执行下面程序段后,f的值是:()
+int f=5;
+switch(f)
+{case 5:f+=1;
+case 6:f--;
+case 7:f *=3;break;
+case 8:++f;
+}
+
+A、15
+B、10
+C、28
+D、9
+答案：AC
+
+
+题号：11465
+若file1中,包含file2,file2中,要用到file3,若file2中,不用 #include"file3.h",则在file1.c中,应进行如下定义().
+A、#include"file2.h,file3.h"
+B、#include"file2.h"和#include"file3.h"
+C、#include"file3.h"和#include"file2.h"
+D、#include"file2.h","file3.h"
+答案：C
+
+
+题号：11459
+存在多层嵌套循环时,下列说法正确的是().
+A、continue语句可以中止所有循环
+B、continue语句能够中止包含该语句的最内层循环
+C、break语句可以中止所有循环
+D、break语句能够中止包含该语句的最内层循环
+答案：D
+
+
