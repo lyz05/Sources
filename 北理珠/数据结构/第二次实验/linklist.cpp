@@ -75,20 +75,50 @@ class LinkList
 		delete q;
 		return OK;
 	} 
-	
+	Status Converse()
+	{
+		LNode *p,*q;
+		p = L->next;
+		L->next = NULL;				//断开头指针 
+		while (p)
+		{
+			q = p;
+			p = p->next;
+			q->next = L->next;		//反转指针 
+			L->next = q;			//头节点指向当前最后一个元素 
+		}
+		return OK;
+	}
+	Status OrderInsert(ElemType e) 	//有序递增链表 
+	{
+		LNode *p = L->next;
+		int tot = 1;
+		while (p)
+		{
+			if (p->data >= e) break; //查找位置并插入 
+			p = p->next;
+			tot ++;
+		}
+		return ListInsert(tot,e);
+	}
+	int GetLen()
+	{
+		int n;
+		LNode *p = L->next;
+		for (n=0;p!=NULL;p = p->next,n ++);
+		return n;
+	} 
 };
 
-ostream& operator << (ostream &os,const LinkList &L)
+ostream& operator << (ostream &os,LinkList &L)	//输出链表的所有元素 
 {
-	int n;
-	LNode *p = (L.L)->next;
 	cout << "elem:";
-	for (n=0;p!=NULL;p = p->next,n ++) cout << p->data << " ";
-	cout << endl << "length:" << n << endl;
+	for (LNode *p = (L.L)->next;p!=NULL;p = p->next) cout << p->data << " ";
+	cout << endl << "length:" << L.GetLen() << endl;
 	return os;
 }
 
-istream& operator >> (istream &is,LinkList &L) //后插法单个结点 
+istream& operator >> (istream &is,LinkList &L) 			//后插法单个结点 
 {
 	ElemType e;
 	cout << "Input a elem:";
@@ -115,6 +145,11 @@ int main()
 	for (int i=1;i<=n;i ++) cin >> L; 
 	cout << L << endl;
 	
+	cout << "Please input the elem to Insert the Ordered list:";
+	cin >> e;
+	L.OrderInsert(e);
+	cout << L << endl;
+	
 	cout << "Please input the number of LinkList to get elem:";
 	cin >> n;
 	L.GetElem(n,e);
@@ -136,5 +171,8 @@ int main()
 	L.ListDelete(n);
 	cout << L << endl;
 	
+	cout << "Converse the LinkList" << endl;
+	L.Converse();
+	cout << L << endl;
 	return 0;
 }
