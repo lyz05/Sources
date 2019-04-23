@@ -55,17 +55,17 @@ SElemType GetTop(SqStack S) {//返回S的栈顶元素，不修改栈顶指针
 
 Status Trans(int n,int num)
 {
-	SqStack s;
+	SqStack s;						//定义栈 
 	SElemType e; 
-	InitStack(s);
+	InitStack(s);					//初始化栈 
 	while (num)
 	{
-		int t = num%n;
-		Push(s,t); 
+		int t = num%n;				//取出每一位 
+		Push(s,t); 					//压栈 
 		num /= n; 
 	} 
 	cout << "转换后:"; 
-	while (Pop(s,e)!=ERROR) 
+	while (Pop(s,e)!=ERROR) 		//退栈直到栈底 
 		if (e<=9) cout << e; else cout << char('A'+(e-10)); 
 	cout << endl;  
 	return OK; 
@@ -80,15 +80,15 @@ Status Match(char s[])
 	{
 		if (s[i]=='(') 
 		{ 
-			if (Push(S,1)==ERROR) 
+			if (Push(S,s[i])==ERROR) 		//压入左括号 
 				return ERROR;
 		} else if (s[i]==')')
 		{ 
-			if (Pop(S,e)==ERROR) 
-				return FAIL; 
+			if (Pop(S,e)==ERROR) 			//弹出右括号 
+				return FAIL; 				//右括号多了 
 		} else return ERROR;
 	}
-	if (Pop(S,e)==ERROR) return OK; 
+	if (Pop(S,e)==ERROR) return OK; 		//左括号多了 
 	else return FAIL; 
 } 
 
