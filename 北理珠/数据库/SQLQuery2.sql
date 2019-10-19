@@ -1,4 +1,4 @@
-
+/*创建数据库（BookDB）*/
 CREATE DATABASE [BookDB]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -6,9 +6,12 @@ CREATE DATABASE [BookDB]
  LOG ON 
 ( NAME = 'BookLog', FILENAME = 'D:\SQ\BookLog.ldf' , SIZE = 5120KB , MAXSIZE = 20480KB , FILEGROWTH = 1024KB )
 
+/*转到（BookDB）数据库*/
 use BookDB;
+/*修正数据库无法显示中文的问题*/
 ALTER DATABASE [BookDB] COLLATE Chinese_PRC_CI_AS;
 
+/*创建表结构*/
 CREATE TABLE BookClass
 (
 	classNO char(3) NOT NULL primary key,
