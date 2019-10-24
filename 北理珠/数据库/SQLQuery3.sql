@@ -116,9 +116,6 @@ select classNo,sum(shopNum)
 from Book where (classNO < '009') group by classNO;
 
 /* 8开始，使用连接，子查询还有聚合函数；*/
-
-
---10.查询没有借阅图书编号以'B2001'开头的图书的读者编号、姓名以及他们所借阅图书的图书名称、借书日期（使用IN子查询表达）。
 /*
 select *
 from Borrow,Reader,Book
@@ -131,3 +128,133 @@ where Borrow.readerNO=Reader.readerNO and Book.bookNO = Borrow.bookNO group by R
 having sum(price)>100;
 
 --9.查询没有借书的读者姓名和工作单位(使用IN子查询表达)；
+--select distinct readerNO from Borrow;
+--select readerNO from Reader;
+select readerName 读者姓名,workUnit 工作单位 from Reader
+where readerNo not in
+(
+	select readerNO from Borrow
+);
+
+--10.查询没有借阅图书编号以'B2001'开头的图书的读者编号、姓名以及他们所借阅图书的图书名称、借书日期（使用IN子查询表达）。
+select Borrow.readerNO 读者编号,readerName 姓名,bookName 图书名称,borrowDate 借书日期 
+from Borrow,Reader,Book
+where Borrow.readerNo not in
+(
+	select readerNO from Borrow where bookNo like 'B2001%'
+) and Borrow.readerNO=Reader.readerNO and Book.bookNO = Borrow.bookNO;
+
+/*--11开始使用集合运算，*/
+--11.查询既借阅了"商务英语"图书又借阅了"大学英语"两本图书的读者编号、读者姓名、借书日期和图书名称；
+select Borrow.readerNo 读者编号,readername 读者姓名,borrowDate 借书日期,bookName 图书名称
+from Borrow,Reader,Book
+where Borrow.readerNO=Reader.readerNO and Book.bookNO = Borrow.bookNO
+and (bookName = '商务英语' or bookName = '大学英语') and Borrow.readerNO in (
+	select Borrow.readerNo
+	from Borrow,Reader,Book
+	where Borrow.readerNO=Reader.readerNO and Book.bookNO = Borrow.bookNO and bookName = '商务英语'
+	INTERSECT
+	select Borrow.readerNo
+	from Borrow,Reader,Book
+	where Borrow.readerNO=Reader.readerNO and Book.bookNO = Borrow.bookNO and bookName = '大学英语'
+);
+
+--12.查询没有借阅"经济类"图书的读者编号、读者姓名（使用IN子查询表达）；
+select distinct Borrow.readerNO 读者编号,readerName 读者姓名
+from Borrow,Reader,Book
+where Borrow.readerNO=Reader.readerNO and Book.bookNO = Borrow.bookNO
+and classNO not in
+(
+	select Book.classNO
+	from Borrow,Reader,Book,BookClass
+	where Borrow.readerNO=Reader.readerNO and Book.bookNO = Borrow.bookNO and bookclass.classNO  = Book.classNO
+	and className = '经济类'
+);
+
+--13.查询至少与读者"张晓梅"所借的图书一样的读者编号、读者姓名和工作单位；
+select distinct Borrow.readerNO 读者编号,readerName 读者姓名,workUnit 工作单位
+from Borrow,Reader,Book
+where Borrow.readerNO=Reader.readerNO and Book.bookNO = Borrow.bookNO
+and bookName in (
+	select bookName
+	from Borrow,Reader,Book
+	where Borrow.readerNO=Reader.readerNO and Book.bookNO = Borrow.bookNO
+	and readername = '张晓梅'
+) and readername != '张晓梅';
+
+--14.查询借阅了图书类别为002号的所有图书的读者编号、读者姓名以及他们所借阅过的所有图书的图书名称和借阅日期；
+select Reader.readerNO 读者编号,readerName 读者姓名,bookName 图书名称,borrowDate 借阅日期
+from Borrow,Reader,Book,BookClass
+where Borrow.readerNO=Reader.readerNO and Book.bookNO = Borrow.bookNO and Book.classNO=BookClass.classNO
+and Reader.readerNO in (
+	select distinct Reader.readerNo
+	from Borrow,Reader,Book,BookClass
+	where Borrow.readerNO=Reader.readerNO and Book.bookNO = Borrow.bookNO and Book.classNO=BookClass.classNO
+	and BookClass.classNo = '002'
+);
+
+/*--15开始，是分组和组过滤，以及排序输出；*/  
+--15.查询至少借阅了3本图书的读者编号、读者姓名、图书编号、图书名称，按读者编号排序输出；
+select Reader.readerNO 读者编号,readerName 读者姓名,book.bookNO 图书编号,bookname 图书名称
+from Borrow,Reader,Book
+where Borrow.readerNO=Reader.readerNO and Book.bookNO = Borrow.bookNO
+and Reader.readerNO in(
+	select Reader.readerNO
+	from Borrow,Reader,Book
+	where Borrow.readerNO=Reader.readerNO and Book.bookNO = Borrow.bookNO
+	group by Reader.readerNO
+	having count(Reader.readerNO)>=3
+)
+order by 读者编号;
+
+--16.查询所借阅的图书总价最高的读者编号、读者姓名和出生日期；
+select Reader.readerNO 读者编号,readerName 读者姓名,substring(identitycard,7,8) 出生日期
+from Borrow,Reader,Book,BookClass
+where Borrow.readerNO=Reader.readerNO and Book.bookNO = Borrow.bookNO and Book.classNO=BookClass.classNO
+and price in
+(
+	select max(price) from Borrow,Book where Book.bookNO = Borrow.bookNO
+);
+
+--17.将"经济类"图书的单价提高10%；
+/*
+select * from book where classNO in (
+	select classNO from BookClass where className='经济类'
+)
+*/
+update book set price = price*1.1 where classNO in (
+	select classNO from BookClass where className='经济类'
+)
+/*
+select * from book where classNO in (
+	select classNO from BookClass where className='经济类'
+)
+*/
+
+--18.对于年龄在25-35岁之间的读者所借阅的应归还还未归还的图书,将其归还日期修改为系统当天日期;
+/*
+select borrow.readerNO,borrow.bookNO
+from Borrow,Reader,Book,BookClass
+where Borrow.readerNO=Reader.readerNO and Book.bookNO = Borrow.bookNO and Book.classNO=BookClass.classNO
+and returnDate is null and ((year(GETDATE()) - cast(SUBSTRING(identitycard,7,4) as int)) between 25 and 35);
+
+select * from Borrow tableA where exists(
+	select borrow.readerNO,borrow.bookNO
+	from Borrow,Reader,Book,BookClass
+	where Borrow.readerNO=Reader.readerNO and Book.bookNO = Borrow.bookNO and Book.classNO=BookClass.classNO
+	and /*returnDate is null and*/ ((year(GETDATE()) - cast(SUBSTRING(identitycard,7,4) as int)) between 25 and 35)
+	and tableA.readerNO = borrow.readerNO and tableA.bookNO = borrow.bookNO
+)
+*/
+update borrow set returnDate=getdate() from borrow tableA where exists(
+	select borrow.readerNO,borrow.bookNO
+	from Borrow,Reader,Book,BookClass
+	where Borrow.readerNO=Reader.readerNO and Book.bookNO = Borrow.bookNO and Book.classNO=BookClass.classNO
+	and returnDate is null and ((year(GETDATE()) - cast(SUBSTRING(identitycard,7,4) as int)) between 25 and 35)
+	and tableA.readerNO = borrow.readerNO and tableA.bookNO = borrow.bookNO
+)
+/*
+select *
+from Borrow,Reader,Book,BookClass
+where Borrow.readerNO=Reader.readerNO and Book.bookNO = Borrow.bookNO and Book.classNO=BookClass.classNO
+*/
