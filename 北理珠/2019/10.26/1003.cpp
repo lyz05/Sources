@@ -42,7 +42,7 @@ void maketree(int id,int l,int r)
 
 int main()
 {
-	freopen("1003.in","r",stdin);
+	freopen("in.txt","r",stdin);
 	freopen("1003.out","w",stdout);
 	
 	while (cin >> n && n)
