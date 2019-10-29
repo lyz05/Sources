@@ -39,10 +39,9 @@ void bfs()
 
 int main()
 {
-	cin >> n >> m;
-	for (int i=1;i<=n;i ++)
-		for (int j=1;j<=m;j ++)
-			cin >> map[i][j],d[i][j] = -1;
+	for (int i=1;i<=3;i ++)
+		for (int j=1;j<=3;j ++)
+			cin >> map[i][j]; 
 	bfs();
 	cout << d[n][m] << endl;
 	return 0;
