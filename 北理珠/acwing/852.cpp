@@ -5,7 +5,9 @@
 using namespace std;
 
 const int N = 1e5+7;
-int e[N],vis[N],d[N],n,m;
+int e[N],vis[N],d[N],n,m,cnt[N];
+//cnt数组记录每个点的最短路的路径长度
+//如果大于n，说明一定存在负环。 
 struct Node
 {
 	int y,next,w;
@@ -21,13 +23,14 @@ void add(int x,int y,int z)
 	e[x] = tot;
 }
 
-void spfa(int u)
+bool spfa(int u)
 {
 	static queue<int> q;
 	memset(d,124,sizeof d);
 	memset(vis,0,sizeof vis);
+	memset(cnt,0,sizeof cnt);
 	d[u] = 0;
-	q.push(u);
+	q.push(u); 
 	vis[u] = 1;
 	while (!q.empty())
 	{
@@ -38,6 +41,8 @@ void spfa(int u)
 			if (d[x]+h[i].w<d[y])
 			{
 				d[y] = d[x]+h[i].w;
+				cnt[y] = cnt[x]+1;
+				if (cnt[y]>n) return 1; 
 				if (!vis[y])
 				{
 					vis[y] = 1;
@@ -46,11 +51,12 @@ void spfa(int u)
 			}
 		}
 	}
+	return 0;
 }
 
 int main()
 {
-	//freopen("851.in","r",stdin);
+	freopen("852.in","r",stdin);
 	cin >> n >> m;
 	for (int i=1;i<=m;i ++)
 	{
@@ -58,9 +64,15 @@ int main()
 		cin >> x >> y >> z;
 		add(x,y,z);
 	}
-	spfa(1);						//以1号结点为起点做单源最短路
+	for (int u=1;u<=n;u ++)
+	{
+		if (spfa(u)) 
+		{
+			cout << "Yes" << endl;
+			return 0;
+		}
+	}
+	cout << "No" << endl;
 
-	if (d[n] == 2088533116) cout << "impossible" << endl; 
-	else cout << d[n] << endl;
 	return 0;
 }
