@@ -111,20 +111,15 @@ select classNo 图书分类号,max(price) 最高价格,avg(price) 平均价格
 from Book group by classNO order by 最高价格 desc;
 
 --7.查询分类号小于009号每类图书的入库数量；
-select * from Book;
+-- select * from Book;
 select classNo,sum(shopNum)
 from Book where (classNO < '009') group by classNO;
 
 /* 8开始，使用连接，子查询还有聚合函数；*/
-/*
-select *
-from Borrow,Reader,Book
-where Borrow.readerNO=Reader.readerNO and Book.bookNO = Borrow.bookNO order by Reader.readerNO;
-*/
 --8.查询所借图书的总价在100元以上的读者编号、读者姓名和所借图书的总价；  
-select Reader.readerNO 读者编号,Reader.readerName 读者姓名,sum(price) 所借图书总价
-from Borrow,Reader,Book
-where Borrow.readerNO=Reader.readerNO and Book.bookNO = Borrow.bookNO group by Reader.readerNO,Reader.readerName
+select R.readerNO 读者编号,R.readerName 读者姓名,sum(price) 所借图书总价
+from Borrow,Reader R,Book
+where Borrow.readerNO=R.readerNO and Book.bookNO = Borrow.bookNO group by R.readerNO,R.readerName
 having sum(price)>100;
 
 --9.查询没有借书的读者姓名和工作单位(使用IN子查询表达)；
@@ -137,26 +132,26 @@ where readerNo not in
 );
 
 --10.查询没有借阅图书编号以'B2001'开头的图书的读者编号、姓名以及他们所借阅图书的图书名称、借书日期（使用IN子查询表达）。
-select Borrow.readerNO 读者编号,readerName 姓名,bookName 图书名称,borrowDate 借书日期 
-from Borrow,Reader,Book
-where Borrow.readerNo not in
+select BW.readerNO 读者编号,readerName 姓名,bookName 图书名称,borrowDate 借书日期 
+from Borrow BW,Reader R,Book BK
+where BW.readerNo not in
 (
 	select readerNO from Borrow where bookNo like 'B2001%'
-) and Borrow.readerNO=Reader.readerNO and Book.bookNO = Borrow.bookNO;
+) and BW.readerNO=R.readerNO and BK.bookNO = BW.bookNO;
 
 /*--11开始使用集合运算，*/
 --11.查询既借阅了"商务英语"图书又借阅了"大学英语"两本图书的读者编号、读者姓名、借书日期和图书名称；
-select Borrow.readerNo 读者编号,readername 读者姓名,borrowDate 借书日期,bookName 图书名称
-from Borrow,Reader,Book
-where Borrow.readerNO=Reader.readerNO and Book.bookNO = Borrow.bookNO
-and (bookName = '商务英语' or bookName = '大学英语') and Borrow.readerNO in (
-	select Borrow.readerNo
-	from Borrow,Reader,Book
-	where Borrow.readerNO=Reader.readerNO and Book.bookNO = Borrow.bookNO and bookName = '商务英语'
+select BW.readerNo 读者编号,readername 读者姓名,borrowDate 借书日期,bookName 图书名称
+from Borrow BW,Reader R,Book BK
+where BW.readerNO=R.readerNO and BK.bookNO = BW.bookNO
+and /*(bookName = '商务英语' or bookName = '大学英语') and */BW.readerNO in (
+	select BW.readerNo
+	from Borrow BW,Reader R,Book BK
+	where BW.readerNO=R.readerNO and BK.bookNO = BW.bookNO and bookName = '商务英语'
 	INTERSECT
-	select Borrow.readerNo
-	from Borrow,Reader,Book
-	where Borrow.readerNO=Reader.readerNO and Book.bookNO = Borrow.bookNO and bookName = '大学英语'
+	select BW.readerNo
+	from Borrow BW,Reader R,Book BK
+	where BW.readerNO=R.readerNO and BK.bookNO = BW.bookNO and bookName = '大学英语'
 );
 
 --12.查询没有借阅"经济类"图书的读者编号、读者姓名（使用IN子查询表达）；
