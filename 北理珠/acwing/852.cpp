@@ -26,7 +26,6 @@ void add(int x,int y,int z)
 bool spfa(int u)
 {
 	static queue<int> q;
-	memset(d,124,sizeof d);
 	memset(vis,0,sizeof vis);
 	memset(cnt,0,sizeof cnt);
 	d[u] = 0;
@@ -56,7 +55,7 @@ bool spfa(int u)
 
 int main()
 {
-	freopen("852.in","r",stdin);
+	//freopen("852.in","r",stdin);
 	cin >> n >> m;
 	for (int i=1;i<=m;i ++)
 	{
@@ -64,9 +63,10 @@ int main()
 		cin >> x >> y >> z;
 		add(x,y,z);
 	}
+	memset(d,124,sizeof d);
 	for (int u=1;u<=n;u ++)
 	{
-		if (spfa(u)) 
+		if (d[u]==2088533116 && spfa(u)) 
 		{
 			cout << "Yes" << endl;
 			return 0;

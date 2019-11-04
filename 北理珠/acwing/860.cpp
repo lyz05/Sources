@@ -5,8 +5,8 @@
 #include <map>
 using namespace std;
 
-const int N = 1e5+7;
-int n,m,e[N]; 
+const int N = 2e5+7;
+int n,m,e[N],tot,color[N];
 struct Node
 {
 	int y,next;
@@ -28,10 +28,11 @@ bool dfs(int x,int col)
 		int y = h[i].y;
 		if (!color[y])
 		{
-			dfs(h[i].y,3-col);
-		} else return color[y];
+			if (!dfs(h[i].y,3-col)) return false;
+		} else if (color[y]==col) return false;
 		
 	}
+	return true;
 }
 
 int main()
@@ -41,13 +42,15 @@ int main()
 	{
 		int x,y;
 		cin >> x >> y;
-		add(x,y);add(y,x)
+		add(x,y);add(y,x);
 	}
 	
+	bool flag = 1;
 	for (int i=1;i<=n;i ++)
 	{
-		if (!color[i]) dfs(i,1);
+		if (!color[i]) flag = flag & 
+			dfs(i,1);
 	}
-	
+	cout << (flag?"Yes":"No") << endl;
 	return 0;
 } 
