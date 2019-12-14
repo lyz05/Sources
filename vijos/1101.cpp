@@ -69,7 +69,7 @@ void search(int deep,int last)
 
 int main()
 {
-	freopen("1101.in","r",stdin);
+	//freopen("1101.in","r",stdin);
 	//freopen("1101.out","w",stdout);
 
 	scanf("%d%d",&n,&m);

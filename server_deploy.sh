@@ -94,6 +94,7 @@ function gen_pythonenv(){
 	if [[ -z "${l_pythonenv_path}" ]];then
 		return -1
 	fi
+	fi
 	cat>${l_pythonenv_path}<<'EOF'
 name: jingleoj
 channels:
@@ -242,7 +243,7 @@ if [[ ${IS_INSTALL_PYTHON3} == 1 ]];then
 
 	cd ${TEMP_DIR}
 
-	wget --quiet ${ANACONDA_DOWNLOAD_URL} -O ${anaconda_file}
+	#wget --quiet ${ANACONDA_DOWNLOAD_URL} -O ${anaconda_file}
 	ret_val=$?
 	if [[ ${ret_val} != 0 ]];then
 		echo "wget anaconda error"
