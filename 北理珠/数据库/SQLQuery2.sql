@@ -39,7 +39,8 @@ CREATE TABLE Reader
 	sex char(2),
 	identitycard char(18),
 	workUnit char(50),
-	borrowCount tinyint
+	borrowCount tinyint,
+	password char(256)
 )
 
 CREATE TABLE Borrow
@@ -71,16 +72,16 @@ INSERT INTO Book VALUES('B200301004','003','算法设计与分析','陈慧南','科学出版社
 
 
 /*读者表（Reader）数据：*/
-insert Reader values('R2005001','张小娟','F','412723199001014321','统一股份有限公司',0)
-insert Reader values('R2006001','刘凤','F','412723199003014321','联合股份有限公司',0)
-insert Reader values('R2007001','高代鹏','M','412723199005014321','洪都股份有限公司',0)
-insert Reader values('R2008001','陈辉','M','412723199111014321','南昌市电脑研制公司',0)
-insert Reader values('R2009001','李虹冰','F','412723199208014321','富士康科技集团',0)
-insert Reader values('R2005002','张露','F','412723199002014321','兴隆股份有限公司',0)
-insert Reader values('R2006002','喻自强','M','412723199004014321','万事达股份有限公司',0)
-insert Reader values('R2007002','张晓梅','F','412723199112014321','世界技术开发公司',0)
-insert Reader values('R2008002','张良','M','412723199110014321','上海生物研究室',0)
-insert Reader values('R2009002','韩福平','M','412723199209014321','合生元有限公司',0)
+insert Reader values('R2005001','张小娟','F','412723199001014321','统一股份有限公司',3,'')
+insert Reader values('R2006001','刘凤','F','412723199003014321','联合股份有限公司',3,'')
+insert Reader values('R2007001','高代鹏','M','412723199005014321','洪都股份有限公司',3,'')
+insert Reader values('R2008001','陈辉','M','412723199111014321','南昌市电脑研制公司',1,'')
+insert Reader values('R2009001','李虹冰','F','412723199208014321','富士康科技集团',1,'')
+insert Reader values('R2005002','张露','F','412723199002014321','兴隆股份有限公司',3,'')
+insert Reader values('R2006002','喻自强','M','412723199004014321','万事达股份有限公司',2,'')
+insert Reader values('R2007002','张晓梅','F','412723199112014321','世界技术开发公司',2,'')
+insert Reader values('R2008002','张良','M','412723199110014321','上海生物研究室',0,'')
+insert Reader values('R2009002','韩福平','M','412723199209014321','合生元有限公司',2,'')
 
 /*借阅表（Borrow）数据：*/
 insert Borrow values('R2005001','B200101001','20110901','20111001',null)
