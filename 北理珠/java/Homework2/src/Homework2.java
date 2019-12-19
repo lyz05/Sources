@@ -8,8 +8,7 @@ public class Homework2 {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             //--3 创建连接
             String url="jdbc:sqlserver://localhost:1433;databaseName=StuDB";
-            Connection conn=DriverManager.getConnection(url,"sa","qazQAZ123!");
-            //System.out.println("数据库连接成功");
+            Connection conn=DriverManager.getConnection(url,"sa","");
             return conn ;//返回创建的数据库连接对象
         }catch(ClassNotFoundException ex){//捕获驱动程序找不到异常
             ex.printStackTrace();
@@ -35,10 +34,7 @@ public class Homework2 {
             Vector<Vector<String>> data=new Vector<Vector<String>>();
             while(rs.next()){
                 Vector<String> line=new Vector<String>();
-                line.add(rs.getString(1));
-                line.add(rs.getString(2));
-                line.add(rs.getString(3));
-                line.add(rs.getString(4));
+                for (int i=1;i<=4;i ++) line.add(rs.getString(i));
                 data.add(line);
             }
             //关闭
@@ -53,6 +49,7 @@ public class Homework2 {
         }
     }
 	public static void main(String[] args) {
+		Demo.main();
 		// TODO 自动生成的方法存根
 		Vector<Vector<String>> data = queryVectorStudents("Select * from Student");
 		System.out.println("学号\t\t\t姓名\t性别\t年龄");
