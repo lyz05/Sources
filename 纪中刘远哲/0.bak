@@ -1,6 +1,0 @@
-BEGIN
-
-    WRITELN('AA'<'A');
-
-
-END.

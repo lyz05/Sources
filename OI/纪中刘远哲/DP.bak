@@ -1,0 +1,9 @@
+@echo off
+:loop
+	data.exe>data.in
+        3922.exe<DATA.IN>me1.out
+        EDITOR.exe<DATA.IN>me2.out
+fc "ME1.out" "ME2.out"
+if not errorlevel 1 goto loop  
+pause
+goto loop

@@ -1,0 +1,6 @@
+BEGIN
+
+    WRITELN('AA'>'B');
+
+
+END.

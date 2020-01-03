@@ -1,7 +1,0 @@
-刘远哲
-男
-高二
-中山
-中山纪念中学
-宋新波
-stone.cpp,substring.cpp,transport.cpp

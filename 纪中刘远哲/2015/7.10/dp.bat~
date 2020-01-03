@@ -1,8 +1,0 @@
-@echo off
-:loop
-data.exe>data.in
-2.exe<data.in>2.out
-type data.in
-type 2.out
-pause
-goto loop

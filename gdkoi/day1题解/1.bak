@@ -1,3 +1,0 @@
-begin
-    read(ch);
-end;

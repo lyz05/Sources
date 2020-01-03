@@ -1,0 +1,49 @@
+const name='1789';
+var n,i,j,k,l,t:longint;
+    s,s1:string;
+    p:boolean;
+    dir:array[1..51,0..10000] of longint;
+function len(x:string):longint;
+var i:longint;
+begin
+  len:=0;
+  for i:=1 to length(x) do len:=len+i*i*(ord(x[i])-46);
+end;
+begin
+  assign(input,name+'.in');assign(output,name+'.out');
+  reset(input);rewrite(output);
+
+  l:=0;
+  readln(n);
+  for k:=1 to n do
+  begin
+    readln(s);
+    delete(s,1,1);
+    s:=s+'/';
+
+    s1:='';
+    t:=0;
+    for i:=1 to length(s) do
+    begin
+      s1:=s1+s[i];
+      if s[i]='/' then
+      begin
+        p:=false;
+        inc(t);
+        j:=1;
+        while (dir[t,j]<>0) and (dir[t,j]<>len(s1)) do inc(j);
+          if dir[t,j]<>0 then
+          begin
+            p:=true;
+          end;
+        if not p then
+        begin
+          inc(l);
+          dir[t,j]:=len(s1);
+        end;
+      end;
+    end;
+    writeln(l);
+  end;
+  close(input);close(output);
+end.

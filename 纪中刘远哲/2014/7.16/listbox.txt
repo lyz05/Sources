@@ -1,3 +1,0 @@
-000.pas(34,16) Error: Element zero of an ansi/wide- or longstring can't be accessed, use (set)length instead
-000.pas(58) Fatal: There were 1 errors compiling module, stopping
-000.pas(0) Fatal: Compilation aborted
