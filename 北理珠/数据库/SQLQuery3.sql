@@ -119,7 +119,8 @@ from Book where (classNO < '009') group by classNO;
 --8.查询所借图书的总价在100元以上的读者编号、读者姓名和所借图书的总价；  
 select R.readerNO 读者编号,R.readerName 读者姓名,sum(price) 所借图书总价
 from Borrow,Reader R,Book
-where Borrow.readerNO=R.readerNO and Book.bookNO = Borrow.bookNO group by R.readerNO,R.readerName
+where Borrow.readerNO=R.readerNO and Book.bookNO = Borrow.bookNO
+group by R.readerNO,R.readerName
 having sum(price)>100;
 
 --9.查询没有借书的读者姓名和工作单位(使用IN子查询表达)；

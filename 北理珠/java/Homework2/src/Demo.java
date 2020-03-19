@@ -1,22 +1,23 @@
-class Student<T>{
-	T name;
-	T sex;
-	Student(T name,T sex){
-		this.name=name;
-		this.sex=sex;
+import java.util.*;
+
+import javax.management.RuntimeErrorException;
+
+public class Demo {     
+	public void evaluate1(List<? extends Person> list){
+		list.add(new Student("Jack",21,"计算机"));
+		list.add(new Teacher("Amy",21,"讲师"));
 	}
-	T getName(){
-		return name;
-	}
-	T getSex(){
-		return sex;
-	}
-}
-public class Demo {     	
-    public static void main(){
-    	Student stu=new Student("李红","女");
-		   System.out.println ("姓名:"+stu.getName());
-		   System.out.println ("性别:"+stu.getSex());
+
+    public static void main(String[] args){
+    	try {
+    		System.out.println(10/0);
+    	}catch (Exception e)
+    	{
+    		e.printStackTrace();
+    	} catch (ArithmeticException e)
+    	{
+    		e.printStackTrace();
+    	}
     }
 }
 
