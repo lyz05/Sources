@@ -1,0 +1,13 @@
+A
+
+AB
+BA
+
+ABC
+BAC
+CBA
+ACB
+BAC
+
+(())
+()()()
