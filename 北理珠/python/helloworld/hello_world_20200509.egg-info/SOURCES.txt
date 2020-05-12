@@ -1,0 +1,8 @@
+README.md
+setup.py
+hello_world/__init__.py
+hello_world_20200509.egg-info/PKG-INFO
+hello_world_20200509.egg-info/SOURCES.txt
+hello_world_20200509.egg-info/dependency_links.txt
+hello_world_20200509.egg-info/entry_points.txt
+hello_world_20200509.egg-info/top_level.txt

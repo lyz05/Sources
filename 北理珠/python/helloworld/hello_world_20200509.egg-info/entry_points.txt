@@ -1,0 +1,4 @@
+[console_scripts]
+hello = hello_world:hello
+world = hello_world:world
+
