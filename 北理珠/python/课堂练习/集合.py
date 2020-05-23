@@ -1,0 +1,20 @@
+st = set()
+#新增5个元素
+st.add(1)
+st.add(2)
+st.add(3)
+st.add(4)
+st.add(5)
+print(st)
+#新增2个重复元素
+st.add(2)
+st.add(4)
+print(st)
+#存在
+st.discard(2)
+st.remove(3)
+print(st)
+#不存在
+st.discard(2)
+st.remove(3)
+print(st)
