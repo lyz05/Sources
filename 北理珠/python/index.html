@@ -1,0 +1,1696 @@
+
+<!DOCTYPE html>
+<html lang="zh-hans">
+    <head>
+        <meta charset="utf-8" />
+        <title>C4致网OpenLAB网络实验平台</title>
+        
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+
+        
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link href="/site_media/static/css/font-awesome.min.2838e7de92f1.css" rel="stylesheet">
+    <link href="/site_media/static/font-awesome/css/font-awesome.min.269550530cc1.css" rel="stylesheet">
+    <link href="/site_media/static/iconfont/iconfont.441c10be4379.css" rel="stylesheet">
+    <link href="/site_media/static/plug-in/jquery-ui/jquery-ui.min.f493d75c3883.css" rel="stylesheet">
+    <link href="/site_media/static/luces_css/main.f39116e1be67.css" rel="stylesheet">
+    <link href="/site_media/static/luces_css/style_defined.e305c2485191.css" rel="stylesheet">
+    <link href="/site_media/static/luces_css/luces.82828e56e4c2.css" rel="stylesheet">
+    <link href="/site_media/static/css/button.edbe151f33f9.css" rel="stylesheet">
+
+    
+    <link rel="stylesheet" type="text/css" href="/site_media/static/luces_css/login.9bde1758adc8.css" />
+    
+        <link rel="stylesheet" type="text/css" href="/site_media/static/luces_css/login-animate.726750a0d89e.css" />
+    
+    <link rel="stylesheet" type="text/css" href="/site_media/static/css/parsley.3b36bb7fbabf.css" />
+
+
+
+    
+        
+        
+        
+            
+            
+            
+                
+                <!-- <link href="/site_media/static/skin/skin_03/css/skin_03.6ff09b9bd440.css" id="skinCss"  rel="stylesheet" c="2"> -->
+            
+                
+            
+        
+    
+
+    <script src="/site_media/static/js/jquery-1.11.3.min.895323ed2f72.js"></script>
+
+    <!--[if lt IE 9]>
+      <script src="/site_media/static/js/respond.min.afc1984a3d17.js"></script>
+      <script src="/site_media/static/js/excanvas.59e01a2bcf64.js"></script>
+      <script src="/site_media/static/js/indexof_ie8.78914e4e1981.js"></script>
+      <script>
+       (function() {
+             if (!0) return;
+             var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video".split(', ');
+             var i= e.length;
+             while (i--){
+                 document.createElement(e[i])
+             }
+
+        })();
+      </script>
+    <![endif]-->
+
+
+
+        
+            <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+            <!--[if lt IE 9]>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
+            <![endif]-->
+        
+
+        
+    
+
+    </head>
+    <body class="login_bg login-body" id="" >
+        <div class="wrap_all">
+
+            
+
+            
+
+
+<div class="login_wrap">
+
+<div class="container login_body">
+  <div class="right" style="background-image: url(/site_media/static/img/skin/orange-theme/bg/login_bg.jpg);">
+
+    
+    <img src="/site_media/static/img/skin/orange-theme/logo/openlab_login.png"/>
+    
+
+    
+
+   <footer  class="login_new_foot">
+    
+    OpenLab ©2015-2020 南京优速网络科技有限公司   版权所有&nbsp;&nbsp;v6.4.234（正式版）
+    
+</footer>
+  </div>
+  <div class="left">
+
+        <div class=" login_main">
+        <!--<h4 class="login_title">C4致网OpenLAB网络实验平台</h4>-->
+        <h4 class="animation a2">C4致网OpenLAB网络实验平台</h4>
+        <div class="login_form">
+        
+
+
+
+
+<!-- Nav tabs -->
+<!--<ul class="nav nav-tabs">
+   <li class="active "><a href="/login/"><span>登录</span></a></li>
+   
+    
+   <li class=""><a href="/user/signup/"><span>注册</span></a></li>
+    
+   
+</ul>-->
+
+<!-- Tab panes -->             
+<div class="tab-content">
+    <h4 class="animation a1">用户登录
+
+
+
+
+
+    </h4>
+
+  <!-- 登录 -->
+  <div  class="tab-pane active" id="user_login">
+       <form id="login_form"  class="" method='post' action="" data-parsley-validate="true">
+       <div class="login_input">                
+            <input type='hidden' name='csrfmiddlewaretoken' value='zzVDGTh4XufhubREqnFFz5rGZeamW8W9' />
+            <div class="form-group  animation a3">
+                <input type="text" name="username" autocomplete="new-password" value="" class="form-control" value="" placeholder="请输入用户名或邮箱" id="login-name" data-parsley-required>
+                <!--<i class="glyphicon glyphicon-user"></i>                -->
+            </div>
+            <div class="form-group  animation a4">
+                <input type="password" class="form-control" autocomplete="new-password" name="password" value="" placeholder="请输入密码" id="login-pass" data-parsley-required>
+                <!--<i class="glyphicon glyphicon-lock"></i>                -->
+            </div>
+            
+            
+            <!--<div class="checkbox">
+                <label>
+                  <input type="checkbox" name="remember"> 记住我
+                </label>
+                <a href="javascript:;" class="pull-right" onclick="click_register();" style="margin-bottom: 10px;">忘记密码？</a>
+            </div>-->
+            <div class="clearfix animation a5">
+                <button class="btn btn-orange radius btn-block" type="submit">登录</button>
+                
+                
+                <!--<span class="pull-right" style="margin-top: 10px;">
+                    <a href="/user/signup/">立即注册</a>
+                </span>-->
+                
+                
+                <!--<button type="button" class="btn btn-orange pull-right" id="register" onclick="window.location.href='/user/signup/'">注册</button>-->
+            </div>
+            <div class="checkbox text-right font_12 animation a6">
+                <!--<label>
+                  <input type="checkbox" name="remember"> 记住我
+                </label>-->
+                <a href="javascript:;" onclick="click_register();">忘记密码？</a>
+            </div>
+            
+            <div class="alert alert-danger text-center hide" id="no_online_user_quota">
+                当前在线用户数已达上限，请稍后重试
+            </div>
+        </div>
+        </form> 
+  </div>
+  
+  
+  <!-- 注册 -->
+  <div  class="tab-pane " id="register">
+      <form id="signup_form" method="post" action="/user/signup/" class="" data-parsley-validate="true">
+       <div class="login_input">                
+            <input type='hidden' name='csrfmiddlewaretoken' value='zzVDGTh4XufhubREqnFFz5rGZeamW8W9' />
+
+            <div class="form-group">
+                <!--<input type="text" name="username" value="" class="form-control" value="" placeholder="请输入用户名" id="login-name">  -->
+               <input type="text" class="form-control username" name="username" id="inputUsername" autocomplete="new-password" placeholder="请输入用户名"
+                       value=""
+                       data-parsley-length="[2, 16]"
+                       
+                       
+                       data-parsley-trigger="change"
+                       data-parsley-required
+                       data-parsley-remote
+                       data-parsley-remote-message="用户名已经存在或当前认证服务出错， 请修改用户名或稍后刷新页面重试"
+                       data-parsley-remote-validator='name_exist' />
+                <i class="glyphicon glyphicon-user"></i>
+                
+                <div class="pop_tip">必填，字符长度应该在2至16之间</div>
+            </div>
+            <div class="form-group">
+                <!--<input type="password" class="form-control" name="password" value="" placeholder="请输入密码" id="login-pass">               -->
+                <input type="password"  name="password" id="inputPassword" autocomplete="new-password" class="form-control"
+                        value=""
+                        placeholder="请输入密码"
+                        data-parsley-length="[6, 16]"
+                        data-parsley-required="true" data-parsley-password=""
+                        data-parsley-password-message="6~16位字母数字组合" />
+                <i class="glyphicon glyphicon-lock"></i>
+                <div class="pop_tip">6~16位字母数字组合</div>
+            </div>
+            <div class="form-group">
+                <!--<input type="password" class="form-control" name="password" value="" placeholder="请再次输入密码" id="relogin-pass">-->
+                <input type="password" name="password_confirm" id="reInputPassword" autocomplete="new-password" class="form-control"
+                        value=""
+                        placeholder="请再次输入密码"
+                        data-parsley-equalto="#inputPassword"
+                        data-parsley-equalto-message="两次密码不一致"
+                        data-parsley-required="true"  data-parsley-password=""
+                        data-parsley-password-message="6~16位字母数字组合" />
+                <i class="glyphicon glyphicon-lock"></i>
+            </div>
+            <div class="form-group">
+                <!--<input type="email" class="form-control" name="email" value="" placeholder="请输入注册邮箱" id="email">-->
+                <input type="email" id="inputEmail" placeholder="请输入邮箱" name="email" autocomplete="new-password" class="form-control" maxlength="200"
+                        value=""
+                        data-parsley-pattern="[^\._-][\w\.-]+@(?:[A-Za-z0-9]+\.)+[A-Za-z]+"
+                        data-parsley-type="email"
+                        data-parsley-required
+                        data-parsley-trigger="change"
+                        data-parsley-remote
+                        data-parsley-remote-message="该邮箱已经被注册或当前认证服务出错， 请修改邮箱或稍后刷新页面重试"
+                        data-parsley-remote-validator="email_exist" />
+                <i class="glyphicon glyphicon-envelope"></i>
+            </div>
+            
+                       
+            <div class="clearfix">
+                <button class="btn btn-orange radius btn-block sign_up" type="submit" >注册</button>
+                <!--<button type="button" class="btn btn-orange pull-right" id="register" onclick="window.location.href='/user/signup/'">注册</button>-->
+            </div>
+            
+
+           <div class="alert alert-danger text-center hide">
+               非常抱歉, 未激活或功能过期版本不支持用户注册, 请联系管理员进行升级.
+           </div>
+
+           <div id="signup_reply" class="alert alert-danger text-center hide">
+               
+               
+               
+           </div>
+        </div>
+        
+    </form>
+  </div>
+  
+</div>
+
+        </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+        <div id="registerModal" class="modal fade modal modal_style_1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                      <h4 class="modal-title">密码重置</h4>
+                    </div>                    
+                    <div class="modal-body">
+                        <form id="resentEmailForm" class="edit_form signup-form form-horizontal" method="post" action="/user/password/reset/" role="form" data-parsley-validate="true" novalidate>
+                            <input type='hidden' name='csrfmiddlewaretoken' value='zzVDGTh4XufhubREqnFFz5rGZeamW8W9' />
+                            <div class="forget_pd ">   
+                                <div class="form-group">                         
+                                    <label class="col-xs-12" for="id_email"><span class="text-red">*&nbsp;&nbsp;</span>登录邮箱</label>
+                                    <div class="col-xs-8">
+                                        <input type="email" class="form-control" name="email" id="id_email" maxlength="200"
+                                               data-parsley-required="true"
+                                               data-parsley-required-message="请输入您注册时填写的邮箱"
+                                        >
+                                    </div> 
+                                    <div class="col-xs-3 help-block">
+                                        <button type="button" id="resentEmail" class="btn btn-sm btn-orange radius">发送邮件</button>
+                                    </div> 
+                                </div>                               
+                                <div class="help-block"><span id="resentWarning" class="text-danger hidden"></span> </div>
+                                <div class="alert alert-info font_12"><span class="glyphicon glyphicon-info-sign"></span> 如遇问题请联系service@sdnlab.com。</div>
+                            </div>   
+                       </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="submit" class="btn btn-orange radius" id="modalReturn">返回</button>
+                      <a href="/" type="" class="hide btn btn-orange radius btn_ok">确定</a>
+                    </div>
+				    
+			     </div>
+            </div>
+       </div>
+       <!-- 注册 -->
+       <form id="modal_signup_form" method="post" action="/user/signup/" class="" data-parsley-validate="true">
+       <div id="regModal" class="modal fade modal modal_style_1" tabindex="-1" data-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                      <h4 class="modal-title">新用户注册</h4>
+                    </div>                    
+                    <div class="modal-body form-horizontal">
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label"><span class="text-red">*&nbsp;&nbsp;</span>用户名</label>
+                            <input type="text" class="form-control hide" name="signup_place" value="modal" />
+                            <div class="col-xs-7">
+                                <input type="text" class="form-control username" name="username" id="inputUsername" autocomplete="new-password"
+                                       data-parsley-length="[2, 16]"
+                                       data-parsley-whitespace="trim"
+                                       
+                                       
+                                       data-parsley-pattern="[^@\ \\\+\#\%\&]+"
+                                       data-parsley-pattern-message="不能包含@, #, %, &, +, \和空格"
+                                       data-parsley-trigger="change"
+                                       data-parsley-required
+                                       data-parsley-remote
+                                       data-parsley-remote-message="用户名已经存在或当前认证服务出错， 请修改用户名或稍后刷新页面重试"
+                                       data-parsley-remote-validator='name_exist'/>
+                            </div>
+                            <div class="col-xs-3 hide">
+                                <div class="help-block font_12">
+                                    <span class="glyphicon glyphicon-info-sign common_color_orange"></span>&nbsp;必填
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label"><span class="text-red">*&nbsp;&nbsp;</span>邮箱</label>
+                            <div class="col-xs-7">
+                                <input type="email" id="inputEmail" name="email" autocomplete="new-password" class="form-control" maxlength="200"
+                                    data-parsley-whitespace="trim"
+                                    data-parsley-pattern="[^\._-][\w\.-]+@(?:[A-Za-z0-9-_]+\.)+[A-Za-z]{2,4}"
+                                    data-parsley-type="email"
+                                    data-parsley-required
+                                    data-parsley-trigger="change"
+                                    data-parsley-remote
+                                    data-parsley-remote-message="该邮箱已经被注册或当前认证服务出错， 请修改邮箱或稍后刷新页面重试"
+                                    data-parsley-remote-validator="email_exist" />
+                            </div>
+                            <div class="col-xs-3 hide">
+                                <div class="help-block font_12">
+                                    <span class="glyphicon glyphicon-info-sign common_color_orange"></span>&nbsp;必填
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label"><span class="text-red">*&nbsp;&nbsp;</span>密码</label>
+                            <div class="col-xs-7">
+                                <input type="password"  name="password" id="modalInputPassword" autocomplete="new-password" class="form-control"
+                                    data-parsley-length="[6, 16]"
+                                    data-parsley-whitespace="trim"
+                                    data-parsley-required="true" data-parsley-password=""
+                                    data-parsley-password-message="6~16位字母数字组合" />
+                            </div>
+                            <div class="col-xs-3 hide">
+                                <div class="help-block font_12">
+                                    <span class="glyphicon glyphicon-info-sign common_color_orange"></span>&nbsp;必填
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label"><span class="text-red">*&nbsp;&nbsp;</span>重复密码</label>
+                            <div class="col-xs-7">
+                                <input type="password" name="password_confirm" id="modalReInputPassword" autocomplete="new-password" class="form-control"
+                                    data-parsley-equalto="#modalInputPassword"
+                                    data-parsley-equalto-message="两次密码不一致"
+                                    data-parsley-whitespace="trim"
+                                    data-parsley-required="true"  data-parsley-password=""
+                                    data-parsley-password-message="6~16位字母数字组合" />
+                            </div>
+                            <div class="col-xs-3 hide">
+                                <div class="help-block font_12">
+                                    <span class="glyphicon glyphicon-info-sign common_color_orange"></span>&nbsp;必填
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group hide default_role_info">
+                            <label class="control-label col-xs-2"></label>
+                            <div class="col-xs-7">
+                                <input type="text" name="role_name" class="form-control" value="学生"/>
+                                <input type="text" name="role_id" class="form-control" value="3af88e40908348088fe1270c6f1012aa"/>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label"><span class="text-red">*&nbsp;&nbsp;</span>姓名</label>
+                            <div class="col-xs-7">
+                                <input type="text" name="name" class="form-control"
+                                    data-parsley-required
+                                    data-parsley-minlength="1"
+                                    data-parsley-maxlength="200"
+                                    data-parsley-whitespace="trim"/>
+                            </div>
+                            <div class="col-xs-3 hide">
+                                <div class="help-block font_12">
+                                    <span class="glyphicon glyphicon-info-sign common_color_orange"></span>&nbsp;必填
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            
+                            <label class="col-xs-2 control-label"><span class="text-red">*&nbsp;&nbsp;</span>学号</label>
+                            
+                            <div class="col-xs-7">
+                                <input type="text" name="serial_no" class="form-control"
+                                   data-parsley-required
+                                   data-parsley-whitespace="trim"
+                                   data-parsley-minlength="1"
+                                   data-parsley-maxlength="200"/>
+                            </div>
+                            <div class="col-xs-3 hide">
+                                <div class="help-block font_12">
+                                    <span class="glyphicon glyphicon-info-sign common_color_orange"></span>&nbsp;必填
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label"><span class="text-red">*&nbsp;&nbsp;</span>性别</label>
+                            <div class="col-xs-7">
+                                <label class="radio-inline">
+                                  <input type="radio" name="sex" value="男" checked> 男
+                                </label>
+                                <label class="radio-inline">
+                                  <input type="radio" name="sex" value="女"> 女
+                                </label>
+                            </div>
+                            <div class="col-xs-3 hide">
+                                <div class="help-block font_12">
+                                    <span class="glyphicon glyphicon-info-sign common_color_orange"></span>&nbsp;必填
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label"><span class="text-red">*&nbsp;&nbsp;</span>学校名称</label>
+                            <div class="col-xs-7">
+                                <input type="text" name="school" class="form-control"
+                                   data-parsley-whitespace="trim"
+                                   data-parsley-minlength="1"
+                                   data-parsley-required
+                                   data-parsley-maxlength="200""/>
+                            </div>
+                            <div class="col-xs-3 hide">
+                                <div class="help-block font_12">
+                                    <span class="glyphicon glyphicon-info-sign common_color_orange"></span>&nbsp;必填
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label"><span class="text-red">*&nbsp;&nbsp;</span>院系名称</label>
+                            <div class="col-xs-7">
+                                <input type="text" name="college" class="form-control"
+                                   data-parsley-whitespace="trim"
+                                   data-parsley-required
+                                   data-parsley-minlength="1"
+                                   data-parsley-maxlength="200"/>
+                            </div>
+                            <div class="col-xs-3 hide">
+                                <div class="help-block font_12">
+                                    <span class="glyphicon glyphicon-info-sign common_color_orange"></span>&nbsp;必填
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label"><span class="text-red">*&nbsp;&nbsp;</span>专业名称</label>
+                            <div class="col-xs-7">
+                                <input type="text" name="specialty" class="form-control"
+                                   data-parsley-whitespace="trim"
+                                   data-parsley-required
+                                   data-parsley-minlength="1"
+                                   data-parsley-maxlength="200""/>
+                            </div>
+                            <div class="col-xs-3 hide">
+                                <div class="help-block font_12">
+                                    <span class="glyphicon glyphicon-info-sign common_color_orange"></span>&nbsp;必填
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label"><span class="text-red">*&nbsp;&nbsp;</span>入学年级</label>
+                            <div class="col-xs-7">
+                                <input type="text" name="grade" class="form-control"
+                                   data-parsley-whitespace="trim"
+                                   data-parsley-required
+                                   data-parsley-minlength="1"
+                                   data-parsley-maxlength="200"/>
+                            </div>
+                            <div class="col-xs-3 hide">
+                                <div class="help-block font_12">
+                                    <span class="glyphicon glyphicon-info-sign common_color_orange"></span>&nbsp;必填
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-2 control-label"><span class="text-red">*&nbsp;&nbsp;</span>班级名称</label>
+                            <div class="col-xs-7">
+                                <input type="text" name="class_name" class="form-control"
+                                   data-parsley-whitespace="trim"
+                                   data-parsley-required
+                                   data-parsley-minlength="1"
+                                   data-parsley-maxlength="200"/>
+                            </div>
+                            <div class="col-xs-3 hide">
+                                <div class="help-block font_12">
+                                    <span class="glyphicon glyphicon-info-sign common_color_orange"></span>&nbsp;必填
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+
+                        <div id="modal_signup_reply" class="alert alert-danger text-center hide" email="service@sdnlab.com">
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default circle" data-dismiss="modal">取消</button>
+                      <button type="button" class="btn btn-orange radius signup">注册</button>
+                    </div>
+                    
+                 </div>
+            </div>
+       </div>
+       </form>
+
+
+
+            
+
+
+        </div>
+
+        
+    <script src="/site_media/static/js/placeholder.9f342a8d3614.js"></script>
+    <script src="/site_media/static/js/breadcrumbs.2c1a9d5c174c.js"></script>
+    <!--<script src="/site_media/static/js/jquery-ui-1.12.0.min.aff5b0e52e76.js"></script>-->
+    <script src="/site_media/static/plug-in/jquery-ui/jquery-ui.min.b278bf2bcd74.js"></script>
+    <script src="/site_media/static/js/bootstrap.min.ba847811448e.js"></script>
+    <script src="/site_media/static/js/default.3be732b88f60.js"></script>
+    <script src="/site_media/static/js/jquery.cookie.d5528dde0006.js"></script>
+    <script src="/site_media/static/js/jquery.form.08a24670beb2.js"></script>
+    
+    <script src="/site_media/static/js/setAjax.ec7afac9de2b.js"></script>
+    <script>
+        var STATIC_URL = '/site_media/static/';
+        window.heartbeating = false;
+        window.refresh_token = '270';
+        $(document).ready(function () {
+            
+            $.ajax({
+                type: "GET",
+                url: "/for_user_profile/",
+                dataType: "json",
+                success: function (data) {
+                    if (data) {
+                        $(".user_head").removeClass('hide');
+                        $(".user_head").find("img").attr("src", data.avatar_url);
+                        $(".user_head").next().text(data.username);
+                        $(".user_head").next().attr("title", data.username);
+                    }
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown){
+                }
+            });
+            cloud_pf_id = $("#cloud_pf_info").data("pf_id");
+            url_cloud_add = "?cloud=" + cloud_pf_id;
+            url_cloud_append = "&cloud=" + cloud_pf_id;
+            var has_messages = $("#has_messages").text();
+            if (has_messages == "1") {
+                $("#alert_modal").modal();
+            }
+            $(document).on("click", ".btn-input.btn-delete", function () {
+                if ($(this).hasClass('disabled')) {
+                    return false;
+                }
+                $('#alertModal').modal();
+                var form = $(this).parents('form');
+                var self = $(this);
+                $('.delete-confirm').unbind('click');
+                $('.delete-confirm').click(function () {
+                    form.submit();
+                });
+                return false;
+            });
+            $(document).on("click", "a.btn-delete", function () {
+                if ($(this).hasClass("disabled")) {
+                    return false;
+                } else {
+                    $('#alertModal').modal();
+                    var self = $(this);
+                    $('.delete-confirm').unbind('click');
+                    $('.delete-confirm').click(function () {
+                        window.location.href = self.attr('href');
+                    });
+                    return false;
+                }
+            });
+            //列表框，指针放上去时显示删除图标
+            $(".example-sites li").mouseenter(function () {
+                $(this).children(".close").stop(true, false).fadeIn();
+            });
+            $(".example-sites li").mouseleave(function () {
+                $(this).children(".close").stop(false, true).hide();
+            });
+
+            //菜单下拉
+            $(".base_device").hover(function () {
+                if (!$(".base_device_list").is(":animated")) {
+                    $(".base_device_list").toggle();
+                }
+
+            });
+            //$("ul.dropdown-menu>li.active").parents("li.dropdown").addClass('active');
+
+            config_system_manage_navbar();
+
+            var $firNav = $(".navbar_style_user > li > a");
+            var $secObj = $(".navbar_style_user > li > ul");
+            var $secNav = $(".navbar_style_user > li > ul > li > a");
+
+         /*   $firNav.mouseenter(function(event){   //一级菜单触发事件
+                event.stopPropagation();
+                $(this).closest("li").siblings("li").children("ul").hide();
+                $(this).siblings("ul").stop(true).fadeIn("fast");
+            }); */
+       /*     $firNav.click(function(event){
+                event.stopPropagation();
+                //$(this).trigger("mouseenter");
+                $(this).closest("li").siblings("li").children("ul").hide();
+                $(this).siblings("ul").stop(true).fadeIn("fast");
+            });*/
+            $secNav.mouseenter(function(){  //二级菜单触发事件
+                $(this).closest("li").siblings("li").children("ul").hide();
+                $(this).siblings("ul").show().css({
+                    "left":"140%",
+                    "opacity":"0"
+                }).stop(true).animate({
+                    "left":"110%",
+                    "opacity":"1"
+                });
+            });
+
+
+
+
+         /*   $secObj.click(function(event){
+                event.stopPropagation();
+            });
+
+            $(document).click(function(event){
+                $firNav.siblings("ul").hide();
+                $secNav.siblings("ul").hide();
+            });  */
+            remove_null_navbar();
+
+            $(".username").bind("blur", function(){
+                var result = $(this).val().replace(/(^\s*)|(\s*$)/g, '');
+                $(this).val(result);
+            });
+
+
+
+
+
+
+
+
+
+
+
+            //换肤
+            var skin = $("#skins li");
+            skin.click(function(){
+                if($(this).hasClass("active") || $(this).hasClass("disabled")){
+                   return;
+                }
+                $(this).addClass("disabled").siblings("li").addClass("disabled");
+                var skinName = $(this).data("id");
+                var skinId = $(this).attr("skin-id");
+                var skinCss = $(this).attr("skin-css");
+                var isDefault = $(this).attr("is_default");
+                updateUserSkin(skinId, skinName, skinCss, isDefault, this);
+
+
+
+
+
+
+
+
+
+
+            });
+
+        });
+
+        /*$(document).on("click", "#index_logo", function(){
+            if($(".nav_home .icon-home").length > 0){
+                $(".nav_home .icon-home").trigger("click");
+            }
+            else{
+                window.location.href = "/cloud/platform/?cloud=0";
+            }
+        });*/
+
+        function timing_check_session() {
+            setInterval(function () {
+                $.ajax({
+                    type: "GET",
+                    url: "/check_user_session/?force_activity=true",
+                    dataType: "json",
+                    success: function (data) {
+                        if(data.error == "Not login"){
+                            window.location.href = "/login/?next=" + window.location.pathname + window.location.search;
+                        }
+                    },
+                    error:function(XMLHttpRequest, textStatus, errorThrown){
+                    }
+                });
+            }, 1000 * 60)
+        }
+
+        function updateUserSkin(skinId, skinName, skinCss, isDefault, clickOBJ){
+
+
+
+            $.ajax({
+                type: "POST",
+                url: "/set_user_skin/",
+                dataType: "json",
+                data: {
+                    "skin_id": skinId,
+                    "skin_name": skinName
+                },
+                async: true,
+                success: function (data) {
+                    if (data.result == 0) {
+                        if(skinCss == "") {
+                            $("#skinCss").attr("href", "");
+                        } else {
+                            var skinUrl = '/site_media/static/' + "skin/" + skinCss + "/css/" + skinCss + ".css";
+                            $("#skinCss").attr("href", skinUrl);
+                        }
+                        if(skinName == "skin_02") {
+                            $("#index_logo").attr('src', '/site_media/static/' + 'img/skin/orange-theme/logo/openlab_index_black.png');
+                        } else {
+                            $("#index_logo").attr('src', '/site_media/static/' + 'img/skin/orange-theme/logo/openlab_index.png');
+                        }
+                        $(clickOBJ).addClass("active").siblings("li").removeClass("active");
+                    } else {
+                        if(data.error == "Not login"){
+                            window.location.href =
+                                "/login/";
+                        } else {
+                            $('#alert_info').text(data.error);
+                            $('#alert_modal').modal();
+                        }
+                    }
+                    $(clickOBJ).removeClass("disabled").siblings("li").removeClass("disabled");
+                },
+                error:function(XMLHttpRequest, textStatus, errorThrown){
+                    if (XMLHttpRequest.readyState != 0) {
+                        $('#alert_info').text("皮肤配置失败！");
+                        $('#alert_modal').modal();
+                    }
+                    $(clickOBJ).removeClass("disabled").siblings("li").removeClass("disabled");
+                }
+            });
+        }
+
+        function removeCookie(cookieName){
+            var d = new Date();
+            d.setTime(d.getTime() - 24*60*60*1000);
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = cookieName + "=none; " + expires + ";path=/";
+        }
+
+        function setPlatformCookie(cookie_name1, cookie_value1, cookie_name2, cookie_value2){
+            document.cookie=cookie_name1 + "=" + cookie_value1 +";path=/";
+            document.cookie=cookie_name2 + "=" + cookie_value2 +";path=/";
+        }
+
+        function load_expt_navbar() {
+            var permissions = new Array();
+            permissions.push("list_%s_experiment");
+            $.ajax({
+                type: "GET",
+                url: "/terra_config/exptplatform/list/",
+                dataType: "json",
+                cache: false,
+                async: false,
+                data: {'permissions': permissions},
+                success: function(data) {
+                    if (data.platforms) {
+                        var platforms = data.platforms;
+                        var namespace = $("#current_namespace").text();
+                        if (namespace == "experiment") {
+                            $("#expt_navbar").addClass('active');
+                        }
+                        var origin = window.location.origin;
+                        var pathname = window.location.pathname;
+                        for (var i = 0; i < platforms.length; i++) {
+                            var platform = platforms[i];
+                            if (!platform.list_experiment) continue
+                            if (platform.state != "Active") continue
+                            var is_active = namespace == "experiment" && pathname.indexOf("/" + platform.identification + "/") > 0 ? "active" : '';
+                            var navbar_html = "<li class='" + is_active + "'><a href='" + origin + "/experiment/" + platform.identification + "/list' name='" + platform.name + "'>" + platform.name + "</a></li>";
+                            $("#expt_platform_list").append(navbar_html);
+                        }
+                    }
+                }
+            });
+        }
+
+        function config_system_manage_navbar() {
+            var namespace = $("#current_namespace").text();
+            var pathname = window.location.pathname;
+            if (namespace == "terra_config") {
+                if (pathname.indexOf("exptplatform") > 0) {
+                    $(".menu_sys .autobuild_item").addClass("active");
+                    $(".menu_sys .flavor_item").removeClass("active");
+                } else if (pathname.indexOf("flavor") > 0) {
+                    $(".menu_sys .flavor_item").addClass("active");
+                    $(".menu_sys .autobuild_item").removeClass("active");
+                }
+            }
+        }
+
+        function load_course_expt_navbar() {
+            var pathname = window.location.pathname;
+            var namespace = $("#current_namespace").text();
+            $("#course_expt_list li").each(function(){
+                if (namespace == "expt_course_manage" && pathname.indexOf($(this).attr('pathname')) > 0) {
+                    $(this).addClass('active');
+                } else {
+                    $(this).removeClass('active');
+                }
+            });
+            $("#virtual_class_list li").each(function(){
+                if (namespace == "virtual_class_manage" && pathname.indexOf($(this).attr('pathname')) > 0) {
+                    $(this).addClass('active');
+                } else {
+                    $(this).removeClass('active');
+                }
+            });
+            $.ajax({
+                type: "GET",
+                url: "/course/manage/course/series_list/",
+                dataType: "json",
+                cache: false,
+                async: false,
+                success: function(data) {
+                    if (data.series_list) {
+                        var series_list = data.series_list;
+                        var namespace = $("#current_namespace").text();
+                        if (namespace == "expt_course_manage" || namespace == "virtual_class_manage") {
+                            $("#course_expt_navbar").addClass('active');
+                        }
+                        var origin = window.location.origin;
+                        var pathname = window.location.pathname;
+                        for (var i = 0; i < series_list.length; i++) {
+                            var series = series_list[i];
+                            var is_active = namespace == "expt_course_manage" && pathname.indexOf(series.url_name) > 0 ? "active" : '';
+                            var navbar_html = "<li class='"+ is_active +"'><a href='"+ origin + "/course/experiment/"+ series.url_name +"/list' name='"+ series.name +"'>"+ series.name +"</a></li>";
+                            $("#course_expt_list").append(navbar_html);
+                            var vc_is_active = namespace == "virtual_class_manage" && pathname.indexOf(series.url_name) > 0 ? "active" : '';
+                            var vc_navbar_html = "<li class='"+ vc_is_active +"'><a href='"+ origin + "/virtual/class/"+ series.url_name +"/list' name='"+ series.name +"'>"+ series.name +"</a></li>";
+                            $("#virtual_class_list").append(vc_navbar_html);
+
+                        }
+                    }
+                }
+            });
+        }
+
+        function remove_null_navbar() {
+            remove_sys_menu();
+            $(".parent_navbar").each(function(){
+                if ($(this).find("li.active").length > 0) {
+                    $(this).addClass("active");
+                }
+                // 允许有不包含二级惨淡的一级菜单
+                <!--if ($(this).find("ul a").length <= 0) {-->
+                    <!--$(this).remove();-->
+                <!--}-->
+            });
+            remove_sys_menu();
+        }
+
+        function remove_sys_menu() {
+            if($(".menu_2_n").length <= 0) {
+                $(".menu_2").remove();
+            }
+
+            if($(".menu_1_n").length <= 0) {
+                $(".menu_1").remove();
+            }
+        }
+
+        function clear_could_cookies() {
+            var date=new Date();
+            date.setTime(date.getTime()-10000);
+            document.cookie="cloud_platform_id="+""+"; expire="+date.toUTCString() +";path=/";
+            document.cookie="cloud_platform_name="+""+"; expire="+date.toUTCString() +";path=/";
+            window.location.reload();
+        }
+
+    </script>
+    
+        <script src="/site_media/static/solar/js/importLicense.c142bead88f1.js"></script>
+    
+    
+
+
+
+
+<!--[if lt IE 9]>
+     <div class="ie_bg"></div> 
+     <div class="ie_pop">
+         <p>您的浏览器版本较低，为了让您拥有一个良好的网站体验，建议您升级到最新版本的Internet Explorer，或选择其他WEB浏览器，下面列表为您提供最流行的WEB浏览器，供您下载：</p>
+         <ul>
+             <li>
+                 <a href="http://www.google.cn/intl/zh-CN/chrome/" target="_blank" class="ie_pot chrome">
+                     <i>Chrome</i>
+                     <span></span>
+                 </a>
+             </li>
+             <li>
+                 <a href="http://www.firefox.com.cn/download/" target="_blank" class="ie_pot firefox">
+                     <i>Firefox</i>
+                     <span></span>
+                 </a>
+             </li>
+             <li>
+                 <a href="http://windows.microsoft.com/zh-cn/internet-explorer/download-ie" target="_blank" class="ie_pot ie">
+                     <i>IE</i>
+                     <span></span>
+                 </a>
+             </li>
+             <li>
+                 <a href="http://www.opera.com/zh-cn" target="_blank" class="ie_pot opera">
+                     <i>Opera</i>
+                     <span></span>
+                 </a>
+             </li>
+             <li>
+                 <a href="http://support.apple.com/kb/DL1531" target="_blank" class="ie_pot safari">
+                     <i>Safari</i>
+                     <span></span>
+                 </a>
+             </li>
+             <div class="clear"></div>
+         </ul>
+
+         <div class="ie_goon">
+             <i>继续访问···</i>
+             <span></span>
+         </div>
+     </div>
+<![endif]-->
+
+
+
+<script src="/site_media/static/js/jquery.cookie.d5528dde0006.js"></script>
+<script src="/site_media/static/js/ie_pop.6358e7cb602c.js"></script>
+
+
+<!--<script src="/site_media/static/js/jquery.cookie.d5528dde0006.js"></script>-->
+<script src="/site_media/static/js/parsley/parsley.min.03280442fd4e.js"></script>
+<script src="/site_media/static/js/parsley/i18n/zh_cn.c7b0ab4dd49c.js"></script>
+<!--<script src="/site_media/static/js/login_position.d22c4356ab85.js"></script>-->
+
+<script src="/site_media/static/js/common/autoPopAlert.2d61be7d8c33.js"></script>
+
+<script type="text/javascript" charset="utf-8">
+
+    $(function () {
+        var all_url = document.location.toString();
+        if (all_url.indexOf("limit") > -1) {
+            $("#no_online_user_quota").removeClass("hide");
+            history.pushState({}, 'title', "/login/");
+        }
+    });
+
+    //输入框获得焦点，如有tip，显示tip
+    $("input.form-control").focus(function(){
+        var tip = $(this).siblings(".pop_tip");
+        
+        if(tip.length != 0 && !$(this).hasClass("parsley-error")) {
+            tip.fadeIn();
+        }
+    });
+    $("input.form-control").blur(function(){
+        var tip = $(this).siblings(".pop_tip");
+        
+        if(tip.length != 0) {
+            tip.fadeOut();
+        }
+    });
+
+
+    $('#modalReturn').click(function(){
+    	$('#registerModal').modal('hide');
+    });
+
+    var resetOptions = {
+        dataType: 'json',
+        success: function(data){
+            $('#resentEmail').prop('disabled', false);
+            $("#resentEmail").removeClass("disabled");
+            $("#resentEmail").find("i").remove();
+            if (data.result){
+                $('#resentWarning').addClass('hidden');
+                $('#resentWarning').text(data.error);
+                $('#resentWarning').removeClass('hidden');
+            }else{
+                $('#resentWarning').addClass('hidden');
+                $('#resentWarning').text('密码重置邮件已发送到您指定的邮件, 请查收.');
+                $('#resentWarning').removeClass('hidden');
+            }
+        }
+    };
+
+    $('#resentEmail').click(function(){
+        $("#resentWarning").text("");
+        $('#resentEmailForm').parsley().validate();
+        if($('#resentEmailForm').parsley().validationResult){
+            $(this).append('<i class="icon-spinner icon-spin"></i>');
+            $('#resentEmail').prop('disabled', true);
+            $('#resentEmailForm').ajaxSubmit(resetOptions);
+        }
+    });
+
+    $("#id_email").keydown(function(e) {
+         var e = e || event;
+         if (e.keyCode == "13") {
+             $('#resentEmail').trigger("click");
+             e.preventDefault ? e.preventDefault() : (e.returnValue = false);
+         }
+    });
+
+
+</script>
+<script type="text/javascript">
+    $('#registerModal').on('hide.bs.modal', function () {
+        window.location.href = '/';
+    })
+    
+    function click_register(){
+        $('#registerModal').modal('show');
+    }
+</script>
+<!-- 验证码刷新和自动验证 -->
+<script type="text/javascript">
+    $(document).on("click", '#captcha-img, #signup-captcha-img', function(){
+        var groupObj = $(this).parents(".form-group");
+        var hashkeyObj = groupObj.find(".hashkey");
+        $.ajax({
+            url: '/captcha/refresh/',
+            dataType: 'JSON',
+            type: 'GET',
+            success: function(data){
+                hashkeyObj.val(data.hashkey);
+                groupObj.find('img').attr("src", data.image_url);
+                $("#captcha-img").removeClass("hide");
+            }
+        })
+    });
+    $(document).on("blur", '#captcha-string, #signup-captcha-string', function(){
+        var hashkey = $(this).next().val();
+        var response_str = $(this).val();
+        var groupObj = $(this).parents(".form-group");
+        $.ajax({
+            url: '/captcha/valid/',
+            type: 'POST',
+            data: {hashkey: hashkey, response_str: response_str},
+            dataType: 'json',
+            success: function(data){
+                if(data.valid){
+                    // 验证码正确
+                    groupObj.removeClass("has-error");
+                }else{
+                    // 验证码错误
+                    groupObj.addClass("has-error");
+                    groupObj.find(".yzm").find('img').trigger('click');
+                }
+            }
+        })
+    });
+</script>
+<script>
+    // 注册页面添加Parsley自定义验证
+    Parsley.addAsyncValidator('name_exist', function(xhr) {
+        if (200 == xhr.status) {
+            data = $.parseJSON(xhr.responseText)
+            return !data.result
+        }
+        return false;
+    }, '/user/exist/?name={value}', {type: 'GET'});
+
+    Parsley.addAsyncValidator('email_exist', function(xhr) {
+        if (200 == xhr.status) {
+            data = $.parseJSON(xhr.responseText)
+            return !data.result
+        }
+        return false;
+    }, '/user/exist/?email={value}', {type: 'GET'});
+
+    window.Parsley.addValidator('password', {
+        validateString: function(value) {
+            var re = new RegExp('^[0-9a-zA-Z]+$');
+            var digitalRe = new RegExp('^[0-9]+$');
+            var charRe = new RegExp('^[a-zA-Z]+$');
+            var result = !re.test(value) || digitalRe.test(value) || charRe.test(value);
+            return !result;
+        },
+    });
+
+    $("#signup_form").submit(function(){
+        $("#signup_reply").addClass('hide');
+        var hashkey = $("#signup-captcha-string").next().val();
+        var response_str = $("#signup-captcha-string").val();
+        var groupObj = $("#signup-captcha-string").parents(".form-group");
+        $.ajax({
+            url: '/captcha/valid/',
+            type: 'POST',
+            async: false,
+            data: {hashkey: hashkey, response_str: response_str},
+            dataType: 'json',
+            success: function(data){
+                if(data.valid){
+                    // 验证码正确
+                    groupObj.removeClass("has-error");
+                }else{
+                    // 验证码错误
+                    groupObj.addClass("has-error");
+                    $("#signup-captcha-string").val('');
+                    $("#signup-captcha-img").trigger("click");
+                }
+            }
+        });
+        if ($("#signup_form .form-group").hasClass("has-error")) {
+            // 设置第一个有错误的输入框的焦点
+            $("#signup_form .has-error:first input").focus();
+            return false;
+        }
+    });
+
+    $('#login_form').submit(function(){
+        if ($("#captcha-img").length <= 0) {
+            return;
+        }
+        var hashkey = $("#captcha-string").next().val();
+        var response_str = $("#captcha-string").val();
+        var groupObj = $("#captcha-string").parents(".form-group");
+        $.ajax({
+            url: '/captcha/valid/',
+            type: 'POST',
+            async: false,
+            data: {hashkey: hashkey, response_str: response_str},
+            dataType: 'json',
+            success: function(data){
+                if(data.valid){
+                    // 验证码正确
+                    groupObj.removeClass("has-error");
+                }else{
+                    // 验证码错误
+                    groupObj.addClass("has-error");
+                    $("#captcha-string").val('');
+                    $("#captcha-img").trigger("click");
+                }
+            }
+        });
+        if ($("#login_form .form-group").hasClass("has-error")) {
+            // 设置第一个有错误的输入框的焦点
+            $("#login_form .has-error:first input").focus();
+            return false;
+        }
+
+        $(".alert-danger.text-center").remove();
+    });
+
+</script>
+<script>
+    /*
+     * Signup change to modal
+     */
+    $(document).on("blur", "input", function(){
+        $(this).val($(this).val().trim());
+    });
+
+
+    $('#regModal').on('hide.bs.modal', function (ev) {
+        $('#regModal').find("input").val("");
+        $("input[name='sex']:first").prop("checked", true);
+        $("#modal_signup_form").parsley().reset();
+        $(".default_role_info").find("input").each(function(){
+            $(this).val($(this).attr("value"));
+        });
+        $("#regModal input[name='sex']").eq(0).attr("value", "男");
+        $("#regModal input[name='sex']").eq(1).attr("value", "女");
+    });
+
+    var signupOptions = {
+        dataType: 'json',
+        success: function(data){
+            $('#modal_signup_form .signup').attr("disabled", false);
+            $('#modal_signup_form .signup').siblings().attr("disabled", false);
+            if(data.result){
+                $("#regModal").modal('hide');
+                $("#modal_signup_reply").empty();
+                var welcomeText = "恭喜您注册成功，您现在可以登录体验了。";
+                if (data.confirmation_required) {
+                    var adminEmail = $("#modal_signup_reply").attr("email");
+                    welcomeText = "已发送注册邮件至" + data.email + "，请查收！如未收到邮件请及时联系管理员" + adminEmail + "。";
+                }
+                $("#alertModal button.delete-cancel").addClass('hide');
+                $('#alertModal').find('p.text-center').text(welcomeText);
+                $('#alertModal').modal();
+            } else {
+                $("#modal_signup_reply").text(data.error);
+                $("#modal_signup_reply").removeClass("hide");
+            }
+        },
+        error: function(){
+        }
+    };
+
+    $('#modal_signup_form .signup').click(function(){
+        $("#resentWarning").text("");
+        validate_user_quota();
+    });
+
+    function validate_user_quota() {
+        $.ajax({
+            type: "GET",
+            url: "/user/validate/quota/",
+            dataType: "json",
+            async: true,
+            success: function (data){
+                if(data.result != 0) {
+                    $('#alert_info').text(data.error);
+                    $('#alert_modal').modal();
+                    $("#regModal").modal('hide');
+                } else {
+                    $('#modal_signup_form').parsley().validate();
+                    if($('#modal_signup_form').parsley().validationResult){
+                        $('#modal_signup_form .signup').attr("disabled", 'disabled')
+                        $('#modal_signup_form .signup').siblings().attr("disabled", 'disabled')
+                        $('#modal_signup_form').ajaxSubmit(signupOptions);
+                    }
+                }
+            },
+            error:function(XMLHttpRequest, textStatus, errorThrown){
+            }
+        });
+    }
+    $("#captcha-img").trigger("click");
+</script>
+
+
+
+
+
+
+
+
+        
+            <script src="/site_media/static/pinax/js/theme.0cde6ba88d08.js"></script>
+        
+
+        
+    
+        <!-- body遮罩loading -->
+        <div id="body_loading_layer">
+            <img src="/site_media/static/img/loading/body_loading.a36b8b61e79a.gif" />
+            <!-- <div class='common_page_loading'><span class='loader_spot bg'></span><span class='loader_spot sm'></span><span class='loader_spot bg'></span></div> -->
+        </div>
+
+    <!-- 换肤 -->
+    
+    
+
+    <div class="clear" style="display: none">
+    </div>
+
+    
+
+    <div id="logoutModal" class="modal fade modal_style_1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="false" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p class="text-center">确定注销吗？</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn delete-cancel btn-default circle" data-dismiss="modal">取消</button>
+                    <a id="account_logout" class="btn btn_info" href="#">注销</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 确认提示框 -->
+    <div id="alertModal" class="modal fade modal_style_1" data-backdrop="static">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center">确定删除吗？</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default delete-cancel circle" data-dismiss="modal">取消</button>
+                    <button class="btn delete-confirm btn-orange radius" data-dismiss="modal">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--警告框-->
+    <div id="alert_modal" class="modal fade modal_style_1" tabindex="-1" role="dialog" aria-hidden="false" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">提示</h4>
+                </div>
+                <div class="modal-body">
+                    
+                        <p id="has_messages" class="hidden">0</p>
+                        <p class="text-center" id="alert_info"></p>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-orange radius" data-dismiss="modal" id="alert_close">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+        <form id="license_import_form" class="form-horizontal" enctype="multipart/form-data" method='post' action="/license/activate/">
+    <div id="license_import" class="modal fade modal_style_1" tabindex="-1" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button id="import_license_close_button" type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">许可证导入</h4>
+                </div>
+                <div class="modal-body">
+                    <p>请根据实际情况选择对应的许可证文件：</p><br />
+                    <div class="form-group">
+                        <label class="col-xs-2 control-label">文件选择</label>
+                        <div class="col-xs-8">
+                            <div class="form-control" id="upload_file_text"></div>
+                            <input type="file" name='license' class="hide" id="upload_file" />
+                            <input type="text" name='license_name' class="hide" id="license_name" />
+                            <p class="help-block">
+                                <span class="glyphicon glyphicon-info-sign text-orange"></span>&nbsp;必填，如果没有获取到许可文件，请联系相关商务人员或service@sdnlab.com。
+                            </p>
+                            <p class="help-block hide">
+                                <span class="glyphicon glyphicon-remove-sign text-red"></span>&nbsp;报错信息xxxx。
+                            </p>
+                        </div>
+                        <div class="col-xs-2 btn_sm_col">
+                            <button type="button" class="btn btn-orange radius btn-sm" data-file-id="upload_file">浏&nbsp;览</button>
+                        </div>                
+                    </div><br />
+                    <div class="alert alert-danger hide" id="license_import_error">
+
+                        <h5 style="margin-top:0;"><span class="glyphicon glyphicon-remove-sign text-red"></span>&nbsp;导入失败！</h5>
+                        <span class="font_12"><span id="error_msg">请检查文件的合法性和正确性，勿重复导入</span>，如有问题，请及时联系service@sdnlab.com。</span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="import_license_cancel_button" type="button" class="btn btn-default circle" data-dismiss="modal">取消</button>
+                    <button type="button submit" class="btn btn-orange radius" id="importBtn" data-loading-text="导入中..." data-initial-text="导入">导入</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+        <form class="form-horizontal">
+    <div id="license_import_success" class="modal fade modal_style_1" tabindex="-1" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">许可证导入</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="text-muted">导入<span class="text-orange">成功</span>，您的license当前状态为：<span class="text-orange" id="license_state"></span></p><br />
+                    <table class="tb_generic">
+                        <thead>
+                            <tr>
+                                <th>功能生效时间</th>
+                                <th>功能过期时间</th>
+                                <th>服务生效时间</th>
+                                <th>服务过期时间</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="function_start">2016-12-12&nbsp;12:00:00</td>
+                                <td id="function_end">2016-12-12&nbsp;12:00:00</td>
+                                <td id="service_start">2016-12-12&nbsp;12:00:00</td>
+                                <td id="service_end">2016-12-12&nbsp;12:00:00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-orange radius" data-dismiss="modal">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+        <form class="form-horizontal">
+    <div id="license_tip" class="modal fade modal_style_1" tabindex="-1" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="window.location.href='/logout'">×</button>
+                    <h4 class="modal-title">提示</h4>
+                </div>
+                <div class="modal-body">
+                    <h5 class="text-orange text-center font_16">
+                        
+                        <strong>许可证未到生效时间</strong>
+                        
+                    </h5>
+                    <p class="text-muted">
+                        
+                    </p>
+                    <p class="text-muted">
+                        
+                        系统许可证将于2020-04-15 00:00:00生效，请于生效时间后登录本系统，给你带来的不便还请谅解，如有问题请联系service@sdnlab.com。
+                        
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    
+                    <button type="button" class="btn btn-orange radius" data-dismiss="modal"  data-toggle="modal" data-target="#license_import" onclick="out_dated_import()">更改许可证</button>
+                    <button type="button" class="btn btn-orange radius" data-dismiss="modal" onclick="window.location.href='/logout'">关闭</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script>
+    function out_dated_import() {
+        document.getElementById("import_license_close_button").removeAttribute("data-dismiss");
+        document.getElementById("import_license_cancel_button").removeAttribute("data-dismiss");
+        document.getElementById("import_license_close_button").setAttribute("onclick", "window.location.href='/logout'");
+        document.getElementById("import_license_cancel_button").setAttribute("onclick", "window.location.href='/logout'");
+    }
+</script>
+        
+<form class="form-horizontal">
+    <div id="maintenance_tip_expired" class="modal fade modal_style_1" tabindex="-1" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">提示</h4>
+                </div>
+                <div class="modal-body">
+                    <h5 class="text-orange text-center font_16"><strong>维保服务已过期</strong></h5>
+                    <p class="text-muted">亲爱的用户：</p>         
+                    <p class="text-muted">您好，您的维保服务<span class="text-orange">已过期</span>，当前平台功能可正常使用，但不享受免费的维护和升级服务，如有需要请联系service@sdnlab.com。</p>
+                </div>
+                <div class="modal-footer">
+                    <!--<button type="button" class="btn btn-default circle" data-dismiss="modal">不再提醒</button>-->
+                    <button type="button" class="btn btn-orange radius" data-dismiss="modal" onclick="skip_license_tip()">我知道了</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<form class="form-horizontal">
+    <div id="maintenance_tip_expired_soon_service" class="modal fade modal_style_1" tabindex="-1" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">提示</h4>
+                </div>
+                <div class="modal-body">
+                    <h5 class="text-orange text-center font_16"><strong>维保服务即将过期</strong></h5>
+                    <p class="text-muted">亲爱的用户：</p>
+                    <p class="text-muted">您好，您的维保服务将于<span id="maintenance_tip_expire_time" class="text-orange">2017-03-23&nbsp;12:00:00</span>过期，过期后当前平台功能可正常使用，但不享受免费的维护和升级服务，如有需要请联系service@sdnlab.com。</p>
+                </div>
+                <div class="modal-footer">
+                    <!--<button type="button" class="btn btn-default circle" data-dismiss="modal">不再提醒</button>-->
+                    <button type="button" class="btn btn-orange radius" data-dismiss="modal" onclick="skip_license_tip()">我知道了</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<form class="form-horizontal">
+    <div id="licence_tip_expired" class="modal fade modal_style_1" tabindex="-1" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="window.location.href='/logout'">×</button>
+                    <h4 class="modal-title">提示</h4>
+                </div>
+                <div class="modal-body">
+                    <h5 class="text-orange text-center font_16"><strong>许可证已过期</strong></h5>
+                    <p class="text-muted">亲爱的用户：</p>
+                    <p class="text-muted">您好，当前系统许可证已经<span class="text-orange">过期</span>，需要更新后方可正常使用，获取许可证及其他问题请联系service@sdnlab.com。</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default circle" onclick="window.location.href='/logout'">以后再说</button>
+                    <button type="button" class="btn btn-orange radius" data-dismiss="modal" data-toggle="modal" data-target="#license_import">立即更新</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<form class="form-horizontal">
+    <div id="licence_tip_expired_soon" class="modal fade modal_style_1" tabindex="-1" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">提示</h4>
+                </div>
+                <div class="modal-body">
+                    <h5 class="text-orange text-center font_16"><strong>试用期即将过期</strong></h5>
+                    <p class="text-muted">亲爱的用户：</p>
+                    <p class="text-muted">您好，距离试用有效期结束还有<span id="license_tip_expire_duration" class="text-orange">10</span>天，为了不影响您的正常使用请及时更新，后续可在“系统>许可证”页面进行操作，如有需要请联系service@sdnlab.com。</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default circle" data-dismiss="modal" onclick="skip_license_tip()">以后再说</button>
+                    <button type="button" class="btn btn-orange radius" data-dismiss="modal" data-toggle="modal" data-target="#license_import">立即更新</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<form class="form-horizontal">
+    <div id="maintenance_tip_expired_soon_function" class="modal fade modal_style_1" tabindex="-1" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">提示</h4>
+                </div>
+                <div class="modal-body">
+                    <h5 class="text-orange text-center font_16"><strong>许可证即将过期</strong></h5>
+                    <p class="text-muted">亲爱的用户：</p>
+                    <p class="text-muted">您好，距离功能有效期结束还有<span id="function_expire_duration" class="text-orange">10</span>天，为了不影响您的正常使用请及时更新，后续可在“系统>许可证”页面进行操作，如有需要请联系service@sdnlab.com。</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default circle" data-dismiss="modal" onclick="skip_license_tip()">以后再说</button>
+                    <button type="button" class="btn btn-orange radius" data-dismiss="modal" data-toggle="modal" data-target="#license_import">立即更新</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+        <div id="license_system_notice" class="modal fade modal_style_1 create_notice_modal" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="window.location.href='/logout'">×</button>
+                <h4 class="modal-title">系统提示</h4>
+            </div>
+            <div class="modal-body no_footer">
+                <h5 class="text-orange text-center font_16"><strong>未检测到许可证</strong></h5>        
+                <p class="text-muted">亲爱的用户：</p>         
+                <p class="text-muted">您好，当前系统中未检测到许可证，为了保证平台功能的正常使用，请及时 <button type="button" class="btn btn-orange radius" data-dismiss="modal" data-toggle="modal" data-target="#license_import" onclick="no_license_import()">导入</button></p>
+                <p class="text-muted">如有问题，请联系service@sdnlab.com。</p>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+
+<!--<a href="javascript:;" data-dismiss="modal" data-toggle="modal" data-target="#license_import" onclick="no_license_import()"> 导入</a>-->
+
+<script>
+    function no_license_import() {
+        document.getElementById("import_license_close_button").removeAttribute("data-dismiss");
+        document.getElementById("import_license_cancel_button").removeAttribute("data-dismiss");
+        document.getElementById("import_license_close_button").setAttribute("onclick", "window.location.href='/logout'");
+        document.getElementById("import_license_cancel_button").setAttribute("onclick", "window.location.href='/logout'");
+    }
+</script>
+    
+
+    <!--操作提示框-->
+    <div id="alert_modal_action" class="modal fade modal_style_1" tabindex="-1" role="dialog" aria-hidden="false"
+         data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center" id="alert_action_info"></p>
+                </div>
+                <div class="modal-footer" id="alert_action_button">
+                    <!-- 插入操作按钮 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 公告框 -->
+    <!-- 普通用户展示公告框 -->
+    <div id="index_user_notice_modal" class="modal fade modal_style_1 create_notice_modal user_notice_modal" data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h4 class="modal-title">公告栏</h4>
+
+                </div>
+                <div class="modal-body form-horizontal">
+                    <h4 class="text-center" id="index_user_notice_modal_title"></h4>
+                    <p id="index_user_notice_modal_content" class="text-justify"><br /></p>
+                    <p id="index_user_notice_modal_sender" class="text-right"></p>
+                    <p id="index_user_notice_modal_date" class="text-right"></p>
+                </div>
+                <div class="modal-footer">
+                    <div class="font_12 text-right">
+                        <a href="javascript:;" id="index_page_user_notice_modal_last" page="last" notice_id="">上一条</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="javascript:;" id="index_page_user_notice_modal_next" page="next" notice_id="">下一条</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a href="javascript:;" id="index_page_user_notice_ignore">忽略所有</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--登出提示框-->
+    <div id="alert_logout_modal" class="modal fade modal_style_1" tabindex="-1" role="dialog" aria-hidden="false"
+         data-backdrop="static">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">提示</h4>
+                </div>
+                <div class="modal-body">
+                    <p class="text-center" id="alert_logout_info"></p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-orange radius" data-dismiss="modal" id="alert_logout_sure">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" id="index_hidden_unread_notices" value=""/>
+    <input type="hidden" id="cloud_pf_info" data-pf_id="" data-pf_name=""/>
+
+
+    
+
+    </body>
+</html>
