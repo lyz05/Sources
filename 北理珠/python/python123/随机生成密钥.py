@@ -7,5 +7,7 @@ for i in range(n):
     ans = ''
     for i in range(24):
         ans += random.choice(str)
-    f.write("{}-{}-{}-{}\n".format(ans[0:6],ans[6:12],ans[12:18],ans[18:24]))
+    ans = "{}-{}-{}-{}".format(ans[0:6],ans[6:12],ans[12:18],ans[18:24])
+    print(ans)
+    f.write(ans+'\n')
 f.close()
