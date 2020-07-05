@@ -12,6 +12,7 @@ print(summary) #获得统计信息
 #进行最小二乘线性回归分析，对输入的训练数据进行中心化处理
 model = LinearRegression(fit_intercept=True)
 x = carsdata['wt']
+y = carsdata['mpg']
 model.fit(x[:, np.newaxis], y)
 xfit = np.linspace(1, 6, 32)        #获取均匀间隔的数字，质量由1kg到6kg
 yfit = model.predict(xfit[:, np.newaxis])
