@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/git/lyz05/ACM/19CCPC/library.cpp
+library.h
+D:/git/lyz05/ACM/19CCPC/library.h
+iostream
+-
+
+D:/git/lyz05/ACM/19CCPC/library.h
+

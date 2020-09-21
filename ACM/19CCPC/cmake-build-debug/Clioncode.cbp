@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Clioncode"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="19CCPC-0">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/19CCPC-0.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 19CCPC-0"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="19CCPC-0/fast">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/19CCPC-0.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 19CCPC-0/fast"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="19CCPC-library">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/19CCPC-library.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 19CCPC-library"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="19CCPC-library/fast">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/19CCPC-library.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 19CCPC-library/fast"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="19CCPC-CCPCTrainingClass">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/19CCPC-CCPCTrainingClass.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 19CCPC-CCPCTrainingClass"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="19CCPC-CCPCTrainingClass/fast">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/19CCPC-CCPCTrainingClass.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 19CCPC-CCPCTrainingClass/fast"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="19CCPC-6702">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/19CCPC-6702.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 19CCPC-6702"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="19CCPC-6702/fast">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/19CCPC-6702.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 19CCPC-6702/fast"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="19CCPC-Convolution">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/19CCPC-Convolution.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 19CCPC-Convolution"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="19CCPC-Convolution/fast">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/19CCPC-Convolution.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 19CCPC-Convolution/fast"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="19CCPC-hdu6708">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/19CCPC-hdu6708.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 19CCPC-hdu6708"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="19CCPC-hdu6708/fast">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/19CCPC-hdu6708.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 19CCPC-hdu6708/fast"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="19CCPC-report">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/19CCPC-report.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 19CCPC-report"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="19CCPC-report/fast">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/19CCPC-report.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 19CCPC-report/fast"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="19CCPC-Express">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/19CCPC-Express.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 19CCPC-Express"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="19CCPC-Express/fast">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/19CCPC-Express.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 19CCPC-Express/fast"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="19CCPC-hdu67070">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/19CCPC-hdu67070.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 19CCPC-hdu67070"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="19CCPC-hdu67070/fast">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/19CCPC-hdu67070.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 19CCPC-hdu67070/fast"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hdu6708">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/hdu6708.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 hdu6708"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hdu6708/fast">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/hdu6708.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 hdu6708/fast"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="6702">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/6702.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 6702"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="6702/fast">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/6702.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 6702/fast"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="report">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/report.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 report"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="report/fast">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/report.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 report/fast"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CCPCTrainingClass">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/CCPCTrainingClass.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 CCPCTrainingClass"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CCPCTrainingClass/fast">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/CCPCTrainingClass.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 CCPCTrainingClass/fast"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Express">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Express.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 Express"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Express/fast">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Express.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 Express/fast"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Convolution">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Convolution.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 Convolution"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Convolution/fast">
+				<Option output="D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Convolution.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/mingw32"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include/c++/backward"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/../../../../include"/>
+					<Add directory="d:\program files\mingw\bin\../lib/gcc/mingw32/4.8.1/include-fixed"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 Convolution/fast"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/git/lyz05/ACM/19CCPC/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/Program Files/MinGW/bin/mingw32-make.exe -f &quot;D:/git/lyz05/ACM/19CCPC/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/git/lyz05/ACM/19CCPC/0.cpp">
+			<Option target="19CCPC-0"/>
+		</Unit>
+		<Unit filename="D:/git/lyz05/ACM/19CCPC/6702.cpp">
+			<Option target="19CCPC-6702"/>
+			<Option target="6702"/>
+		</Unit>
+		<Unit filename="D:/git/lyz05/ACM/19CCPC/CCPCTrainingClass.cpp">
+			<Option target="19CCPC-CCPCTrainingClass"/>
+			<Option target="CCPCTrainingClass"/>
+		</Unit>
+		<Unit filename="D:/git/lyz05/ACM/19CCPC/Convolution.cpp">
+			<Option target="19CCPC-Convolution"/>
+			<Option target="Convolution"/>
+		</Unit>
+		<Unit filename="D:/git/lyz05/ACM/19CCPC/Express.cpp">
+			<Option target="19CCPC-Express"/>
+			<Option target="Express"/>
+		</Unit>
+		<Unit filename="D:/git/lyz05/ACM/19CCPC/hdu67070.cpp">
+			<Option target="19CCPC-hdu67070"/>
+		</Unit>
+		<Unit filename="D:/git/lyz05/ACM/19CCPC/hdu6708.cpp">
+			<Option target="19CCPC-hdu6708"/>
+			<Option target="hdu6708"/>
+		</Unit>
+		<Unit filename="D:/git/lyz05/ACM/19CCPC/library.cpp">
+			<Option target="19CCPC-library"/>
+		</Unit>
+		<Unit filename="D:/git/lyz05/ACM/19CCPC/library.h">
+			<Option target="19CCPC-library"/>
+		</Unit>
+		<Unit filename="D:/git/lyz05/ACM/19CCPC/report.cpp">
+			<Option target="19CCPC-report"/>
+			<Option target="report"/>
+		</Unit>
+		<Unit filename="D:/git/lyz05/ACM/19CCPC/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

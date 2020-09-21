@@ -1,0 +1,16 @@
+cmake_minimum_required(VERSION 3.16)
+project(Clioncode)
+
+set(CMAKE_CXX_STANDARD 14)
+file (GLOB files *.cpp */*.cpp)
+foreach (file ${files})
+    string(REGEX REPLACE ".+/(.+)/(.+)\\..*" "\\1-\\2" exe ${file})
+    add_executable (${exe} ${file})
+endforeach ()
+
+add_executable(hdu6708 hdu6708.cpp)
+add_executable(6702 6702.cpp)
+add_executable(report report.cpp)
+add_executable(CCPCTrainingClass CCPCTrainingClass.cpp)
+add_executable(Express Express.cpp)
+add_executable(Convolution Convolution.cpp)

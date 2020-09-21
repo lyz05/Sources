@@ -1,0 +1,3 @@
+C:\Users\congcong\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.6948.80\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\19CCPC-library.dir/objects.a
+"D:\Program Files\MinGW\bin\ar.exe" cr CMakeFiles\19CCPC-library.dir/objects.a @CMakeFiles\19CCPC-library.dir\objects1.rsp
+"D:\Program Files\MinGW\bin\g++.exe" -g   -Wl,--whole-archive CMakeFiles\19CCPC-library.dir/objects.a -Wl,--no-whole-archive  -o 19CCPC-library.exe -Wl,--out-implib,lib19CCPC-library.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\19CCPC-library.dir\linklibs.rsp

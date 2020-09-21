@@ -1,0 +1,4 @@
+C:\Users\congcong\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.6948.80\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\git\lyz05\ACM\19CCPC
+-- Configuring done
+-- Generating done
+-- Build files have been written to: D:/git/lyz05/ACM/19CCPC/cmake-build-debug
