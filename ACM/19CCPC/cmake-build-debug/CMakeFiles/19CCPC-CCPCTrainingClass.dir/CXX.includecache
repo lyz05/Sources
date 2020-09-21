@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/git/lyz05/ACM/19CCPC/CCPCTrainingClass.cpp
+cstdio
+-
+map
+-
+cstring
+-
+iostream
+-
+

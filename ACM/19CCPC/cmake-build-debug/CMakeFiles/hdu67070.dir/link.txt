@@ -1,0 +1,3 @@
+C:\Users\congcong\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\202.6948.80\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\hdu67070.dir/objects.a
+"D:\Program Files\MinGW\bin\ar.exe" cr CMakeFiles\hdu67070.dir/objects.a @CMakeFiles\hdu67070.dir\objects1.rsp
+"D:\Program Files\MinGW\bin\g++.exe" -g   -Wl,--whole-archive CMakeFiles\hdu67070.dir/objects.a -Wl,--no-whole-archive  -o hdu67070.exe -Wl,--out-implib,libhdu67070.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\hdu67070.dir\linklibs.rsp
