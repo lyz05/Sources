@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Web程序设计-作业</title>
+    <title>作业 - Web程序设计</title>
     <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <!--  Vue.js  -->
@@ -23,7 +23,7 @@
             <div class="row">
                 <div class="col-md-offset-2 col-md-8">
                     <h3>
-                        一、单项选择题
+                        一、单选题
                     </h3>
                 </div>
                 <div id="app1" class="col-md-offset-2 col-md-8">
@@ -66,6 +66,28 @@
                         <hr>
                     </div>
                 </div>
+                <div class="col-md-offset-2 col-md-8">
+                    <h3>
+                        三、多选题
+                    </h3>
+                </div>
+                <div id="app3" class="col-md-offset-2 col-md-8">
+                    <div v-for="(question, index) in questions">
+                        {{index+1}}. {{question.desp}}
+                        <br>
+                        <div class="checkbox" v-for="(item, index) in question.items">
+                            <label>
+                              <input type="checkbox" v-bind:value="item" v-model="question.useranswer" @change="judgeAnswer(question)">
+                              {{ String.fromCharCode(index+65) }}、{{item}}
+                            </label>
+                        </div>
+                        <div v-if="seen" class="alert" v-bind:class="{ 'alert-success': question.isCorrect ,'alert-danger': !question.isCorrect}" class="alert alert-success" role="alert">
+                            我的答案：{{question.useranswer}} 正确答案：{{question.answer}}
+                        </div>
+                        </p>
+                        <hr>
+                    </div>
+                </div>
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-8">
                         <button type="submit" class="btn btn-primary">提交</button>
@@ -87,6 +109,7 @@
             function sub() {
                 vm1.$data.seen = true;
                 vm2.$data.seen = true;
+                vm3.$data.seen = true;
                 return false;
             }
             var vm1 = new Vue({
@@ -132,7 +155,9 @@
                 data: {
                     questions: [{
                         desp: "confirm( )方法用于提示用户输入某个值，例如成绩。",
-                        answer: false
+                        answer: false,
+                        useranswer: '',
+                        isCorrect: false
                     }, {
                         desp: "JavaScript代码可以放置在主体中。",
                         answer: true
@@ -158,6 +183,53 @@
                     judgeAnswer(question) {
                         question.useranswer = question.useranswer === 'true';
                         question.isCorrect = question.useranswer == question.answer;
+                    }
+                },
+                created: function() {
+                    randomQuestions(this.questions);
+                }
+            });
+            var vm3 = new Vue({
+                el: "#app3",
+                //Model 层数据
+                data: {
+                    questions: [{
+                        desp: "我们想要将页面中的文本采用项目符号的形式予以显示，采用哪些标记组合可以达到我们的要求?",
+                        items: ['<P>', '<UL>', '<BR>', '<LI>'],
+                        answer: ['<LI>', '<UL>'],
+                        useranswer: [],
+                        isCorrect: false
+                    }, {
+                        desp: "RGB三原色的组成是哪三种颜色?",
+                        items: ['红', '黄', '蓝', '绿'],
+                        answer: ['红', '蓝', '绿'],
+                        useranswer: []
+                    }, {
+                        desp: "下面关于CSS表述正确的是",
+                        items: ['CSS是一种制作网页的新技术，现在已经为大多数的浏览器所支持，成为网页设计必不可少的工具之一。', '层叠样式表是HTML的辅助工具，缺点是设计者设计的网页缺少动感，网页内容的排版布局上也有很多困难', '使用CSS能够简化网页的格式代码，加快下载显示的速度，也减少了需要上传的代码数量，大大减少了重复劳动的工作量。', 'CSS是Cascading Stylesheets的缩写，中文意思是层叠样式表'],
+                        answer: ['CSS是一种制作网页的新技术，现在已经为大多数的浏览器所支持，成为网页设计必不可少的工具之一。', '使用CSS能够简化网页的格式代码，加快下载显示的速度，也减少了需要上传的代码数量，大大减少了重复劳动的工作量。', 'CSS是Cascading Stylesheets的缩写，中文意思是层叠样式表'],
+                        useranswer: []
+                    }],
+                    seen: false
+                },
+                methods: {
+                    judgeAnswer(question) {
+                        function isArrayEqual(value1 = [], value2 = []) {
+                            let hash = JSON.parse(JSON.stringify(value2));
+                            if (value1.length === value2.length) {
+                                for (let i = 0; i < value1.length; i++) {
+                                    const index = hash.indexOf(value1[i]);
+                                    if (index > -1) {
+                                        hash.splice(index, 1);
+                                    } else {
+                                        return false;
+                                    }
+                                }
+                                return true;
+                            }
+                            return false;
+                        }
+                        question.isCorrect = isArrayEqual(question.useranswer, question.answer);
                     }
                 },
                 created: function() {
