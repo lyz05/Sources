@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>登录 - Web程序设计</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #0082c9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row text-center">
+            <div class="page-header">
+                <h1 style="color:#fff;">
+                    Web程序设计
+                </h1>
+                <div class="alert alert-info fade in" style="display: none;" role="alert" id="alert">
+                    alert message
+                </div>
+            </div>
+            <div class="col-sm-4 col-sm-offset-4">
+                <h2 style="color:#fff;">
+                    登录
+                </h2>
+                <form id="form1" class="form-horizontal" onkeydown="if(event.keyCode==13)login();">
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">
+			            	<span class="glyphicon glyphicon-user"></span>
+                        </span>
+                        <input id="username" name="username" type="text" placeholder="账号" class="form-control">
+                    </div>
+                    <div class="form-group input-group">
+                        <span class="input-group-addon">
+			            	<span class="glyphicon glyphicon-lock"></span>
+                        </span>
+                        <input id="password" name="password" type="password" class="form-control" placeholder="密码">
+                    </div>
+                    <div class="form-group">
+                        <input id="loginbtn" type="button" value="登录" class="btn btn-success btn-block" onclick="login()" />
+                        <input id="resetbtn" type="reset" value="重置" class="btn btn-default btn-block" />
+                        <input id="loginbtn" type="button" value="注册" class="btn btn-warning btn-block" onclick="register()" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    function login() {
+        alert("登录成功");
+        window.location.href = "../index.html";
+    }
+
+    function register() {
+        window.location.href = "register.html";
+    }
+</script>
+
+</html>
