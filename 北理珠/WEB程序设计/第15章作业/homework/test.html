@@ -21,12 +21,11 @@
         </div>
         <form onsubmit="return sub();">
             <div class="row">
-                <div class="col-md-offset-2 col-md-8">
-                    <h3>
-                        一、单选题
-                    </h3>
-                </div>
                 <div id="app1" class="col-md-offset-2 col-md-8">
+                    <h3>
+                        一、{{title}}
+                        <small v-if="seen">得分：{{(score*100).toFixed(2)+"%"}}</small>
+                    </h3>
                     <div v-for="(question, index) in questions">
                         {{index+1}}. {{question.desp}}
                         <br>
@@ -42,12 +41,11 @@
                         <hr>
                     </div>
                 </div>
-                <div class="col-md-offset-2 col-md-8">
-                    <h3>
-                        二、判断题
-                    </h3>
-                </div>
                 <div id="app2" class="col-md-offset-2 col-md-8">
+                    <h3>
+                        二、{{title}}
+                        <small v-if="seen">得分：{{(score*100).toFixed(2)+"%"}}</small>
+                    </h3>
                     <div v-for="(question, index) in questions">
                         {{index+1}}. {{question.desp}}
                         <br>
@@ -66,12 +64,11 @@
                         <hr>
                     </div>
                 </div>
-                <div class="col-md-offset-2 col-md-8">
-                    <h3>
-                        三、多选题
-                    </h3>
-                </div>
                 <div id="app3" class="col-md-offset-2 col-md-8">
+                    <h3>
+                        三、{{title}}
+                        <small v-if="seen">得分：{{(score*100).toFixed(2)+"%"}}</small>
+                    </h3>
                     <div v-for="(question, index) in questions">
                         {{index+1}}. {{question.desp}}
                         <br>
@@ -87,6 +84,9 @@
                         </p>
                         <hr>
                     </div>
+                </div>
+                <div id="app" v-if="seen" class="col-md-offset-2 col-md-8 alert alert-success" role="alert">
+                    最终得分：{{(score*100).toFixed(2)+"%"}}
                 </div>
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-8">
@@ -107,15 +107,45 @@
             }
 
             function sub() {
-                vm1.$data.seen = true;
-                vm2.$data.seen = true;
-                vm3.$data.seen = true;
-                return false;
+                if (isNaN(vm.score)) {
+                    alert("请答完所有题目，再点击提交哦！");
+                    return false;
+                } else {
+                    vm1.$data.seen = true;
+                    vm2.$data.seen = true;
+                    vm3.$data.seen = true;
+                    vm.$data.seen = true;
+                    return false;
+                }
             }
+
+            function calcscore(vm) {
+                var cnt = 0;
+                var ans = vm.questions.length;
+                for (i in vm.questions) {
+                    cnt += vm.questions[i].isCorrect
+                }
+                vm.score = 1.0 * cnt / ans;
+            }
+
+            var vm = new Vue({
+                el: "#app",
+                data: {
+                    seen: false
+                },
+                computed: {
+                    score: function() {
+                        return 1.0 * (vm1.score + vm2.score + vm3.score) / 3;
+                    }
+                }
+            })
             var vm1 = new Vue({
                 el: "#app1",
                 //Model 层数据
                 data: {
+                    title: "单选题",
+                    seen: false,
+                    score: NaN,
                     questions: [{
                         desp: "以下事件中，不属于键盘事件的是",
                         items: ['KeyDown', 'KeyPress', 'KeyOver', 'KeyUp'],
@@ -135,11 +165,11 @@
                         items: ['<script href="show.js">', '<script src="show.js">', '<script name="show.js">', '<script source="show.js">'],
                         answer: '<script src="show.js">'
                     }],
-                    seen: false
                 },
                 methods: {
                     judgeAnswer: function(question) {
                         question.isCorrect = question.useranswer == question.answer;
+                        calcscore(this);
                     }
                 },
                 created: function() {
@@ -153,6 +183,9 @@
                 el: "#app2",
                 //Model 层数据
                 data: {
+                    title: "判断题",
+                    seen: false,
+                    score: NaN,
                     questions: [{
                         desp: "confirm( )方法用于提示用户输入某个值，例如成绩。",
                         answer: false,
@@ -177,12 +210,12 @@
                         desp: "用循环  for (property in document){  }   可以访问document对象的属性。 ",
                         answer: true
                     }],
-                    seen: false
                 },
                 methods: {
                     judgeAnswer(question) {
                         question.useranswer = question.useranswer === 'true';
                         question.isCorrect = question.useranswer == question.answer;
+                        calcscore(this);
                     }
                 },
                 created: function() {
@@ -193,6 +226,8 @@
                 el: "#app3",
                 //Model 层数据
                 data: {
+                    title: "多选题",
+                    score: NaN,
                     questions: [{
                         desp: "我们想要将页面中的文本采用项目符号的形式予以显示，采用哪些标记组合可以达到我们的要求?",
                         items: ['<P>', '<UL>', '<BR>', '<LI>'],
@@ -230,6 +265,7 @@
                             return false;
                         }
                         question.isCorrect = isArrayEqual(question.useranswer, question.answer);
+                        calcscore(this);
                     }
                 },
                 created: function() {

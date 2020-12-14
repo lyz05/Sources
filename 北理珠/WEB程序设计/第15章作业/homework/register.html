@@ -48,7 +48,7 @@
                         <input name="newpwd2" type="password" placeholder="再次确认新密码" class="form-control">
                     </div>
                     <div class="form-group">
-                        <input type="button" value="注册账户" class="btn btn-primary btn-block" onclick="register()" />
+                        <input type="button" value="注册账户" class="btn btn-success btn-block" onclick="register()" />
                         <input type="button" value="返回" class="btn btn-default btn-block" onclick="history.back();" />
                     </div>
                 </form>
@@ -56,10 +56,6 @@
         </div>
     </div>
     <script>
-        function alterpwd() {
-            ajaxRequest("post", "User/psdalter", $('#form1').serialize(), null, null);
-        }
-
         function register() {
             alert("注册成功");
             history.back();
