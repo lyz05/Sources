@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>作业 - Web程序设计</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--  Vue.js  -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- LeanCloud -->
+    <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.7.0/dist/av-live-query-min.js"></script>
+    <script type="text/javascript" src="init.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <h1>
+                    Web程序设计<small>答题页面</small>
+                </h1>
+            </div>
+        </div>
+        <form onsubmit="return sub();">
+            <div class="row">
+                <div id="app1" class="col-md-offset-2 col-md-8">
+                    <h3>
+                        一、{{title}}
+                        <small v-if="seen">得分：{{(score*100).toFixed(2)+"%"}}</small>
+                    </h3>
+                    <div v-for="(question, index) in questions">
+                        {{index+1}}. {{question.desp}}
+                        <br>
+                        <div class="radio" v-for="(item, index) in question.items">
+                            <label>
+                            <input type="radio" v-bind:value="item" v-model="question.useranswer" @change="judgeAnswer(question)">
+                            {{ String.fromCharCode(index+65) }}、{{item}}
+                        </label>
+                        </div>
+                        <div v-if="seen" class="alert" v-bind:class="{ 'alert-success': question.isCorrect ,'alert-danger': !question.isCorrect}" class="alert alert-success" role="alert">
+                            我的答案：{{question.useranswer}} 正确答案：{{question.answer}}
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+                <div id="app2" class="col-md-offset-2 col-md-8">
+                    <h3>
+                        二、{{title}}
+                        <small v-if="seen">得分：{{(score*100).toFixed(2)+"%"}}</small>
+                    </h3>
+                    <div v-for="(question, index) in questions">
+                        {{index+1}}. {{question.desp}}
+                        <br>
+                        <div class="radio">
+                            <label class="radio-inline">
+                        <input type="radio" value="true" v-model="question.useranswer" @change="judgeAnswer(question)"> √
+                            </label>
+                            <label class="radio-inline">
+                        <input type="radio" value="false" v-model="question.useranswer" @change="judgeAnswer(question)"> ×
+                            </label>
+                        </div>
+                        <div v-if="seen" class="alert" v-bind:class="{ 'alert-success': question.isCorrect ,'alert-danger': !question.isCorrect}" class="alert alert-success" role="alert">
+                            我的答案：{{question.useranswer}} 正确答案：{{question.answer}}
+                        </div>
+                        </p>
+                        <hr>
+                    </div>
+                </div>
+                <div id="app3" class="col-md-offset-2 col-md-8">
+                    <h3>
+                        三、{{title}}
+                        <small v-if="seen">得分：{{(score*100).toFixed(2)+"%"}}</small>
+                    </h3>
+                    <div v-for="(question, index) in questions">
+                        {{index+1}}. {{question.desp}}
+                        <br>
+                        <div class="checkbox" v-for="(item, index) in question.items">
+                            <label>
+                              <input type="checkbox" v-bind:value="item" v-model="question.useranswer" @change="judgeAnswer(question)">
+                              {{ String.fromCharCode(index+65) }}、{{item}}
+                            </label>
+                        </div>
+                        <div v-if="seen" class="alert" v-bind:class="{ 'alert-success': question.isCorrect ,'alert-danger': !question.isCorrect}" class="alert alert-success" role="alert">
+                            我的答案：{{question.useranswer}} 正确答案：{{question.answer}}
+                        </div>
+                        </p>
+                        <hr>
+                    </div>
+                </div>
+                <div id="app" v-if="seen" class="col-md-offset-2 col-md-8 alert alert-success" role="alert">
+                    最终得分：{{(score*100).toFixed(2)+"%"}}
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-8">
+                        <button type="submit" class="btn btn-primary">提交</button>
+                    </div>
+                </div>
+        </form>
+        </div>
+        <script>
+            init();
+
+            function getObject(objectid, vm) {
+                const query = new AV.Query('Test');
+                query.get(objectid).then((test) => {
+                    vm.title = test.get('title');
+                    vm.questions = test.get('questions');
+                    //randomQuestions
+                    randomQuestions(vm.questions);
+                }, (error) => {
+                    alert("获取题目失败！可能是网络问题！");
+                });
+            }
+
+            function newObject(title, questions) {
+                const test = new AV.Object('Test');
+                test.set('questions', questions);
+                test.set('title', title);
+                test.save().then((todo) => {
+                    // 成功保存之后，执行其他逻辑
+                    console.log(`保存成功。objectId：${todo.id}`);
+                }, (error) => {
+                    // 异常处理
+                });
+            }
+
+            function randomQuestions(arr) {
+                var len = arr.length;
+                for (x = 0; x < len; x++) {
+                    var y = Math.floor(Math.random() * len);
+                    var tempOption = arr[x];
+                    Vue.set(arr, x, arr[y]);
+                    Vue.set(arr, y, tempOption);
+                }
+            }
+
+            function sub() {
+                if (isNaN(vm.score)) {
+                    alert("请答完所有题目，再点击提交哦！");
+                    return false;
+                } else {
+                    vm1.$data.seen = true;
+                    vm2.$data.seen = true;
+                    vm3.$data.seen = true;
+                    vm.$data.seen = true;
+                    return false;
+                }
+            }
+
+            function calcscore(vm) {
+                var cnt = 0;
+                var ans = vm.questions.length;
+                for (i in vm.questions) {
+                    cnt += vm.questions[i].isCorrect
+                }
+                vm.score = 1.0 * cnt / ans;
+            }
+
+            function isArrayEqual(value1 = [], value2 = []) {
+                return value1.sort().toString() === value2.sort().toString();
+            }
+
+            var vm = new Vue({
+                el: "#app",
+                data: {
+                    seen: false
+                },
+                computed: {
+                    score: function() {
+                        return 1.0 * (vm1.score + vm2.score + vm3.score) / 3;
+                    }
+                }
+            })
+            var vm1 = new Vue({
+                el: "#app1",
+                //Model 层数据
+                data: {
+                    title: null,
+                    seen: false,
+                    score: NaN,
+                    questions: null,
+                },
+                methods: {
+                    judgeAnswer: function(question) {
+                        question.isCorrect = question.useranswer == question.answer;
+                        calcscore(this);
+                    }
+                },
+                mounted() {
+                    getObject('5fd73896a4c66d6958e957f3', this);
+                }
+            });
+            var vm2 = new Vue({
+                el: "#app2",
+                //Model 层数据
+                data: {
+                    title: null,
+                    seen: false,
+                    score: NaN,
+                    questions: null
+                },
+                methods: {
+                    judgeAnswer(question) {
+                        question.useranswer = question.useranswer === 'true';
+                        question.isCorrect = question.useranswer == question.answer;
+                        calcscore(this);
+                    }
+                },
+                mounted() {
+                    getObject('5fd73896a4c66d6958e957f2', this);
+                }
+            });
+            var vm3 = new Vue({
+                el: "#app3",
+                //Model 层数据
+                data: {
+                    title: null,
+                    score: NaN,
+                    questions: null,
+                    seen: false
+                },
+                methods: {
+                    judgeAnswer(question) {
+                        question.isCorrect = isArrayEqual(question.useranswer, question.answer);
+                        calcscore(this);
+                    }
+                },
+                mounted() {
+                    getObject('5fd73896a4c66d6958e957f4', this);
+                }
+            });
+            // newObject("选择题", vm1.questions);5fd73896a4c66d6958e957f3
+            // newObject("判断题", vm2.questions);5fd73896a4c66d6958e957f2
+            // newObject("多选题", vm3.questions);5fd73896a4c66d6958e957f4
+        </script>
+
+</html>
