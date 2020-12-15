@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>上传题目 - Web程序设计</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!--  Vue.js  -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- LeanCloud -->
+    <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.7.0/dist/av-live-query-min.js"></script>
+    <script type="text/javascript" src="init.js"></script>
+</head>
+
+<body>
+    <div id="app" class="container">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <h1>
+                    Web程序设计<small>答题页面</small>
+                </h1>
+            </div>
+            <form>
+                <questions ref="selectquestion" :seen="seen" v-bind="selectquestion" :seen="seen" option="selectquestion"></questions>
+                <questions ref="yesnoquestion" :seen="seen" v-bind="yesnoquestion" option="yesnoquestion"></questions>
+                <questions ref="selectquestions" :seen="seen" v-bind="selectquestions" option="selectquestions"></questions>
+                <result ref="result" :seen="seen" :score="score"></result>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-8">
+                        <button type="button" class="btn btn-primary" @click="sub()">提交</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript">
+        init();
+    </script>
+
+</html>
