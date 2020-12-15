@@ -38,7 +38,7 @@
                             {{ String.fromCharCode(index+65) }}、{{item}}
                         </label>
                         </div>
-                        <div v-if="seen" class="alert" v-bind:class="{ 'alert-success': question.isCorrect ,'alert-danger': !question.isCorrect}" class="alert alert-success" role="alert">
+                        <div v-if="seen" class="alert" v-bind:class="{ 'alert-success': question.isCorrect ,'alert-danger': !question.isCorrect}" role="alert">
                             我的答案：{{question.useranswer}} 正确答案：{{question.answer}}
                         </div>
                         <hr>
@@ -60,7 +60,7 @@
                         <input type="radio" value="false" v-model="question.useranswer" @change="judgeAnswer(question)"> ×
                             </label>
                         </div>
-                        <div v-if="seen" class="alert" v-bind:class="{ 'alert-success': question.isCorrect ,'alert-danger': !question.isCorrect}" class="alert alert-success" role="alert">
+                        <div v-if="seen" class="alert" v-bind:class="{ 'alert-success': question.isCorrect ,'alert-danger': !question.isCorrect}" role="alert">
                             我的答案：{{question.useranswer}} 正确答案：{{question.answer}}
                         </div>
                         </p>
@@ -81,7 +81,7 @@
                               {{ String.fromCharCode(index+65) }}、{{item}}
                             </label>
                         </div>
-                        <div v-if="seen" class="alert" v-bind:class="{ 'alert-success': question.isCorrect ,'alert-danger': !question.isCorrect}" class="alert alert-success" role="alert">
+                        <div v-if="seen" class="alert" v-bind:class="{ 'alert-success': question.isCorrect ,'alert-danger': !question.isCorrect}" role="alert">
                             我的答案：{{question.useranswer}} 正确答案：{{question.answer}}
                         </div>
                         </p>
@@ -96,7 +96,6 @@
                         <button type="submit" class="btn btn-primary">提交</button>
                     </div>
                 </div>
-
             </form>
         </div>
     </div>
