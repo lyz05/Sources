@@ -175,7 +175,7 @@
             methods: {
                 judgeAnswer: function() {
                     this.question.isCorrect = this.question.useranswer == this.question.answer;
-                    this.$emit('childvalue', this.question)
+                    this.$emit('childvalue')
                 }
             }
         });
@@ -186,7 +186,7 @@
                 judgeAnswer: function() {
                     this.question.useranswer = this.question.useranswer == 'true';
                     this.question.isCorrect = this.question.useranswer == this.question.answer;
-                    this.$emit('childvalue', this.question)
+                    this.$emit('childvalue')
                 }
             }
         });
@@ -199,7 +199,7 @@
                 },
                 judgeAnswer() {
                     this.question.isCorrect = this.isArrayEqual(this.question.useranswer, this.question.answer);
-                    this.$emit('childvalue', this.question);
+                    this.$emit('childvalue');
                 }
             }
         });
@@ -215,7 +215,7 @@
                     }
                     return 1.0 * cnt / ans;
                 },
-                judgeAnswer(question) {
+                judgeAnswer() {
                     this.obj.score = this.calcscore(this.obj.questions);
                     this.$emit('childvalue');
                 }
