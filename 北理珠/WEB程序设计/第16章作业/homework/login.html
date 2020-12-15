@@ -88,7 +88,6 @@
                     return;
                 }
                 AV.User.logIn(this.username, this.password).then((user) => {
-                    alert("登录成功");
                     window.location.href = "../index.html";
                 }, (error) => {
                     alert(`登录失败！原因：${error.rawMessage}`);

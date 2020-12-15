@@ -1,57 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>测试图形验证码</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 
 <body>
-    <label>手机号
-    <input type="text" id="phone" />
-  </label>
-    <br />
-    <label>校验码
-    <input type="text" id="captcha-code" />
-  </label>
-    <img id="captcha-image" />
-    <br />
-    <button id="verify">发送验证码</button>
-    <!-- 引入 LeanCloud SDK -->
-    <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.8.2/dist/av-min.js"></script>
-    <script type="text/javascript" src="init.js"></script>
-    <script>
-        init();
-        // AV.Captcha.request() 默认生成一个 85px x 30px 的 AV.Captcha 实例
-        AV.Captcha.request().then(function(captcha) {
-            // 在浏览器中，可以直接使用 captcha.bind 方法将验证码与 DOM 元素绑定
-            captcha.bind({
-                textInput: 'captcha-code', // The id for textInput
-                image: 'captcha-image', // The id for image element
-                verifyButton: 'verify' // The id for verify button
-            }, {
-                success: function(validateCode) {
-                    var phoneNumber = document.getElementById('phone').value;
-                    console.log('验证成功，下一步发送验证码短信至：' + phoneNumber);
-                    // AV.Cloud.requestSmsCode({
-                    //     mobilePhoneNumber: phoneNumber,
-                    //     name: '应用名称',
-                    //     validate_token: validateCode,
-                    //     op: '某种操作',
-                    //     ttl: 10
-                    // }).then(function() {
-                    //     console.log('发送成功。');
-                    // }, function(err) {
-                    //     console.error('发送失败。', err.message);
-                    // });
-                },
-                error: function(error) {
-                    console.error(error.message);
-                }
-            });
-        });
-    </script>
+    <div id="app">
+        {{test.a}}
+        <child :data="test"></child>
+    </div>
 </body>
+
+<script>
+    Vue.component("child", {
+        props: ["data"],
+        template: `
+            <div>
+                <input v-model="data.a"></input>
+            </div>
+            `,
+        methods: {
+            onClick() {
+                this.data++
+            }
+        }
+    })
+    var app = new Vue({
+        el: "#app",
+        data: {
+            test: {
+                a: "123"
+            }
+        }
+    })
+</script>
 
 </html>
