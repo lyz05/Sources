@@ -23,83 +23,91 @@
             </div>
         </div>
         <div class="row">
-            <form onsubmit="return sub();">
-                <div id="app1" class="col-md-offset-2 col-md-8">
-                    <h3>
-                        一、{{title}}
-                        <small v-if="seen">得分：{{(score*100).toFixed(2)+"%"}}</small>
-                    </h3>
-                    <div v-for="(question, index) in questions">
-                        {{index+1}}. {{question.desp}}
-                        <br>
-                        <div class="radio" v-for="(item, index) in question.items">
-                            <label>
-                            <input type="radio" v-bind:value="item" v-model="question.useranswer" @change="judgeAnswer(question)">
-                            {{ String.fromCharCode(index+65) }}、{{item}}
-                        </label>
-                        </div>
-                        <div v-if="seen" class="alert" v-bind:class="{ 'alert-success': question.isCorrect ,'alert-danger': !question.isCorrect}" role="alert">
-                            我的答案：{{question.useranswer}} 正确答案：{{question.answer}}
-                        </div>
-                        <hr>
-                    </div>
-                </div>
-                <div id="app2" class="col-md-offset-2 col-md-8">
-                    <h3>
-                        二、{{title}}
-                        <small v-if="seen">得分：{{(score*100).toFixed(2)+"%"}}</small>
-                    </h3>
-                    <div v-for="(question, index) in questions">
-                        {{index+1}}. {{question.desp}}
-                        <br>
-                        <div class="radio">
-                            <label class="radio-inline">
-                        <input type="radio" value="true" v-model="question.useranswer" @change="judgeAnswer(question)"> √
-                            </label>
-                            <label class="radio-inline">
-                        <input type="radio" value="false" v-model="question.useranswer" @change="judgeAnswer(question)"> ×
-                            </label>
-                        </div>
-                        <div v-if="seen" class="alert" v-bind:class="{ 'alert-success': question.isCorrect ,'alert-danger': !question.isCorrect}" role="alert">
-                            我的答案：{{question.useranswer}} 正确答案：{{question.answer}}
-                        </div>
-                        </p>
-                        <hr>
-                    </div>
-                </div>
-                <div id="app3" class="col-md-offset-2 col-md-8">
-                    <h3>
-                        三、{{title}}
-                        <small v-if="seen">得分：{{(score*100).toFixed(2)+"%"}}</small>
-                    </h3>
-                    <div v-for="(question, index) in questions">
-                        {{index+1}}. {{question.desp}}
-                        <br>
-                        <div class="checkbox" v-for="(item, index) in question.items">
-                            <label>
-                              <input type="checkbox" v-bind:value="item" v-model="question.useranswer" @change="judgeAnswer(question)">
-                              {{ String.fromCharCode(index+65) }}、{{item}}
-                            </label>
-                        </div>
-                        <div v-if="seen" class="alert" v-bind:class="{ 'alert-success': question.isCorrect ,'alert-danger': !question.isCorrect}" role="alert">
-                            我的答案：{{question.useranswer}} 正确答案：{{question.answer}}
-                        </div>
-                        </p>
-                        <hr>
-                    </div>
-                </div>
-                <div id="app4" v-if="seen" class="col-md-offset-2 col-md-8 alert alert-success" role="alert">
-                    最终得分：{{(score*100).toFixed(2)+"%"}}
-                </div>
+            <form>
+                <selectquestion ref="selectquestion" :seen="seen"></selectquestion>
+                <yesnoquestion ref="yesnoquestion" :seen="seen"></yesnoquestion>
+                <selectquestions ref="selectquestions" :seen="seen"></selectquestions>
+                <result ref="result" :seen="seen" :score="score"></result>
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-8">
-                        <button type="submit" class="btn btn-primary">提交</button>
+                        <button type="button" class="btn btn-primary" @click="sub()">提交</button>
                     </div>
                 </div>
             </form>
         </div>
     </div>
-    <script>
+    <script type="text/x-template" id="selectquestion">
+        <div class="col-md-offset-2 col-md-8">
+            <v-title :title="title" :score="score" :seen="seen"></v-title>
+            <div v-for="(question, index) in questions">
+                <desp :desp="question.desp" :index="index"></desp>
+                <div class="radio" v-for="(item, index) in question.items">
+                    <label>
+                    <input type="radio" v-bind:value="item" v-model="question.useranswer" @change="judgeAnswer(question)">
+                    {{ String.fromCharCode(index+65) }}、{{item}}
+                </label>
+                </div>
+                <answer :seen="seen" :isCorrect="question.isCorrect" :useranswer="question.useranswer" :answer="question.answer"></answer>
+                <hr>
+            </div>
+        </div>
+    </script>
+    <script type="text/x-template" id="yesnoquestion">
+        <div class="col-md-offset-2 col-md-8">
+            <v-title :title="title" :score="score" :seen="seen"></v-title>
+            <div v-for="(question, index) in questions">
+                <desp :desp="question.desp" :index="index"></desp>
+                <div class="radio">
+                    <label class="radio-inline">
+                <input type="radio" value="true" v-model="question.useranswer" @change="judgeAnswer(question)"> √
+                    </label>
+                    <label class="radio-inline">
+                <input type="radio" value="false" v-model="question.useranswer" @change="judgeAnswer(question)"> ×
+                    </label>
+                </div>
+                <answer :seen="seen" :isCorrect="question.isCorrect" :useranswer="question.useranswer" :answer="question.answer"></answer>
+                <hr>
+            </div>
+        </div>
+    </script>
+    <script type="text/x-template" id="selectquestions">
+        <div class="col-md-offset-2 col-md-8">
+            <v-title :title="title" :score="score" :seen="seen"></v-title>
+            <div v-for="(question, index) in questions">
+                <desp :desp="question.desp" :index="index"></desp>
+                <div class="checkbox" v-for="(item, index) in question.items">
+                    <label>
+                      <input type="checkbox" v-bind:value="item" v-model="question.useranswer" @change="judgeAnswer(question)">
+                      {{ String.fromCharCode(index+65) }}、{{item}}
+                    </label>
+                </div>
+                <answer :seen="seen" :isCorrect="question.isCorrect" :useranswer="question.useranswer" :answer="question.answer"></answer>
+                <hr>
+            </div>
+        </div>
+    </script>
+    <script type="text/x-template" id="result">
+        <div v-if="seen" class="col-md-offset-2 col-md-8 alert alert-success" role="alert">
+            最终得分：{{(score()*100).toFixed(2)+"%"}}
+        </div>
+    </script>
+    <script type="text/x-template" id="desp">
+        <div>
+            {{index+1}}. {{desp}}
+        </div>
+    </script>
+    <script type="text/x-template" id="answer">
+        <div v-if="seen" class="alert" v-bind:class="{ 'alert-success': isCorrect ,'alert-danger': !isCorrect}" role="alert">
+            我的答案：{{useranswer}} 正确答案：{{answer}}
+        </div>
+    </script>
+    <script type="text/x-template" id="v-title">
+        <h3>
+            {{title}}
+            <small v-if="seen">得分：{{(score*100).toFixed(2)+"%"}}</small>
+        </h3>
+    </script>
+    <script type="text/javascript">
         init();
 
         function getObject(objectid, vm) {
@@ -136,19 +144,6 @@
             }
         }
 
-        function sub() {
-            if (isNaN(vm4.score)) {
-                alert("请答完所有题目，再点击提交哦！");
-                return false;
-            } else {
-                vm1.$data.seen = true;
-                vm2.$data.seen = true;
-                vm3.$data.seen = true;
-                vm4.$data.seen = true;
-                return false;
-            }
-        }
-
         function calcscore(vm) {
             var cnt = 0;
             var ans = vm.questions.length;
@@ -162,14 +157,27 @@
             return value1.sort().toString() === value2.sort().toString();
         }
 
-        var vm1 = new Vue({
-            el: "#app1",
-            //Model 层数据
-            data: {
-                title: null,
-                seen: false,
-                score: NaN,
-                questions: null,
+        Vue.component("v-title", {
+            template: '#v-title',
+            props: ['title', 'score', 'seen']
+        });
+        Vue.component("desp", {
+            template: '#desp',
+            props: ['desp', 'index']
+        });
+        Vue.component("answer", {
+            template: '#answer',
+            props: ['seen', 'isCorrect', 'useranswer', 'answer']
+        });
+        Vue.component("selectquestion", {
+            template: '#selectquestion',
+            props: ['seen'],
+            data() {
+                return {
+                    title: null,
+                    score: NaN,
+                    questions: null
+                };
             },
             methods: {
                 judgeAnswer: function(question) {
@@ -181,14 +189,15 @@
                 getObject('5fd73896a4c66d6958e957f3', this);
             }
         });
-        var vm2 = new Vue({
-            el: "#app2",
-            //Model 层数据
-            data: {
-                title: null,
-                seen: false,
-                score: NaN,
-                questions: null
+        Vue.component("yesnoquestion", {
+            template: '#yesnoquestion',
+            props: ['seen'],
+            data() {
+                return {
+                    title: null,
+                    score: NaN,
+                    questions: null
+                };
             },
             methods: {
                 judgeAnswer(question) {
@@ -201,14 +210,15 @@
                 getObject('5fd73896a4c66d6958e957f2', this);
             }
         });
-        var vm3 = new Vue({
-            el: "#app3",
-            //Model 层数据
-            data: {
-                title: null,
-                score: NaN,
-                questions: null,
-                seen: false
+        Vue.component("selectquestions", {
+            template: '#selectquestions',
+            props: ['seen'],
+            data() {
+                return {
+                    title: null,
+                    score: NaN,
+                    questions: null
+                };
             },
             methods: {
                 judgeAnswer(question) {
@@ -220,18 +230,28 @@
                 getObject('5fd73896a4c66d6958e957f4', this);
             }
         });
-        var vm4 = new Vue({
-            el: "#app4",
+        Vue.component("result", {
+            template: '#result',
+            props: ['seen', 'score']
+        });
+        var vm = new Vue({
+            el: "#app",
             data: {
-                seen: false
+                seen: true
             },
-            computed: {
-                score: function() {
-                    return 1.0 * (vm1.score + vm2.score + vm3.score) / 3;
+            methods: {
+                sub() {
+                    if (isNaN(this.score())) {
+                        alert("请答完所有题目，再点击提交哦！");
+                    } else {
+                        this.seen = true;
+                    }
+                },
+                score() {
+                    return 1.0 * (this.$refs.selectquestion.score + this.$refs.yesnoquestion.score + this.$refs.selectquestions.score) / 3;
                 }
             }
         });
-
         // newObject("选择题", vm1.questions);5fd73896a4c66d6958e957f3
         // newObject("判断题", vm2.questions);5fd73896a4c66d6958e957f2
         // newObject("多选题", vm3.questions);5fd73896a4c66d6958e957f4
