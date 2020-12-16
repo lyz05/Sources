@@ -9,3 +9,4 @@ function init() {
         serverURL: 'https://sahleptf.lc-cn-e1-shared.com'
     });
 }
+init();

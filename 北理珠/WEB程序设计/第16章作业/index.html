@@ -186,7 +186,7 @@
                     <li>
                         大作业
                         <ul>
-                            <li><a href="homework/test.html" target="index">答题页面</a></li>
+                            <li><a href="homework/test.html">答题页面</a></li>
                             <li><a href="homework/valine.html" target="index">留言板</a></li>
                             <li><a href="homework/note.html" target="index">剪切板</a></li>
                             <li><a href="javascript:logout();">注销</a></li>
@@ -200,7 +200,6 @@
         </div>
     </div>
     <script>
-        init();
         const currentUser = AV.User.current();
         if (!currentUser) {
             alert('您还未登录');

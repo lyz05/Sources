@@ -30,9 +30,11 @@
                         最终得分：{{(score*100).toFixed(2)+"%"}}
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-8">
+                <div class="col-md-offset-2 col-md-8">
+                    <div class="btn-group" role="group" aria-label="...">
                         <button type="button" class="btn btn-primary" @click="sub()">提交</button>
+                        <button type="button" class="btn btn-default" @click="save()">暂时保存</button>
+                        <button type="button" class="btn btn-default" @click="renew()">重新生成新题</button>
                     </div>
                 </div>
             </form>
@@ -83,14 +85,14 @@
         <div>
             <div class="checkbox" v-for="(item, index) in question.items">
                 <label>
-                  <input type="checkbox" v-bind:value="item" v-model="question.useranswer" @change="judgeAnswer()">
+                  <input type="checkbox" :value="item" v-model="question.useranswer" @change="judgeAnswer()">
                   {{ String.fromCharCode(index+65) }}、{{item}}
                 </label>
             </div>
         </div>
     </script>
     <script type="text/javascript">
-        init();
+        var dataobjid = null;
         const currentUser = AV.User.current();
         if (!currentUser) {
             alert('您还未登录');
@@ -111,41 +113,74 @@
                 },
                 score: NaN
             }
-            const query = new AV.Query('Questions');
-            query.get(objectid).then((question) => {
-                ret.seen = question.get('seen');
-                ret.selectquestion = question.get('selectquestion');
-                ret.yesnoquestion = question.get('yesnoquestion');
-                ret.selectquestions = question.get('selectquestions');
-                //randomQuestions
-                //randomQuestions(ret.questions);
+            const query = new AV.Query('Test');
+            query.equalTo('user', currentUser);
+            query.find().then((questions) => {
+                if (questions.length == 0)
+                    query.get('5fd97546c87f3d0b6b65c1cd').then((question) => {
+                        ret.seen = question.get('seen');
+                        ret.selectquestion = question.get('selectquestion');
+                        ret.yesnoquestion = question.get('yesnoquestion');
+                        ret.selectquestions = question.get('selectquestions');
+                        //randomQuestions
+                        randomQuestions(ret.selectquestion.questions, 2);
+                        randomQuestions(ret.yesnoquestion.questions, 4);
+                        randomQuestions(ret.selectquestions.questions, 3);
+                    }, (error) => {
+                        alert("获取题目失败！可能是网络问题！");
+                    });
+                else {
+                    dataobjid = questions[0].id;
+                    var question = questions[0];
+                    ret.seen = question.get('seen');
+                    ret.selectquestion = question.get('selectquestion');
+                    ret.yesnoquestion = question.get('yesnoquestion');
+                    ret.selectquestions = question.get('selectquestions');
+                }
             }, (error) => {
                 alert("获取题目失败！可能是网络问题！");
             });
             return ret;
         }
 
-        function newObject(vm) {
-            const test = new AV.Object('Questions');
+        function delObject(objid, callback) {
+            if (!objid) return;
+            var obj = AV.Object.createWithoutData('Test', objid);
+            obj.destroy().then(function(success) {
+                console.log(`删除成功。objectId：${success.id}`);
+                if (typeof(callback) != "undefined")
+                    callback();
+            });
+        }
+
+        function createObject(vm) {
+            const test = new AV.Object('Test');
             test.set('selectquestion', vm.selectquestion);
+            console.log(vm.selectquestion)
             test.set('yesnoquestion', vm.yesnoquestion);
             test.set('selectquestions', vm.selectquestions);
             test.set('seen', vm.seen);
+            test.set('user', currentUser);
             test.save().then((todo) => {
                 // 成功保存之后，执行其他逻辑
                 console.log(`保存成功。objectId：${todo.id}`);
+                dataobjid = todo.id;
             }, (error) => {
                 // 异常处理
             });
         }
 
-        function randomQuestions(arr) {
-            var len = arr.length;
-            for (x = 0; x < len; x++) {
-                var y = Math.floor(Math.random() * len);
-                var tempOption = arr[x];
-                Vue.set(arr, x, arr[y]);
-                Vue.set(arr, y, tempOption);
+        function saveObject(vm) {
+            delObject(dataobjid);
+            createObject(vm);
+        }
+
+        function randomQuestions(arr, size) {
+            var ret = [];
+            size = arr.length - size;
+            for (var i = 0, len = arr.length; i < size; i++, len = arr.length) {
+                var index = Math.floor(Math.random() * len);
+                arr.splice(index, 1);
             }
         }
 
@@ -204,7 +239,7 @@
         var vm = new Vue({
             el: "#app",
             data() {
-                return getObject('5fd8ad19c87f3d0b6b5dc40c');
+                return getObject('5fd97546c87f3d0b6b65c1cd');
             },
             methods: {
                 sub() {
@@ -212,7 +247,16 @@
                         alert("请答完所有题目，再点击提交哦！");
                     } else {
                         this.seen = true;
+                        saveObject(this);
                     }
+                },
+                save() {
+                    saveObject(this);
+                },
+                renew() {
+                    delObject(dataobjid, function() {
+                        location.reload()
+                    });
                 },
                 judgeAnswer() {
                     this.score = 1.0 * (this.selectquestion.score + this.yesnoquestion.score + this.selectquestions.score) / 3;
