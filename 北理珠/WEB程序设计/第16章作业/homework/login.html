@@ -59,6 +59,12 @@
 </body>
 <script>
     init();
+    const currentUser = AV.User.current();
+    if (currentUser) {
+        console.log(currentUser);
+        window.location.href = "../index.html";
+    }
+
     var vm1 = new Vue({
         el: "#app1",
         data: {
