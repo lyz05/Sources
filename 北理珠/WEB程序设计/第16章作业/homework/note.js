@@ -43,7 +43,6 @@ function livequery() {
 }
 
 $(document).ready(function() {
-    init();
     get();
     livequery();
     $('#content').keyup(
