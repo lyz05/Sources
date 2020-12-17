@@ -11,17 +11,20 @@
         ul li:hover ul {
             display: block;
         }
+        
+        body {
+            padding-top: 70px;
+        }
     </style>
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
     <!--  Vue.js  -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <!-- jQuery -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- BootStrap4 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/popper.js/1.14.7/umd/popper.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <!-- LeanCloud -->
     <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.7.0/dist/av-live-query-min.js"></script>
     <script type="text/javascript" src="homework/init.js"></script>
@@ -29,51 +32,43 @@
 
 <body>
     <div id="app">
-        <div id="head">
-            <nav class="navbar navbar-default navbar-inverse">
-                <div class="container-fluid">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                    </button>
-                        <a class="navbar-brand" href="#" @click="navclick(-1)">Web程序设计</a>
-                    </div>
+        <header>
+            <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+                <a class="navbar-brand" href="#" @click="navclick(-1)">Web程序设计</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto col-auto">
+                        <li class="nav-item" :class="{'active': activeIndex == index}" v-for="(item,index) in navlist">
+                            <a class="nav-link" href="#" @click="navclick(index)">{{item}}</a>
+                        </li>
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-left">
-                            <li v-for="(item,index) in navlist">
-                                <a href="#" :class="{'active': activeIndex == index}" @click="navclick(index)">{{item}}</a>
-                            </li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li v-if="username==null"><a href="homework/register.html" target="index">注册</a></li>
-                            <li v-if="username!=null" class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                    {{username}}
-                                    <span class="caret"></span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="homework/alterpassword.html" target="index">修改密码</a></li>
+                    </ul>
 
-                                    <li><a href="#" @click="logout()">注销</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- /.navbar-collapse -->
+                    <ul class="nav navbar-nav col-auto">
+                        <li class="nav-item dropdown col-auto" v-if="username!=null">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{username}}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="homework/alterpassword.html" target="index">修改密码</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" @click="logout()">注销</a>
+                            </div>
+                        </li>
+                        <li class="nav-item" v-if="username==null">
+                            <a class="nav-link" href="homework/register.html" target="index">注册</a>
+                        </li>
+                    </ul>
                 </div>
-                <!-- /.container-fluid -->
             </nav>
-        </div>
+        </header>
 
 
-        <div class="container-fluid">
+        <div class="container-fluid" role="main">
             <div class="row">
-                <div id="sidebar" class="col-md-2">
+                <div id="sidebar" class="col-2" v-if="activeIndex!=-1">
                     <div id="homework" v-if="activeIndex==0">
                         <ul>
                             <li>
@@ -254,13 +249,22 @@
                         </ul>
                     </div>
                 </div>
-                <div id="main" class="col-md-10">
-                    <iframe id="main-iframe" name="index" width="100%" height="80%" :src="iframesrc"></iframe>
+                <div id="main" class="col">
+                    <iframe id="main-iframe" name="index" width="100%" :height="iframeheight" :src="iframesrc" scrolling="yes" style="overflow-x:scroll; overflow-y:hidden; "></iframe>
                 </div>
             </div>
-
         </div>
-
+        <footer class="footer">
+            <div class="container">
+                <center>
+                    <div class="copyright">
+                        © 2015 –2020
+                        <i class="fa fa-heart"></i>
+                        <span>lyz05</span>
+                    </div>
+                </center>
+            </div>
+        </footer>
     </div>
 
     <script>
@@ -271,10 +275,13 @@
                 activeIndex: null,
                 navlist: [],
                 username: null,
-                iframesrc: null
+                iframesrc: null,
+                clientHeight: null
             },
             computed: {
-
+                iframeheight() {
+                    return this.clientHeight - 100;
+                }
             },
             methods: {
                 navclick(index) {
@@ -288,7 +295,7 @@
             mounted() {
                 if (currentUser) {
                     this.username = currentUser.getUsername();
-                    this.iframesrc = "./carousel.html";
+                    this.iframesrc = "";
                     this.navlist = ['作业展示', '大作业展示'];
                     this.activeIndex = 0;
                 } else {
@@ -297,6 +304,14 @@
                     this.navlist = '';
                     this.iframesrc = "homework/login.html";
                 }
+                // 在DOM渲染数据时，设置下区域高度为浏览器可视区域高度．
+                this.clientHeight = document.body.clientHeight;
+                // 监听window的resize事件．在浏览器窗口变化时再设置下区域高度．
+                const _this = this;
+                window.onresize = function temp() {
+                    _this.clientHeight = document.body.clientHeight;
+                };
+
             }
         });
     </script>
