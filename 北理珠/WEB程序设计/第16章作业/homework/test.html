@@ -93,33 +93,6 @@
         var dataobjid = null;
         const currentUser = AV.User.current();
 
-        function delObject(objid, callback) {
-            if (!objid) return;
-            var obj = AV.Object.createWithoutData('Test', objid);
-            obj.destroy().then(function(success) {
-                console.log(`删除成功。objectId：${success.id}`);
-                dataobjid = null;
-                if (typeof(callback) != "undefined")
-                    callback();
-            });
-        }
-
-        function createObject(vm) {
-            const test = new AV.Object('Test');
-            test.set('selectquestion', vm.selectquestion);
-            test.set('yesnoquestion', vm.yesnoquestion);
-            test.set('selectquestions', vm.selectquestions);
-            test.set('seen', vm.seen);
-            test.set('user', currentUser);
-            test.save().then((todo) => {
-                // 成功保存之后，执行其他逻辑
-                console.log(`新建成功。objectId：${todo.id}`);
-                dataobjid = todo.id;
-            }, (error) => {
-                // 异常处理
-            });
-        }
-
         Vue.component("selectquestion-option", {
             template: '#selectquestion-option',
             props: ['question'],
@@ -195,11 +168,13 @@
                     }
                 },
                 save() {
-                    delObject(dataobjid);
-                    createObject(this);
+                    this.delObject(dataobjid);
+                    this.createObject();
                 },
                 renew() {
-                    delObject(dataobjid, location.reload());
+                    this.delObject(dataobjid, function() {
+                        location.reload();
+                    });
                 },
                 score() {
                     return 1.0 * (this.$refs.child1.score() + this.$refs.child2.score() + this.$refs.child3.score()) / 3
@@ -239,6 +214,31 @@
                         }
                     }, (error) => {
                         alert("获取题目失败！可能是网络问题！");
+                    });
+                },
+                createObject() {
+                    const test = new AV.Object('Test');
+                    test.set('selectquestion', this.selectquestion);
+                    test.set('yesnoquestion', this.yesnoquestion);
+                    test.set('selectquestions', this.selectquestions);
+                    test.set('seen', this.seen);
+                    test.set('user', currentUser);
+                    test.save().then((todo) => {
+                        // 成功保存之后，执行其他逻辑
+                        console.log(`新建成功。objectId：${todo.id}`);
+                        dataobjid = todo.id;
+                    }, (error) => {
+                        // 异常处理
+                    });
+                },
+                delObject(objid, callback) {
+                    if (!objid) return;
+                    var obj = AV.Object.createWithoutData('Test', objid);
+                    obj.destroy().then(function(success) {
+                        console.log(`删除成功。objectId：${success.id}`);
+                        dataobjid = null;
+                        if (typeof(callback) != "undefined")
+                            callback();
                     });
                 }
             },
