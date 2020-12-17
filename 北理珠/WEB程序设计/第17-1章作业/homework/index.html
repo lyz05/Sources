@@ -1,0 +1,98 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>WEB程序设计</title>
+    <style type="text/css">
+        ul li ul {
+            display: none;
+        }
+        
+        ul li:hover ul {
+            display: block;
+        }
+    </style>
+    <!--  Vue.js  -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <!-- LeanCloud -->
+    <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.7.0/dist/av-live-query-min.js"></script>
+    <script type="text/javascript" src="init.js"></script>
+</head>
+
+<body>
+    <div id="head">
+        <nav class="navbar navbar-default navbar-inverse">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Web程序设计</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="../index.html">作业展示</a></li>
+                        <li class="active"><a href="#">大作业展示</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">当前用户:<span id="user"></span><span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="alterpassword.html">修改密码</a></li>
+                                <li><a href="javascript:logout();">注销</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </div>
+    <div class="row">
+        <div id="sidebar" class="col-md-2">
+            <ul>
+                <li>
+                    大作业
+                    <ul>
+                        <li><a href="homework/test.html">答题页面</a></li>
+                        <li><a href="homework/valine.html" target="index">留言板</a></li>
+                        <li><a href="homework/note.html" target="index">剪切板</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="main" class="col-md-10">
+            <iframe name="index" width="100%" height="80%"></iframe>
+        </div>
+    </div>
+    <script>
+        const currentUser = AV.User.current();
+        if (!currentUser) {
+            alert('您还未登录');
+            window.location.href = 'login.html'
+        }
+
+        function logout() {
+            AV.User.logOut();
+            window.location.href = 'login.html'
+        }
+        $("#user").html(currentUser.getUsername());
+    </script>
+
+</body>
+
+</html>
