@@ -48,9 +48,8 @@
                         <input v-model="password" name="password" type="password" class="form-control" placeholder="密码">
                     </div>
                     <div class="form-group">
-                        <input id="loginbtn" type="button" value="登录" class="btn btn-success btn-block" v-on:click="login()" />
-                        <input id="resetbtn" type="reset" value="重置" class="btn btn-default btn-block" />
-                        <input id="loginbtn" type="button" value="注册" class="btn btn-warning btn-block" v-on:click="register()" />
+                        <input type="button" value="登录" class="btn btn-success btn-block" v-on:click="login()" />
+                        <input type="reset" value="重置" class="btn btn-default btn-block" />
                     </div>
                 </form>
             </div>
@@ -80,24 +79,16 @@
             }
         },
         methods: {
-            register: function() {
-                window.location.href = "register.html";
-            },
             login: function() {
                 if (!this.isvalid) {
                     alert(`登录失败！原因：${this.errors}`);
                     return;
                 }
                 AV.User.logIn(this.username, this.password).then((user) => {
-                    window.location.href = "../index.html";
+                    parent.window.location.reload();
                 }, (error) => {
                     alert(`登录失败！原因：${error.rawMessage}`);
                 });
-            }
-        },
-        mounted() {
-            if (currentUser) {
-                window.location.href = "../index.html";
             }
         }
     });
