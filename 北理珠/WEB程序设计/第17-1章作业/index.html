@@ -34,7 +34,7 @@
     <div id="app">
         <header>
             <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
-                <a class="navbar-brand" href="#" @click="navclick(-1)">Web程序设计</a>
+                <a class="navbar-brand" href="./" @click="navclick(-1)">Web程序设计</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -52,13 +52,13 @@
                                 {{username}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="homework/alterpassword.html" target="index">修改密码</a>
+                                <a class="dropdown-item" href="homework/login.html#/alterpassword" target="index">修改密码</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" @click="logout()">注销</a>
+                                <a class="dropdown-item" href="homework/login.html#/logout" target="index">注销</a>
                             </div>
                         </li>
                         <li class="nav-item" v-if="username==null">
-                            <a class="nav-link" href="homework/register.html" target="index">注册</a>
+                            <a class="nav-link" href="homework/login.html#/register" target="index">注册</a>
                         </li>
                     </ul>
                 </div>
@@ -246,6 +246,8 @@
                             <li><a href="homework/test.html" target="index">答题页面</a></li>
                             <li><a href="homework/valine.html" target="index">留言板</a></li>
                             <li><a href="homework/note.html" target="index">剪切板</a></li>
+                            <li><a href="homework/echart.html" target="index">实时：新冠肺炎疫情动态</a></li>
+                            <li><a href="homework/canvas.html" target="index">画图工具</a></li>
                         </ul>
                     </div>
                 </div>
@@ -288,8 +290,7 @@
                     this.activeIndex = index;
                 },
                 logout() {
-                    AV.User.logOut();
-                    location.reload();
+
                 }
             },
             mounted() {
@@ -315,7 +316,7 @@
             }
         });
     </script>
-    <script src="https://cdn.jsdelivr.net/gh/hustcc/canvas-nest.js@2.0.1/dist/canvas-nest.js" type="text/javascript"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/gh/hustcc/canvas-nest.js@2.0.1/dist/canvas-nest.js" type="text/javascript"></script> -->
 </body>
 
 </html>
