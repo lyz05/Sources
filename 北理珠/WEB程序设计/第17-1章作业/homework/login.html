@@ -40,7 +40,7 @@
 </body>
 <script type="text/x-template" id="login">
     <div class="col-sm-4 col-sm-offset-4" id="app1">
-        <h2>登录</h2>
+        <h2>{{title}}</h2>
         <form id="form1" class="form-horizontal" @submit.prevent="login">
             <div class="form-group input-group">
                 <span class="input-group-addon">
@@ -63,7 +63,7 @@
 </script>
 <script type="text/x-template" id="register">
     <div class="col-sm-4 col-sm-offset-4" id="app1">
-        <h2>注册</h2>
+        <h2>{{title}}</h2>
         <form id="form1" class="form-horizontal">
             <div class="form-group input-group">
                 <span class="input-group-addon">
@@ -92,7 +92,7 @@
 </script>
 <script type="text/x-template" id="alterpassword">
     <div class="col-sm-4 col-sm-offset-4" id="app1">
-        <h2>修改密码</h2>
+        <h2>{{title}}</h2>
         <form id="form1" class="form-horizontal">
             <div class="form-group input-group">
                 <span class="input-group-addon">
@@ -133,7 +133,8 @@
             return {
                 errors: [],
                 username: null,
-                password: null
+                password: null,
+                title: '登录'
             }
         },
         computed: {
@@ -171,7 +172,8 @@
                 errors: [],
                 username: null,
                 password: null,
-                password2: null
+                password2: null,
+                title: '注册'
             }
         },
         computed: {
@@ -233,7 +235,8 @@
                 username: null,
                 pwd: null,
                 newpwd: null,
-                newpwd2: null
+                newpwd2: null,
+                title: '修改密码'
             }
         },
         computed: {
