@@ -69,96 +69,117 @@
             <div class="row">
                 <div id="sidebar" class="col-2" v-if="activeIndex!=-1">
                     <div id="homework" v-if="activeIndex==0">
-                        <ul>
-                            <li>
-                                第2章作业
-                                <ul>
-                                    <li><a href="2/2.1.html" target="index">2.1</a></li>
-                                    <li><a href="2/2.2.html" target="index">2.2</a></li>
-                                    <li><a href="2/2.8.html" target="index">2.8</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                第3章作业
-                                <ul>
-                                    <li><a href="3/3.1.html" target="index">3.1</a></li>
-                                    <li><a href="3/3.2.html" target="index">3.2</a></li>
-                                    <li><a href="3/3.4.html" target="index">3.4</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                第4章作业
-                                <ul>
-                                    <li><a href="4/4.1.html" target="index">4.1</a></li>
-                                    <li><a href="4/4.2.html" target="index">4.2</a></li>
-                                    <li><a href="4/4.6.html" target="index">4.6</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                第5章作业
-                                <ul>
-                                    <li><a href="5/5.1.html" target="index">5.1</a></li>
-                                    <li><a href="5/5.2.html" target="index">5.2</a></li>
-                                    <li><a href="5/5.5.html" target="index">5.5</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                第6章作业
-                                <ul>
-                                    <li><a href="6/6.1.html" target="index">6.1</a></li>
-                                    <li><a href="6/6.2.html" target="index">6.2</a></li>
-                                    <li><a href="6/6.4.html" target="index">6.4</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                第7章作业
-                                <ul>
-                                    <li><a href="7/7.1.html" target="index">7.1</a></li>
-                                    <li><a href="7/7.2.html" target="index">7.2</a></li>
-                                    <li><a href="7/7.4.html" target="index">7.4</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                第8章作业
-                                <ul>
-                                    <li><a href="8/8.1.html" target="index">8.1</a></li>
-                                    <li><a href="8/8.2.html" target="index">8.2</a></li>
-                                    <li><a href="8/8.4.html" target="index">8.4</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                第9章作业
-                                <ul>
-                                    <li><a href="9/9.1.html" target="index">9.1</a></li>
-                                    <li><a href="9/9.2.html" target="index">9.2</a></li>
-                                    <li><a href="9/9.7.html" target="index">9.7</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <ul>
-                            <li>
-                                第10章作业
-                                <ul>
-                                    <li><a href="10/10.1.html" target="index">10.1</a></li>
-                                    <li><a href="10/10.2.html" target="index">10.2</a></li>
-                                    <li><a href="10/10.3.html" target="index">10.3</a></li>
-                                </ul>
-                            </li>
-                        </ul>
+                        <div class="accordion" id="accordionExample">
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse2">
+                                            第2章作业
+                                    </button>
+                                </div>
+                                <div id="collapse2" class="collapse" data-parent="#accordionExample">
+                                    <a class="list-group-item" href="2/2.1.html" target="index">2.1</a>
+                                    <a class="list-group-item" href="2/2.2.html" target="index">2.2</a>
+                                    <a class="list-group-item" href="2/2.8.html" target="index">2.8</a>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="heading3">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse3">
+                                            第3章作业
+                                    </button>
+                                </div>
+                                <div id="collapse3" class="collapse" data-parent="#accordionExample">
+                                    <a class="list-group-item" href="3/3.1.html" target="index">3.1</a>
+                                    <a class="list-group-item" href="3/3.2.html" target="index">3.2</a>
+                                    <a class="list-group-item" href="3/3.4.html" target="index">3.4</a>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="heading4">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse4">
+                                            第4章作业
+                                    </button>
+                                </div>
+                                <div id="collapse4" class="collapse" data-parent="#accordionExample">
+                                    <a class="list-group-item" href="4/4.1.html" target="index">4.1</a>
+                                    <a class="list-group-item" href="4/4.2.html" target="index">4.2</a>
+                                    <a class="list-group-item" href="4/4.6.html" target="index">4.6</a>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="heading5">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse5">
+                                            第5章作业
+                                    </button>
+                                </div>
+                                <div id="collapse5" class="collapse" data-parent="#accordionExample">
+                                    <a class="list-group-item" href="5/5.1.html" target="index">5.1</a>
+                                    <a class="list-group-item" href="5/5.2.html" target="index">5.2</a>
+                                    <a class="list-group-item" href="5/5.5.html" target="index">5.5</a>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="heading6">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse6">
+                                            第6章作业
+                                    </button>
+                                </div>
+                                <div id="collapse6" class="collapse" data-parent="#accordionExample">
+                                    <a class="list-group-item" href="6/6.1.html" target="index">6.1</a>
+                                    <a class="list-group-item" href="6/6.2.html" target="index">6.2</a>
+                                    <a class="list-group-item" href="6/6.4.html" target="index">6.4</a>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" id="heading7">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse7">
+                                            第7章作业
+                                    </button>
+                                </div>
+                                <div id="collapse7" class="collapse" data-parent="#accordionExample">
+                                    <a class="list-group-item" href="7/7.1.html" target="index">7.1</a>
+                                    <a class="list-group-item" href="7/7.2.html" target="index">7.2</a>
+                                    <a class="list-group-item" href="7/7.4.html" target="index">7.4</a>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse8">
+                                            第8章作业
+                                    </button>
+                                </div>
+                                <div id="collapse8" class="collapse" data-parent="#accordionExample">
+                                    <a class="list-group-item" href="8/8.1.html" target="index">8.1</a>
+                                    <a class="list-group-item" href="8/8.2.html" target="index">8.2</a>
+                                    <a class="list-group-item" href="8/8.4.html" target="index">8.4</a>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse9">
+                                            第9章作业
+                                    </button>
+                                </div>
+                                <div id="collapse9" class="collapse" data-parent="#accordionExample">
+                                    <a class="list-group-item" href="9/9.1.html" target="index">9.1</a>
+                                    <a class="list-group-item" href="9/9.2.html" target="index">9.2</a>
+                                    <a class="list-group-item" href="9/9.7.html" target="index">9.7</a>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse10">
+                                            第10章作业
+                                    </button>
+                                </div>
+                                <div id="collapse10" class="collapse" data-parent="#accordionExample">
+                                    <a class="list-group-item" href="10/10.1.html" target="index">10.1</a>
+                                    <a class="list-group-item" href="10/10.2.html" target="index">10.2</a>
+                                    <a class="list-group-item" href="10/10.3.html" target="index">10.3</a>
+                                </div>
+                            </div>
+                        </div>
+
                         <ul>
                             <li>
                                 第11章作业
