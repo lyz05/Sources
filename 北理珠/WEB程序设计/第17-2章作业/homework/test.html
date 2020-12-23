@@ -175,6 +175,9 @@
                     this.delObject(dataobjid, function() {
                         location.reload();
                     });
+                    if (dataobjid === null) {
+                        location.reload();
+                    }
                 },
                 score() {
                     return 1.0 * (this.$refs.child1.score() + this.$refs.child2.score() + this.$refs.child3.score()) / 3
