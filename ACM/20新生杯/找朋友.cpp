@@ -9,8 +9,6 @@ int T,n;
 
 int main()
 {
-	freopen("1.in","r",stdin);
-	freopen("0.out","w",stdout);
 	cin >> T;
 	while (T --) {
 		a.clear();
