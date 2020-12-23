@@ -21,9 +21,8 @@
     <!-- font-awesome -->
     <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
     <!--  Vue.js  -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <!-- Vue router -->
-    <script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
     <!-- BootStrap4 -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -37,15 +36,12 @@
 <body>
     <div id="app">
         <header>
-            <navbar :navindex="navindex" @navclick="navclick"></navbar>
+            <router-view name="navbar"></router-view>
         </header>
-
         <div class="container-fluid" role="main">
             <div class="row">
-                <sidebar :navindex="navindex"></sidebar>
-                <div id="main" class="col">
-                    <iframe id="main-iframe" name="index" width="100%" :height="iframeheight" :src="iframesrc" scrolling="yes" style="overflow-x:scroll; overflow-y:hidden; "></iframe>
-                </div>
+                <router-view name="sidebar"></router-view>
+                <router-view name="maincontent"></router-view>
             </div>
         </div>
         <footer class="footer">
@@ -65,7 +61,9 @@
                     <li>
                         {{name}}
                         <ul>
-                            <li v-for="item in items"><a :href="item.href" target="index">{{item.name}}</a></li>
+                            <li v-for="item in items">
+                                <a :href="item.href" target="index">{{item.name}}</a>
+                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -86,7 +84,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto col-auto">
                     <li class="nav-item" :class="{'active': navindex == index}" v-for="(item,index) in navlist">
-                        <a class="nav-link" href="#" @click="navclick(index)">{{item}}</a>
+                        <!-- <a class="nav-link" href="#" @click="navclick(index)">{{item}}</a> -->
+                        <router-link class="nav-link" :to="'/'+index">{{item}}</router-link>
                     </li>
                 </ul>
 
@@ -112,10 +111,15 @@
             </div>
         </nav>
     </script>
+    <script type="text/x-template" id="maincontent">
+        <div id="main" class="col">
+            <iframe id="main-iframe" name="index" width="100%" :height="iframeheight" :src="iframesrc" scrolling="yes" style="overflow-x:scroll; overflow-y:hidden; "></iframe>
+        </div>
+    </script>
     <script>
         const currentUser = AV.User.current();
 
-        Vue.component("navbar", {
+        const navbar = {
             template: '#navbar',
             props: ['navindex'],
             data() {
@@ -138,9 +142,9 @@
                     this.$emit('navclick', index);
                 }
             }
-        })
+        }
 
-        Vue.component("sidebar", {
+        const sidebar = {
             template: '#sidebar',
             props: ['navindex'],
             data() {
@@ -175,31 +179,24 @@
                     this.sidebarindex = index
                 }
             },
-        })
-
-        var vm1 = new Vue({
-            el: "#app",
-            data: {
-                navindex: null,
-                iframesrc: null,
-                clientHeight: null
+        }
+        const maincontent = {
+            template: '#maincontent',
+            data() {
+                return {
+                    iframesrc: null,
+                    clientHeight: null
+                }
             },
             computed: {
                 iframeheight() {
                     return this.clientHeight - 100;
                 }
             },
-            methods: {
-                navclick(index) {
-                    this.navindex = index;
-                }
-            },
             mounted() {
                 if (currentUser) {
                     this.iframesrc = "";
-                    this.navindex = 0;
                 } else {
-                    this.navindex = -1;
                     this.iframesrc = "homework/login.html";
                 }
                 // 在DOM渲染数据时，设置下区域高度为浏览器可视区域高度．
@@ -208,10 +205,34 @@
                 const _this = this;
                 window.onresize = function temp() {
                     _this.clientHeight = document.body.clientHeight;
-                };
-
+                }
             }
-        });
+        }
+
+
+        // 3. 创建 router 实例，然后传 `routes` 配置
+        // 你还可以传别的配置参数, 不过先这么简单着吧。
+        const router = new VueRouter({
+            routes: [{
+                path: '/:navindex',
+                components: {
+                    navbar: navbar,
+                    sidebar: sidebar,
+                    maincontent: maincontent
+                },
+                props: {
+                    navbar: true,
+                    sidebar: true,
+                    maincontent: false
+                }
+            }, {
+                path: '/',
+                redirect: '/-1'
+            }]
+        })
+        const vm1 = new Vue({
+            router
+        }).$mount('#app')
     </script>
     <!-- <script src="https://cdn.jsdelivr.net/gh/hustcc/canvas-nest.js@2.0.1/dist/canvas-nest.js" type="text/javascript"></script> -->
 </body>
