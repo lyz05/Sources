@@ -67,6 +67,18 @@
                         </ul>
                     </li>
                 </ul>
+                <!-- <div v-for="(items, name) in homework" class="accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse2">
+                                {{name}}
+                            </button>
+                        </div>
+                        <div id="collapse2" class="collapse" data-parent="#accordionExample">
+                            <a v-for="item in items" class="list-group-item" :href="item.href" target="index">{{item.name}}</a>
+                        </div>
+                    </div>
+                </div> -->
             </div>
             <div id="bighomework" v-if="navindex==1">
                 <div class="list-group">
@@ -229,6 +241,18 @@
                 path: '/',
                 redirect: '/-1'
             }]
+        })
+        router.beforeEach((to, from, next) => {
+            var navindex = to.params.navindex
+            if (!currentUser && navindex != -1) {
+                next("/-1")
+                return;
+            }
+            if (currentUser && navindex == -1) {
+                next("/0")
+                return;
+            }
+            next()
         })
         const vm1 = new Vue({
             router
