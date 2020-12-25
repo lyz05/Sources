@@ -29,7 +29,7 @@ void dfs(int x,int len,int dis)
 
 int main()
 {
-    freopen("0.in","r",stdin);
+    //freopen("0.in","r",stdin);
     int T;
     cin >> T;
     while (T --) {
