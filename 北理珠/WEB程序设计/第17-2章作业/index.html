@@ -12,8 +12,23 @@
             display: block;
         }
         
-        body {
+        .body {
             padding-top: 70px;
+            background: #eee;
+        }
+        
+        .footer {
+            color: #999;
+            font-size: .875em;
+            padding: 10px 0;
+        }
+        
+        .sidebar-inner {
+            background: #fff;
+            /* border-radius:initial; */
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .12), 0 3px 1px -2px rgba(0, 0, 0, .06), 0 1px 5px 0 rgba(0, 0, 0, .12), 0 -1px .5px 0 rgba(0, 0, 0, .09);
+            box-sizing: border-box;
+            /* padding: 18px 10px; */
         }
     </style>
     <!-- Axios -->
@@ -33,30 +48,38 @@
     <script type="text/javascript" src="homework/init.js"></script>
 </head>
 
-<body>
-    <div id="app">
+<body class="body">
+    <div id="app" class="container-fluid">
         <header>
             <router-view name="navbar"></router-view>
         </header>
-        <div class="container-fluid" role="main">
+
+        <div role="main">
             <div class="row">
                 <router-view name="sidebar"></router-view>
                 <router-view name="maincontent"></router-view>
             </div>
         </div>
+
         <footer class="footer">
-            <div class="container">
-                <div class="copyright text-center">
+            <div class="text-center">
+                <div id="copyright ">
                     © 2015 –2020
                     <i class="fa fa-heart"></i>
                     <span>lyz05</span>
+                </div>
+                <div id="powered-by">
+                    Powered by
+                    <a href="https://cn.vuejs.org/index.html" class="theme-link" rel="noopener" target="_blank">Vue.js</a> &amp;
+                    <a href="https://getbootstrap.com/" class="theme-link" rel="noopener" target="_blank">Bootstrap</a> &amp;
+                    <a href="https://www.leancloud.cn/" class="theme-link" rel="noopener" target="_blank">LeanCloud</a>
                 </div>
             </div>
         </footer>
     </div>
     <script type="text/x-template" id="sidebar">
         <div class="col-2" v-if="navindex!=-1">
-            <div id="homework" v-if="navindex==0">
+            <div id="homework" v-if="navindex==0" class="sidebar-inner">
                 <ul v-for="(items, name) in homework">
                     <li>
                         {{name}}
@@ -80,7 +103,7 @@
                     </div>
                 </div> -->
             </div>
-            <div id="bighomework" v-if="navindex==1">
+            <div id="bighomework" v-if="navindex==1" class="sidebar-inner">
                 <div class="list-group">
                     <a v-for="(item,index) in sidebar" class="list-group-item list-group-item-action" :class="{active: sidebarindex==index}" :href="item.href" target="index" @click="sidebarclick(index)">{{item.name}}</a>
                 </div>
@@ -125,7 +148,7 @@
     </script>
     <script type="text/x-template" id="maincontent">
         <div id="main" class="col">
-            <iframe id="main-iframe" name="index" width="100%" :height="iframeheight" :src="iframesrc" scrolling="yes" style="overflow-x:scroll; overflow-y:hidden; "></iframe>
+            <iframe id="main-iframe" class="sidebar-inner" name="index" width="100%" :height="iframeheight" :src="iframesrc" scrolling="yes" style="overflow-x:scroll; overflow-y:hidden; border:none;"></iframe>
         </div>
     </script>
     <script>
@@ -202,7 +225,7 @@
             },
             computed: {
                 iframeheight() {
-                    return this.clientHeight - 100;
+                    return this.clientHeight - 135;
                 }
             },
             mounted() {
