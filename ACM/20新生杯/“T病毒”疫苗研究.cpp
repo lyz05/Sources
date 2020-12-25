@@ -14,8 +14,8 @@ void dfs(int l,int r, char c)
 int main()
 {
     int n;
-    freopen("0.in","r",stdin);
-    freopen("0.out","w",stdout);
+    //freopen("0.in","r",stdin);
+    //freopen("0.out","w",stdout);
     while (~scanf("%d",&n)) {
         dfs(1,n,'R');
         puts("");
