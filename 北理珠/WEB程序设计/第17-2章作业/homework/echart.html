@@ -78,6 +78,8 @@
             mounted() {
                 //初始化echarts实例
                 var myChart = echarts.init(document.getElementById('myEcharts'));
+                //显示Loading
+                myChart.showLoading();
                 // 指定图表的配置项和数据
                 option = {
                     title: {
@@ -197,6 +199,7 @@
                             //console.log(newArr)
                             //console.log(JSON.stringify(newArr));
                             //使用指定的配置项和数据显示图表
+                            myChart.hideLoading();
                             myChart.setOption({
                                 title: {
                                     subtext: "上次更新时间：" + res.lastUpdateTime

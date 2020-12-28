@@ -89,7 +89,6 @@
             </div>
             <div class="form-group">
                 <input type="submit" value="注册账户" class="btn btn-success btn-block" />
-                <input type="button" value="返回" class="btn btn-default btn-block" @click="jump" />
             </div>
         </form>
     </div>
@@ -247,11 +246,6 @@
                     alertjs(`注册失败！原因：${error.rawMessage}`, 403);
                 });
                 return false;
-            },
-            jump() {
-                this.$router.push({
-                    name: 'login'
-                })
             }
         }
     }
