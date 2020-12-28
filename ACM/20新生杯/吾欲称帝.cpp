@@ -44,8 +44,8 @@ void bfs(Node now)
 
 int main()
 {
-    freopen("0.in","r",stdin);
-    freopen("0.out","w",stdout);
+    //freopen("0.in","r",stdin);
+    //freopen("0.out","w",stdout);
 
     while (cin >> n)
     {
@@ -75,7 +75,7 @@ int main()
         }
         for (int i=0;i<Alen;i ++) {
             int ans = dis[A[i].x][A[i].y];
-            //ans = (ans>=MAX)?-1:ans;
+            ans = (ans>=MAX)?-1:ans;
             cout << ans << " ";
         }
     }
