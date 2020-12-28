@@ -32,7 +32,7 @@
                 <h1>
                     Web程序设计
                 </h1>
-                <div class="alert alert-danger fade in" style="display: none;" role="alert" id="alert">
+                <div class="alert fade in" style="display: none;" role="alert" id="alert">
                     alert message
                 </div>
             </div>
@@ -57,6 +57,15 @@
                     <span class="glyphicon glyphicon-lock"></span>
                 </span>
                 <input v-model="password" name="password" type="password" class="form-control" placeholder="密码">
+            </div>
+            <div v-if="captchaenable" class="form-group input-group">
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-qrcode"></span>
+                </span>
+                <input v-model="captchacode" name="captcha" type="text" class="form-control" placeholder="验证码">
+                <span class="input-group-btn">
+                    <img :src="captchaimgurl" id="kaptchaImage" @click="getcaptcha" alt="点击刷新验证码" style="cursor:pointer">
+                </span>
             </div>
             <div class="form-group">
                 <input type="submit" value="登录" class="btn btn-success btn-block" />
@@ -158,7 +167,11 @@
                 errors: [],
                 username: null,
                 password: null,
-                title: '登录'
+                captchacode: null,
+                title: '登录',
+                captchaenable: false,
+                captchaimgurl: null,
+                captcha: {}
             }
         },
         computed: {
@@ -174,21 +187,47 @@
             }
         },
         methods: {
-            login: function() {
+            login() {
                 if (!this.isvalid) {
                     alertjs(`登录失败！原因：${this.errors}`, 403);
                     return false;
                 }
-                AV.User.logIn(this.username, this.password).then((user) => {
-                    // 登录成功，刷新父页面
-                    alertjs(`登录成功!`, 200);
-                    parent.window.location.reload();
-                }, (error) => {
-                    alertjs(`登录失败！原因：${error.rawMessage}`, 403);
-
-                });
+                if (this.captchaenable) {
+                    this.captcha.verify(this.captchacode)
+                        .then((validateToken) => {
+                            console.log(validateToken)
+                            AV.User.logIn(this.username, this.password).then((user) => {
+                                // 登录成功，刷新父页面
+                                alertjs(`登录成功!`, 200);
+                                parent.window.location.reload();
+                            }, (error) => {
+                                alertjs(`登录失败！原因：${error.rawMessage}`, 403);
+                            });
+                        }, (error) => {
+                            alertjs(`登录失败！原因：${error.rawMessage}`, 403);
+                        });
+                } else {
+                    AV.User.logIn(this.username, this.password).then((user) => {
+                        // 登录成功，刷新父页面
+                        alertjs(`登录成功!`, 200);
+                        parent.window.location.reload();
+                    }, (error) => {
+                        alertjs(`登录失败！原因：${error.rawMessage}`, 403);
+                    });
+                }
                 return false;
+            },
+            getcaptcha() {
+                var _this = this
+                AV.Captcha.request().then(function(captcha) {
+                    _this.captchaimgurl = captcha.url
+                    _this.captcha = captcha
+                });
             }
+        },
+        mounted() {
+            if (this.captchaenable)
+                this.getcaptcha()
         }
     }
     const Register = {
