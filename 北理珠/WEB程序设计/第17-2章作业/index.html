@@ -46,6 +46,8 @@
     <!-- LeanCloud -->
     <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.7.0/dist/av-live-query-min.js"></script>
     <script type="text/javascript" src="homework/init.js"></script>
+    <!-- Animate -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 
 <body class="body">
@@ -79,18 +81,19 @@
     </div>
     <script type="text/x-template" id="sidebar">
         <div class="col-2" v-if="navindex!=-1">
-            <div id="homework" v-if="navindex==0" class="sidebar-inner">
-                <ul v-for="(items, name) in homework">
-                    <li>
-                        {{name}}
-                        <ul>
-                            <li v-for="item in items">
-                                <a :href="item.href" target="index">{{item.name}}</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-                <!-- <div v-for="(items, name) in homework" class="accordion" id="accordionExample">
+            <transition enter-active-class="animate__animated animate__fadeInLeft">
+                <div id="homework" v-if="navindex==0" class="sidebar-inner">
+                    <ul v-for="(items, name) in homework">
+                        <li>
+                            {{name}}
+                            <ul>
+                                <li v-for="item in items">
+                                    <a :href="item.href" target="index">{{item.name}}</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- <div v-for="(items, name) in homework" class="accordion" id="accordionExample">
                     <div class="card">
                         <div class="card-header" id="headingTwo">
                             <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse2">
@@ -102,17 +105,21 @@
                         </div>
                     </div>
                 </div> -->
-            </div>
-            <div id="bighomework" v-if="navindex==1" class="sidebar-inner">
-                <div class="list-group">
-                    <a v-for="(item,index) in sidebar" class="list-group-item list-group-item-action" :class="{active: sidebarindex==index}" :href="item.href" target="index" @click="sidebarclick(index)">{{item.name}}</a>
                 </div>
-            </div>
+            </transition>
+            <transition enter-active-class="animate__animated animate__fadeInLeft" leave-active-class="">
+                <div id="bighomework" v-if="navindex==1" class="sidebar-inner">
+                    <div class="list-group">
+                        <a v-for="(item,index) in sidebar" class="list-group-item list-group-item-action" :class="{active: sidebarindex==index}" :href="item.href" target="index" @click="sidebarclick(index)">{{item.name}}</a>
+                    </div>
+                </div>
+            </transition>
         </div>
     </script>
     <script type="text/x-template" id="navbar">
         <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
-            <a class="navbar-brand" href="./" @click="navclick(-1)">Web程序设计</a>
+            <!-- <a class="navbar-brand" href="./" @click="navclick(-1)">Web程序设计</a> -->
+            <router-link class="navbar-brand" to="/">Web程序设计</router-link>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -140,14 +147,14 @@
                         </div>
                     </li>
                     <li class="nav-item" v-if="username==null">
-                        <a class="nav-link" href="homework/login.html#/register" target="index">注册</a>
+                        <a class="nav-link" target="index" href="javascript:void(0);" @click="menuclick">{{menuname}}</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </script>
     <script type="text/x-template" id="maincontent">
-        <div id="main" class="col">
+        <div id="main" class="col animate__animated animate__fadeInDown">
             <iframe id="main-iframe" class="sidebar-inner" name="index" width="100%" :height="iframeheight" :src="iframesrc" scrolling="yes" style="overflow-x:scroll; overflow-y:hidden; border:none;"></iframe>
         </div>
     </script>
@@ -160,21 +167,24 @@
             data() {
                 return {
                     navlist: null,
-                    username: null
+                    username: null,
+                    menuname: null
                 }
             },
             mounted() {
                 if (currentUser) {
-                    this.navlist = ['作业展示', '大作业展示'];
-                    this.username = currentUser.getUsername();
+                    this.navlist = ['作业展示', '大作业展示']
+                    this.username = currentUser.getUsername()
                 } else {
-                    this.navlist = [];
-                    this.username = null;
+                    this.navlist = []
+                    this.username = null
+                    this.menuclick()
                 }
             },
             methods: {
-                navclick(index) {
-                    this.$emit('navclick', index);
+                menuclick() {
+                    index.location.href = this.menuname == '注册' ? 'homework/login.html#/register' : 'homework/login.html#/login';
+                    this.menuname = (this.menuname == null || this.menuname == '登录') ? '注册' : '登录'
                 }
             }
         }
@@ -230,7 +240,7 @@
             },
             mounted() {
                 if (currentUser) {
-                    this.iframesrc = "";
+                    this.iframesrc = "./carousel.html";
                 } else {
                     this.iframesrc = "homework/login.html";
                 }
@@ -246,7 +256,6 @@
 
 
         // 3. 创建 router 实例，然后传 `routes` 配置
-        // 你还可以传别的配置参数, 不过先这么简单着吧。
         const router = new VueRouter({
             routes: [{
                 path: '/:navindex',
@@ -264,9 +273,11 @@
                 path: '/',
                 redirect: '/-1'
             }]
-        })
+        });
+        //路由守卫
         router.beforeEach((to, from, next) => {
-            var navindex = to.params.navindex
+            var navindex = to.params.navindex;
+            //未登录跳转到登录页面
             if (!currentUser && navindex != -1) {
                 next("/-1")
                 return;
