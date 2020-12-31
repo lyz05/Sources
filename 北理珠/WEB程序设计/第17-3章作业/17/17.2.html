@@ -21,20 +21,24 @@
                 db = event.target.result;
                 var transaction = db.transaction("user", "readwrite");
                 objectStore = transaction.objectStore("user");
+
+                getObject(); //查询数据库
             }
             request.onupgradeneeded = function(event) {
                 alert("版本已经发生改变！");
                 db = event.target.result; //获取结果集
                 objectStore = db.createObjectStore("user", {
-                    keyPath: "userNo"
+                    keyPath: "username"
                 });
-                indexNo = objectStore.createIndex("by_userNo", "userNo", {
+                indexNo = objectStore.createIndex("by_username", "username", {
                     unique: true
                 });
             }
         }
-        createDB('phoneinfo'); //打开数据库
+
+
         function deleteDB(dbName) { //删除数据库
+            db.close();
             request = indexedDB.deleteDatabase(dbName);
             request.onerror = function() {
                 alert("删除数据库失败！");
@@ -44,6 +48,9 @@
                 var ta = document.getElementById("display");
                 ta.innerHTML = '';
                 window.location.reload();
+            }
+            request.onblocked = function() {
+                alert("无法删除数据库，因为操作被禁止")
             }
         }
 
@@ -72,8 +79,8 @@
         function getOneObject(e) {
             //取一个读对象数据
             var ta = document.getElementById("display");
-            ta.innerHTML += "姓名" + "--------------------" + "电话" + "\n";
-            ta.innerHTML += e.username + "-----" + e.userphone + "\n";
+            ta.innerHTML += "姓名" + "\t-----\t" + "电话" + "\n";
+            ta.innerHTML += e.username + "\t-----\t" + e.userphone + "\n";
         }
 
         function addObject() {
@@ -81,7 +88,7 @@
             var phone = document.getElementById("userphone").value;
             if (name.length > 0 && phone.length > 0) {
                 var detail = {
-                    userNo: name,
+                    username: name,
                     userphone: phone
                 }
                 if (!db) {
@@ -92,7 +99,7 @@
                 objectStore = transaction.objectStore("user");
                 objectStore.add(detail);
                 alert("数据库添加成功！");
-                myFrm.Reset();
+                myFrm.reset();
             } else {
                 alert("输入数据不合法！请重新输入");
                 myFrm.username.focus();
@@ -131,6 +138,9 @@
         </form>
         <h3 style="width: 380px;background-color: aqua;">前端工作室设计<br>版权所有，2017-2020</h3>
     </div>
+    <script>
+        createDB('phoneinfo'); //打开数据库
+    </script>
 </body>
 
 </html>
