@@ -23,7 +23,7 @@
     <!--  Vue.js  -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!-- BootStrap4 -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Jquery -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
     <!-- 引入 echarts.js -->
@@ -43,13 +43,14 @@
                 <div class="col mb-4" v-for="(val, key, index) in china.Total">
                     <div class="card text-center" style="width: 18rem;">
                         <div class="card-body">
-                            <h5 class="card-subtitle mb-2 text-muted">较上日
+                            {{dict[key]}}
+                            <!-- <h5 class="card-subtitle mb-2 text-muted">较上日
                                 <span :class="dict[key][1]">
                                     {{china.Add[key]>0?'+'+china.Add[key]:china.Add[key]}}
                                 </span>
                             </h5>
                             <h1 class="card-text" :class="dict[key][1]">{{val}}</h1>
-                            <h4 class="card-title">{{dict[key][0]}}</h4>
+                            <h4 class="card-title">{{dict[key][0]}}</h4> -->
                         </div>
                     </div>
                 </div>
@@ -63,19 +64,40 @@
             el: "#app1",
             data: {
                 china: {
-                    Total: {},
+                    Total: {
+
+                    },
                     Add: {}
                 },
                 dict: {
-                    confirm: ['累计确诊', 'text-danger'],
-                    heal: ['累计治愈', 'text-success'],
-                    dead: ['累计死亡', 'text-dark'],
-                    nowConfirm: ['现有确诊', 'text-danger'],
-                    importedCase: ['境外输入', 'text-warning'],
-                    noInfect: ['无症状感染者', 'text-info']
+                    confirm: {
+                        name: '累计确诊',
+                        class: 'text-danger'
+                    },
+                    heal: {
+                        name: '累计治愈',
+                        class: 'text-success'
+                    },
+                    dead: {
+                        name: '累计死亡',
+                        class: 'text-dark'
+                    },
+                    nowConfirm: {
+                        name: '现有确诊',
+                        class: 'text-danger'
+                    },
+                    importedCase: {
+                        name: '境外输入',
+                        class: 'text-warning'
+                    },
+                    noInfect: {
+                        name: '无症状感染者',
+                        class: 'text-info'
+                    }
                 }
             },
             mounted() {
+                console.log(this.dict['confirm'][1]);
                 //初始化echarts实例
                 var myChart = echarts.init(document.getElementById('myEcharts'));
                 //显示Loading
