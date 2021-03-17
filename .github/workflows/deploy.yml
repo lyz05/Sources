@@ -1,0 +1,41 @@
+name: BTC Market Report
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Setup timezone
+        uses: zcong1993/setup-timezone@master
+        with:
+          timezone: Asia/Shanghai
+          
+      - name: Checkout source
+        uses: actions/checkout@v2
+          
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.7'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pandas
+          pip install requests
+
+      - name: Run BTC Program
+        run: |
+          python 北理珠/python/BTC/BTC.py
+
+      - name: Sending message
+        uses: yakumioto/serverchan-action@v1
+        with:
+          key: ${{ secrets.sckey }}
+          text: python测试
+          desp: python测试
