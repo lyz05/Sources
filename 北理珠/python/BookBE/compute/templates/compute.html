@@ -1,0 +1,169 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>在线计算器</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-1 col-sm-4"> </div>
+            <div id="computer" class="col-xs-10 col-sm-6">
+                <input type="text" id="txt_code" name="txt_code" value="" class="form-control input_show"
+                    placeholder="公式计算" disabled />
+                <input type="text" id="txt_result" name="txt_result" value="" class="form-control input_show"
+                    placeholder="结果" disabled />
+                <br />
+                <div>
+                    <button type="button" class="btn btn-default btn_num" onclick="fun_7()">
+                        7</button>
+                    <button type="button" class="btn btn-default btn_num" onclick="fun_8()">
+                        8</button>
+                    <button type="button" class="btn btn-default btn_num" onclick="fun_9()">
+                        9</button>
+                    <button type="button" class="btn btn-default btn_num" onclick="fun_div()">
+                        ÷</button>
+                    <br />
+                    <button type="button" class="btn btn-default btn_num" onclick="fun_4()">
+                        4</button>
+                    <button type="button" class="btn btn-default btn_num" onclick="fun_5()">
+                        5</button>
+                    <button type="button" class="btn btn-default btn_num" onclick="fun_6()">
+                        6</button>
+                    <button type="button" class="btn btn-default btn_num" onclick="fun_mul()">
+                        x</button>
+                    <br />
+                    <button type="button" class="btn btn-default btn_num" onclick="fun_1()">
+                        1</button>
+                    <button type="button" class="btn btn-default btn_num" onclick="fun_2()">
+                        2</button>
+                    <button type="button" class="btn btn-default btn_num" onclick="fun_3()">
+                        3</button>
+                    <button type="button" class="btn btn-default btn_num" onclick="fun_sub()">
+                        -</button>
+                    <br />
+                    <button type="button" class="btn btn-default btn_num" onclick="fun_0()">
+                        0</button>
+                    <button type="button" class="btn btn-default btn_num" onclick="fun_00()">
+                        00</button>
+                    <button type="button" class="btn btn-default btn_num" onclick="fun_dot()">
+                        .</button>
+                    <button type="button" class="btn btn-default btn_num" onclick="fun_add()">
+                        +</button>
+                </div>
+                <div>
+                    <br />
+                    <button type="button" class="btn btn-success btn-lg btn_clear" id="lgbut_clear"
+                        onclick="fun_clear()">清空</button>
+                    <button type="button" class="btn btn-primary btn-lg" id="lgbut_compute">
+                        计算</button>
+                </div>
+            </div>
+            <div class="col-xs-1 col-sm-2"> </div>
+        </div>
+    </div>
+    <div class="extendContent"> </div>
+
+    <script>
+        var x = document.getElementById("txt_code");
+        var y = document.getElementById("txt_result");
+
+        function fun_7() {
+            x.value += '7';
+        }
+
+        function fun_8() {
+            x.value += '8';
+        }
+
+        function fun_9() {
+            x.value += '9';
+        }
+
+        function fun_div() {
+            x.value += '/';
+        }
+
+        function fun_4() {
+            x.value += '4';
+        }
+
+        function fun_5() {
+            x.value += '5';
+        }
+
+        function fun_6() {
+            x.value += '6';
+        }
+
+        function fun_mul() {
+            x.value += '*';
+        }
+
+        function fun_1() {
+            x.value += '1';
+        }
+
+        function fun_2() {
+            x.value += '2';
+        }
+
+        function fun_3() {
+            x.value += '3';
+        }
+
+        function fun_sub() {
+            x.value += '-';
+        }
+
+        function fun_0() {
+            x.value += '0';
+        }
+
+        function fun_00() {
+            x.value += '00';
+        }
+
+        function fun_dot() {
+            x.value += '.';
+        }
+
+        function fun_add() {
+            x.value += '+';
+        }
+
+        function fun_clear() {
+            x.value = '';
+            y.value = '';
+        }
+    </script>
+    <script>
+        function ShowResult(data) {
+            var y = document.getElementById('txt_result');
+            y.value = data['result'];
+        }
+    </script>
+    <script>
+        $('#lgbut_compute').click(function () {
+            $.ajax({
+                url: '/compute/', // 调用django服务器计算公式
+                type: 'POST',     // 请求类型
+                data: {
+                    'code': $('#txt_code').val() // 获取文本框中的公式
+                },
+                dataType: 'json',   // 期望获得的响应类型为json
+                success: ShowResult // 在请求成功之后调用该回调函数输出结果
+            })
+        })
+    </script>
+</body>
+
+</html>

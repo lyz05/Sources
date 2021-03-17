@@ -1,0 +1,36 @@
+/* 设置整体的背景样式 */
+body {
+    background-image: url("../img/bg.jpg");
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -ms-background-size: cover;
+}
+
+/* 显示文本框样式进行设置 */
+.input_show {
+    margin-top: 35px;
+    max-width: 280px;
+    height: 35px;
+}
+
+/* 数字按钮样式进行设置 */
+.btn_num {
+    margin: 1px 1px 1px 1px;
+    width: 60px;
+}
+
+/* 清空按钮样式进行设置 */
+.btn_clear {
+    margin-left: 40px;
+    margin-right: 20px;
+}
+
+/* 用于将背景拉伸，否则在手机上浏览时背景会显示不全 */
+.extendContent {
+    height: 300px;
+}
