@@ -30,8 +30,10 @@ jobs:
           pip install requests
 
       - name: Run BTC Program
+        env:
+          SCKEY: ${{ secrets.SCKEY }}
         run: |
-          python 北理珠/python/BTC/BTC.py
+          python 北理珠/python/BTC/BTC.py > ./msg.txt
 
       - name: Sending message
         uses: yakumioto/serverchan-action@v1
