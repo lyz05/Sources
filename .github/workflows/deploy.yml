@@ -2,8 +2,8 @@ name: BTC Market Report
 
 on:
   push:
-    branches:
-      - master
+  schedule:
+    - cron: '*/5 * * * *'
 
 jobs:
   build:
@@ -33,11 +33,4 @@ jobs:
         env:
           SCKEY: ${{ secrets.SCKEY }}
         run: |
-          python 北理珠/python/BTC/BTC.py > ./msg.txt
-
-      - name: Sending message
-        uses: yakumioto/serverchan-action@v1
-        with:
-          key: ${{ secrets.sckey }}
-          text: python测试
-          desp: python测试
+          python 北理珠/python/BTC/BTC.py

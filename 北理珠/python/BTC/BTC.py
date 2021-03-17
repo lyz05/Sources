@@ -39,7 +39,7 @@ if __name__ == '__main__':
     msg += "涨跌可能性：{:.2%}.\n".format(possible)
     if (possible - 0.5) * (con) < 0:
         msg += "建议{}\n".format("买入" if (possible - 0.5)>con else "卖出")
-    serverchan("BTC消息", msg)
+    #serverchan("BTC消息", msg)
     flag = ((possible - 0.5) * (con) < 0) or abs(con) == 1 # 当前涨跌与预测不一致 或 位于拐点
     if flag:
         serverchan("BTC消息",msg)
