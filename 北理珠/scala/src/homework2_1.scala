@@ -1,3 +1,5 @@
+import scala.io.StdIn._
+
 object homework2_1 {
   def main(args: Array[String]): Unit = {
     println("Input q:")
@@ -8,6 +10,6 @@ object homework2_1 {
       sum += (n+1)*1.0/n
       n += 1
     }
-    println("Sn=",sum)
+    println("Sn="+sum.formatted("%.6f"))
   }
 }
