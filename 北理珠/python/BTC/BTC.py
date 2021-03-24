@@ -32,7 +32,7 @@ if __name__ == '__main__':
     # serverchan("BTC消息", df.head())
     con = df[df['diff'] < 0].index[0] - df[df['diff'] > 0].index[0]
     msg = "BTC当前价格{:,}，今日涨跌额：{:+.2f}，连续涨{}日.\n".format(df.at[0, 'close'], df.at[0, 'diff'], con)
-    msg += "当前处于拐点，位于最{}点.".format("低" if con > 0 else "高") if abs(con) == 1 else ""
+    msg += "当前处于极值点，位于极{}点.".format("低" if con > 0 else "高") if abs(con) == 1 else ""
 
     df = getMarketInfo({'period': "15min", 'size': 4 * 24, 'symbol': "btcusdt"})
     possible = df[df['diff'] > 0]['amount'].sum() / df['amount'].sum()

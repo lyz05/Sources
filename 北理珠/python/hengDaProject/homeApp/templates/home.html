@@ -1,76 +1,11 @@
+{% extends "base.html" %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="zh-cn">
+{% block title %}
+    首页
+{% endblock %}
+{% block content %}
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>恒达科技(教学示例网站)</title>
-    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
-    <link href="{% static 'css/style.css' %}" rel="stylesheet">
-    <script src="{% static 'js/jquery.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-</head>
-<body>
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example" aria-expanded="false">
-                    <span>导航栏</span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example">
-                <ul class="nav navbar-nav" style="width:100%;">
-                    <li class="active nav-top">
-                        <a href="{% url 'home' %}">首页</a>
-                    </li>
+{% endblock %}
+{% block script %}
 
-                    <li class="dropdown nav-top">   <!-- 下拉菜单 top -->
-                        <a href="#" class="dropdown-toggle on" data-toggle="dropdown">公司简介</a>
-                        <ul class="dropdown-menu">   <!-- 下拉菜单-->
-                            <li><a href="{% url 'aboutApp:survey' %}">企业概况</a></li>
-                            <li><a href="{% url 'aboutApp:honor' %}">荣誉资质</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="dropdown nav-top">
-                        <a href="#" class="dropdown-toggle on" data-toggle="dropdown">新闻动态</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{% url 'newsApp:company' %}">公司要闻</a></li>
-                            <li><a href="{% url 'newsApp:industry' %}">行业新闻</a></li>
-                            <li><a href="{% url 'newsApp:notice' %}">通知公告</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown nav-top">
-                        <a href="#" class="dropdown-toggle on" data-toggle="dropdown">产品中心</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{% url 'productsApp:robot' %}">家用机器人</a></li>
-                            <li><a href="{% url 'productsApp:monitoring' %}">智能监控</a></li>
-                            <li><a href="{% url 'productsApp:face' %}">人脸识别解决方案</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown nav-top">
-                        <a href="#" class="dropdown-toggle on" data-toggle="dropdown">服务支持</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{% url 'serviceApp:download' %}">资料下载</a></li>
-                            <li><a href="{% url 'serviceApp:platform' %}">人脸识别开放平台</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-top">
-                        <a href="{% url 'scienceApp:science' %}">科研基地</a>
-                    </li>
-                    <li class="dropdown nav-top">
-                        <a href="#" class="dropdown-toggle on" data-toggle="dropdown">人才招聘</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{% url 'contactApp:contact' %}">欢迎咨询</a></li>
-                            <li><a href="{% url 'contactApp:recruit' %}">加入恒达</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</body>
-</html>
+{% endblock %}
