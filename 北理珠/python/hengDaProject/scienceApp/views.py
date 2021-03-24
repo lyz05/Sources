@@ -1,6 +1,5 @@
-from django.shortcuts import HttpResponse
+from django.shortcuts import render
 
 
 def science(request):
-    html='<html><body>科研基地</body></html>'
-    return HttpResponse(html)
+    return render(request, 'science.html', {'active_menu': 'science'})

@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>恒达科技 | {% block title %}{% endblock %}</title>
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+<!-- 头部 -->
+<div class="container top">
+    <div class="row">
+        <div class="col-md-6">
+            <a>
+                <img class="img-responsive" src="{% static 'img/logo.jpg' %}" alt="logo">
+            </a>
+        </div>
+        <div class="col-md-3 hidden-xs">
+            <a class="phone ant">
+                <span class="glyphicon glyphicon-phone"></span>电话：400 0000 0000 &nbsp; &nbsp;
+            </a>
+        </div>
+        <div class="col-md-3 hidden-xs">
+            <a class="mail ant">
+                <span class="glyphicon glyphicon-envelope"></span>书籍讨论群：820106877
+            </a>
+        </div>
+    </div>
+</div>
+<!-- 导航栏 -->
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example" aria-expanded="false">
+                <span>导航栏</span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example">
+            <ul class="nav navbar-nav" style="width:100%;">
+                <li class="nav-top">
+                    <a href="{% url 'home' %}">首页</a>
+                </li>
+
+                <li class="dropdown nav-top" id='about'>   <!-- 下拉菜单 top -->
+                    <a href="#" class="dropdown-toggle on" data-toggle="dropdown">公司简介</a>
+                    <ul class="dropdown-menu">   <!-- 下拉菜单-->
+                        <li><a href="{% url 'aboutApp:survey' %}">企业概况</a></li>
+                        <li><a href="{% url 'aboutApp:honor' %}">荣誉资质</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown nav-top" id='news'>
+                    <a href="#" class="dropdown-toggle on" data-toggle="dropdown">新闻动态</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'newsApp:company' %}">公司要闻</a></li>
+                        <li><a href="{% url 'newsApp:industry' %}">行业新闻</a></li>
+                        <li><a href="{% url 'newsApp:notice' %}">通知公告</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown nav-top" id='products'>
+                    <a href="#" class="dropdown-toggle on" data-toggle="dropdown">产品中心</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'productsApp:robot' %}">家用机器人</a></li>
+                        <li><a href="{% url 'productsApp:monitoring' %}">智能监控</a></li>
+                        <li><a href="{% url 'productsApp:face' %}">人脸识别解决方案</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown nav-top">
+                    <a href="#" class="dropdown-toggle on" data-toggle="dropdown">服务支持</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'serviceApp:download' %}">资料下载</a></li>
+                        <li><a href="{% url 'serviceApp:platform' %}">人脸识别开放平台</a></li>
+                    </ul>
+                </li>
+                <li class="nav-top" id='science'>
+                    <a href="{% url 'scienceApp:science' %}">科研基地</a>
+                </li>
+                <li class="dropdown nav-top" id='employ'>
+                    <a href="#" class="dropdown-toggle on" data-toggle="dropdown">人才招聘</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'contactApp:contact' %}">欢迎咨询</a></li>
+                        <li><a href="{% url 'contactApp:recruit' %}">加入恒达</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- 分割线 -->
+<div class="line"></div>
+<!-- 主体 -->
+{% block content %}{% endblock %}
+<!-- 页脚 -->
+<div class="container web-footer">
+    <!-- 站点地图 -->
+    <div class="row" id="map-footer">
+        <div class="col-md-2">
+            <dl>
+                <dt>简介</dt>
+                <dd><a href="{% url 'aboutApp:survey' %}">概况</a></dd>
+                <dd><a href="{% url 'aboutApp:honor' %}">荣誉资质</a></dd>
+            </dl>
+        </div>
+        <div class="col-md-2">
+            <dl>
+                <dt>产品中心</dt>
+                <dd><a href="{% url 'productsApp:robot' %}">家用机器人</a></dd>
+                <dd><a href="{% url 'productsApp:monitoring' %}">智能监控</a></dd>
+                <dd><a href="{% url 'productsApp:face' %}">人脸识别解决方案</a></dd>
+            </dl>
+        </div>
+        <div class="col-md-2">
+            <dl>
+                <dt>服务支持</dt>
+                <dd><a href="{% url 'serviceApp:download' %}">资料下载</a></dd>
+                <dd><a href="{% url 'serviceApp:platform' %}">人脸识别开放平台</a></dd>
+            </dl>
+        </div>
+        <div class="col-md-2">
+            <dl>
+                <dt>人才招聘</dt>
+                <dd><a href="{% url 'contactApp:contact' %}">欢迎咨询</a></dd>
+                <dd><a href="{% url 'contactApp:recruit' %}">加入恒达</a></dd>
+            </dl>
+        </div>
+        <div class="col-md-4" id="wx">
+            <p>扫描二维码，关注我们</p>
+            <img class="qrimg" src="{% static 'img/qr.png' %}" alt="wx">
+            <p>客服热线：<b style="font-size:20px">400 000 0000</b></p>
+        </div>
+    </div>
+    <!-- 版权 -->
+    <div class="row" id="patent-footer">
+        <p> © 2019 Python Web企业门户网站开发示例 版权所有</p>
+    </div>
+
+</div>
+<script>
+    $(function () {
+        $(".dropdown").mouseover(function () {
+            $(this).addClass("open");
+        });
+        $(".dropdown").mouseleave(function () {
+            $(this).removeClass("open");
+        });
+    });
+</script>
+<script type="text/JavaScript">
+    $('#{{ active_menu }}').addClass("active");
+</script>
+{% block script %}{% endblock %}
+</body>
+</html>
