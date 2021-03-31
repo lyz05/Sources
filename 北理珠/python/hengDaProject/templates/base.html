@@ -95,7 +95,7 @@
 </nav>
 <!-- 分割线 -->
 <div class="line"></div>
-<!-- 主体 -->
+<!-- 主体内容 -->
 {% block content %}{% endblock %}
 <!-- 页脚 -->
 <div class="container web-footer">
@@ -142,7 +142,7 @@
     </div>
 
 </div>
-<script>
+<script type="text/JavaScript">
     $(function () {
         $(".dropdown").mouseover(function () {
             $(this).addClass("open");
@@ -154,6 +154,7 @@
 </script>
 <script type="text/JavaScript">
     $('#{{ active_menu }}').addClass("active");
+    $('#{{ sub_menu }}').addClass("active");
 </script>
 {% block script %}{% endblock %}
 </body>
