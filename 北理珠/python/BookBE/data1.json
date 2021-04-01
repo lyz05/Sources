@@ -1,0 +1,442 @@
+[
+  {
+    "model": "api.book",
+    "pk": "B200101001",
+    "fields": {
+      "bookname": "政治经济学",
+      "author": "宋涛",
+      "press": "中国人民大学出版社",
+      "price": "31.80",
+      "publishdate": "1991-01-01",
+      "shopnum": 5
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": "B200101002",
+    "fields": {
+      "bookname": "微观经济学",
+      "author": "张蕊",
+      "press": "高等教育出版社",
+      "price": "41.80",
+      "publishdate": "1991-01-02",
+      "shopnum": 2
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": "B200101003",
+    "fields": {
+      "bookname": "宏观经济学",
+      "author": "袁明圣",
+      "press": "中国财经经济出版社",
+      "price": "51.80",
+      "publishdate": "1991-01-03",
+      "shopnum": 2
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": "B200201001",
+    "fields": {
+      "bookname": "大学英语",
+      "author": "郑树棠",
+      "press": "外语教学与研究出版社",
+      "price": "35.20",
+      "publishdate": "1992-01-01",
+      "shopnum": 3
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": "B200201002",
+    "fields": {
+      "bookname": "商务英语",
+      "author": "马升烨",
+      "press": "上海外语学院出版社",
+      "price": "45.20",
+      "publishdate": "1992-01-02",
+      "shopnum": 5
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": "B200201003",
+    "fields": {
+      "bookname": "商务英语2",
+      "author": "江宇佳",
+      "press": "西安交通大学出版社",
+      "price": "55.20",
+      "publishdate": "1992-01-03",
+      "shopnum": 3
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": "B200301001",
+    "fields": {
+      "bookname": "数据库系统原理",
+      "author": "吴京慧",
+      "press": "清华大学出版社",
+      "price": "58.20",
+      "publishdate": "1993-01-01",
+      "shopnum": 3
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": "B200301002",
+    "fields": {
+      "bookname": "组网技术",
+      "author": "万征",
+      "press": "浙江大学出版社",
+      "price": "38.20",
+      "publishdate": "1993-01-02",
+      "shopnum": 1
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": "B200301003",
+    "fields": {
+      "bookname": "人工智能",
+      "author": "费翔林",
+      "press": "电子工业出版社",
+      "price": "43.20",
+      "publishdate": "1993-01-03",
+      "shopnum": 5
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": "B200301004",
+    "fields": {
+      "bookname": "算法设计与分析",
+      "author": "陈慧南",
+      "press": "科学出版社",
+      "price": "58.20",
+      "publishdate": "1993-01-04",
+      "shopnum": 10
+    }
+  },
+  {
+    "model": "api.reader",
+    "pk": "R2005001",
+    "fields": {
+      "readername": "张小娟",
+      "sex": "女",
+      "identitycard": "412723199001014321",
+      "workunit": "统一股份有限公司"
+    }
+  },
+  {
+    "model": "api.reader",
+    "pk": "R2005002",
+    "fields": {
+      "readername": "张露",
+      "sex": "女",
+      "identitycard": "412723199002014321",
+      "workunit": "兴隆股份有限公司"
+    }
+  },
+  {
+    "model": "api.reader",
+    "pk": "R2006001",
+    "fields": {
+      "readername": "刘凤",
+      "sex": "女",
+      "identitycard": "412723199003014321",
+      "workunit": "联合股份有限公司"
+    }
+  },
+  {
+    "model": "api.reader",
+    "pk": "R2006002",
+    "fields": {
+      "readername": "喻自强",
+      "sex": "男",
+      "identitycard": "412723199004014321",
+      "workunit": "万事达股份有限公司"
+    }
+  },
+  {
+    "model": "api.reader",
+    "pk": "R2007001",
+    "fields": {
+      "readername": "高代鹏",
+      "sex": "男",
+      "identitycard": "412723199005014321",
+      "workunit": "洪都股份有限公司"
+    }
+  },
+  {
+    "model": "api.reader",
+    "pk": "R2007002",
+    "fields": {
+      "readername": "张晓梅",
+      "sex": "女",
+      "identitycard": "412723199112014321",
+      "workunit": "世界技术开发公司"
+    }
+  },
+  {
+    "model": "api.reader",
+    "pk": "R2008001",
+    "fields": {
+      "readername": "陈辉",
+      "sex": "男",
+      "identitycard": "412723199111014321",
+      "workunit": "南昌市电脑研制公司"
+    }
+  },
+  {
+    "model": "api.reader",
+    "pk": "R2008002",
+    "fields": {
+      "readername": "张良",
+      "sex": "男",
+      "identitycard": "412723199110014321",
+      "workunit": "上海生物研究室"
+    }
+  },
+  {
+    "model": "api.reader",
+    "pk": "R2009001",
+    "fields": {
+      "readername": "李虹冰",
+      "sex": "女",
+      "identitycard": "412723199208014321",
+      "workunit": "富士康科技集团"
+    }
+  },
+  {
+    "model": "api.reader",
+    "pk": "R2009002",
+    "fields": {
+      "readername": "韩福平",
+      "sex": "男",
+      "identitycard": "412723199209014321",
+      "workunit": "合生元有限公司"
+    }
+  },
+  {
+    "model": "api.borrow",
+    "pk": 1,
+    "fields": {
+      "readerno": "R2005001",
+      "bookno": "B200101001",
+      "borrowdate": "2011-09-01",
+      "shoulddate": "2011-10-01",
+      "returndate": null
+    }
+  },
+  {
+    "model": "api.borrow",
+    "pk": 2,
+    "fields": {
+      "readerno": "R2006001",
+      "bookno": "B200101001",
+      "borrowdate": "2011-09-07",
+      "shoulddate": "2011-10-07",
+      "returndate": "2011-10-05"
+    }
+  },
+  {
+    "model": "api.borrow",
+    "pk": 3,
+    "fields": {
+      "readerno": "R2007001",
+      "bookno": "B200201001",
+      "borrowdate": "2011-09-13",
+      "shoulddate": "2011-10-13",
+      "returndate": "2011-10-10"
+    }
+  },
+  {
+    "model": "api.borrow",
+    "pk": 4,
+    "fields": {
+      "readerno": "R2008001",
+      "bookno": "B200301001",
+      "borrowdate": "2011-09-15",
+      "shoulddate": "2011-10-15",
+      "returndate": "2011-10-13"
+    }
+  },
+  {
+    "model": "api.borrow",
+    "pk": 5,
+    "fields": {
+      "readerno": "R2009001",
+      "bookno": "B200301001",
+      "borrowdate": "2011-09-18",
+      "shoulddate": "2011-10-18",
+      "returndate": null
+    }
+  },
+  {
+    "model": "api.borrow",
+    "pk": 6,
+    "fields": {
+      "readerno": "R2005001",
+      "bookno": "B200101002",
+      "borrowdate": "2011-09-02",
+      "shoulddate": "2011-10-02",
+      "returndate": null
+    }
+  },
+  {
+    "model": "api.borrow",
+    "pk": 7,
+    "fields": {
+      "readerno": "R2005001",
+      "bookno": "B200101003",
+      "borrowdate": "2011-09-03",
+      "shoulddate": "2011-10-03",
+      "returndate": null
+    }
+  },
+  {
+    "model": "api.borrow",
+    "pk": 8,
+    "fields": {
+      "readerno": "R2005002",
+      "bookno": "B200101001",
+      "borrowdate": "2011-09-04",
+      "shoulddate": "2011-10-04",
+      "returndate": "2011-10-03"
+    }
+  },
+  {
+    "model": "api.borrow",
+    "pk": 9,
+    "fields": {
+      "readerno": "R2005002",
+      "bookno": "B200101002",
+      "borrowdate": "2011-09-05",
+      "shoulddate": "2011-10-05",
+      "returndate": null
+    }
+  },
+  {
+    "model": "api.borrow",
+    "pk": 10,
+    "fields": {
+      "readerno": "R2005002",
+      "bookno": "B200101003",
+      "borrowdate": "2011-09-06",
+      "shoulddate": "2011-10-06",
+      "returndate": "2011-10-08"
+    }
+  },
+  {
+    "model": "api.borrow",
+    "pk": 11,
+    "fields": {
+      "readerno": "R2006001",
+      "bookno": "B200101002",
+      "borrowdate": "2011-09-08",
+      "shoulddate": "2011-10-08",
+      "returndate": "2011-10-06"
+    }
+  },
+  {
+    "model": "api.borrow",
+    "pk": 12,
+    "fields": {
+      "readerno": "R2006001",
+      "bookno": "B200101003",
+      "borrowdate": "2011-09-09",
+      "shoulddate": "2011-10-09",
+      "returndate": null
+    }
+  },
+  {
+    "model": "api.borrow",
+    "pk": 13,
+    "fields": {
+      "readerno": "R2009002",
+      "bookno": "B200201001",
+      "borrowdate": "2011-09-10",
+      "shoulddate": "2011-10-10",
+      "returndate": "2011-10-08"
+    }
+  },
+  {
+    "model": "api.borrow",
+    "pk": 14,
+    "fields": {
+      "readerno": "R2006002",
+      "bookno": "B200201002",
+      "borrowdate": "2011-09-11",
+      "shoulddate": "2011-10-11",
+      "returndate": "2011-10-08"
+    }
+  },
+  {
+    "model": "api.borrow",
+    "pk": 15,
+    "fields": {
+      "readerno": "R2006002",
+      "bookno": "B200201003",
+      "borrowdate": "2011-09-12",
+      "shoulddate": "2011-10-12",
+      "returndate": "2011-10-08"
+    }
+  },
+  {
+    "model": "api.borrow",
+    "pk": 16,
+    "fields": {
+      "readerno": "R2007001",
+      "bookno": "B200201002",
+      "borrowdate": "2011-09-14",
+      "shoulddate": "2011-10-14",
+      "returndate": null
+    }
+  },
+  {
+    "model": "api.borrow",
+    "pk": 17,
+    "fields": {
+      "readerno": "R2007001",
+      "bookno": "B200201003",
+      "borrowdate": "2011-09-15",
+      "shoulddate": "2011-10-15",
+      "returndate": "2011-10-10"
+    }
+  },
+  {
+    "model": "api.borrow",
+    "pk": 18,
+    "fields": {
+      "readerno": "R2009002",
+      "bookno": "B200201001",
+      "borrowdate": "2011-09-16",
+      "shoulddate": "2011-11-16",
+      "returndate": "2011-10-14"
+    }
+  },
+  {
+    "model": "api.borrow",
+    "pk": 19,
+    "fields": {
+      "readerno": "R2007002",
+      "bookno": "B200201002",
+      "borrowdate": "2011-09-17",
+      "shoulddate": "2011-10-17",
+      "returndate": "2011-10-14"
+    }
+  },
+  {
+    "model": "api.borrow",
+    "pk": 20,
+    "fields": {
+      "readerno": "R2007002",
+      "bookno": "B200201003",
+      "borrowdate": "2011-09-17",
+      "shoulddate": "2011-10-17",
+      "returndate": "2011-10-14"
+    }
+  }
+]

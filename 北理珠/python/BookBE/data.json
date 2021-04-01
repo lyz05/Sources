@@ -1,0 +1,24 @@
+[
+  {
+    "model": "api.borrow",
+    "pk": 1,
+    "fields": {
+      "readerno": "lyz",
+      "bookno": "123",
+      "borrowdate": "2021-04-01",
+      "shoulddate": "2021-05-02",
+      "returndate": "2021-04-01"
+    }
+  },
+  {
+    "model": "api.borrow",
+    "pk": 2,
+    "fields": {
+      "readerno": "lyz",
+      "bookno": "123",
+      "borrowdate": "2021-04-01",
+      "shoulddate": "2021-05-02",
+      "returndate": null
+    }
+  }
+]
