@@ -19,29 +19,6 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-
-class BorrowViewSet(CustomViewSet):
-    """
-    允许查看或编辑借阅记录的API路径。
-    """
-    queryset = Borrow.objects.all()
-    serializer_class = BorrowSerializer
-    filter_class = Filter.BorrowFilter
-
-    def update(self, request, *args, **kwargs):
-        request.data._mutable = True  # 允许修改数据
-        today = dt.date.today()
-        if (request.data['returndate'] == ""):
-            shoulddate = today + dt.timedelta(days=31)
-            request.data['shoulddate'] = shoulddate
-            print(request.data['shoulddate'])
-        else:
-            request.data['returndate'] = today
-        response = super().update(request, *args, **kwargs)
-        print('更新一条记录')
-        return response
-
-
 class BookViewSet(CustomViewSet):
     """
     允许查看或编辑Books的API路径。
@@ -95,13 +72,29 @@ class ViewBorrowViewSet(CustomViewSet):
     serializer_class = ViewBorrowSerializer
     filter_class = Filter.ViewBorrowFilter
 
-    def list(self, request, *args, **kwargs):
-        response = super().list(request, *args, **kwargs)
-        print('列出所有记录')
-        return response
-
 
 class ViewBookViewSet(CustomViewSet):
     queryset = ViewBook.objects.all()
     serializer_class = ViewBookSerializer
     filter_class = Filter.ViewBookFilter
+
+
+# class BorrowViewSet(CustomViewSet):
+#     """
+#     允许查看或编辑借阅记录的API路径。
+#     """
+#     queryset = Borrow.objects.all()
+#     serializer_class = BorrowSerializer
+#     filter_class = Filter.BorrowFilter
+#
+#     def update(self, request, *args, **kwargs):
+#         request.data._mutable = True  # 允许修改数据
+#         today = dt.date.today()
+#         if (request.data['returndate'] == ""):
+#             shoulddate = today + dt.timedelta(days=31)
+#             request.data['shoulddate'] = shoulddate
+#         else:
+#             request.data['returndate'] = today
+#         response = super().update(request, *args, **kwargs)
+#         print('更新一条记录')
+#         return response

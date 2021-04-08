@@ -8,4 +8,3 @@ book2 = Book.objects.create(bookno='book2', bookname='book2', author='lyz', pres
                             publishdate='2020-01-02', shopnum=10)
 borrow1 = Borrow(reader=lyz,book=book1,borrowdate='2020-01-02',shoulddate='2020-01-02')
 borrow1.save()
-print()

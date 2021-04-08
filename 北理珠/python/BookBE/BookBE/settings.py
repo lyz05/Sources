@@ -134,14 +134,18 @@ STATIC_URL = '/static/'
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
+    # 接口访问权限设置
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.AllowAny',
     ],
+    # 设置过滤驱动
     'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
-    # rest_framework默认使用系统自导认证服务
+    # rest_framework默认使用系统自带认证服务
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
-    )
+    ),
+    # 自定义异常处理
+    'EXCEPTION_HANDLER': 'utils.CustomExceptionHandler.exception_handler',
 }
 
 # 不自动添加斜杠，为了兼容已经开发完的前端
