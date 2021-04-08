@@ -6,7 +6,8 @@ from api.models import Borrow, Book, Reader
 from utils.BaseResponse import BaseResponse
 import datetime as dt
 
-
+# 普通读者的三个借阅书籍操作（借书，续借，还书）
+# 借书
 def addborrow(request):
     current_user = request.user
     today = dt.date.today()
@@ -16,7 +17,6 @@ def addborrow(request):
     dic['borrowdate'] = today
     dic['shoulddate'] = today + dt.timedelta(days = 31)
     #dic['returndate'] = ""
-    print(dic)
     borrow = Borrow.objects.filter(bookno=dic['bookno'], readerno=dic['readerno'], returndate=None)
     if borrow.exists():
         return BaseResponse.fail("这本书你已经借过了")
@@ -26,6 +26,7 @@ def addborrow(request):
     else:
         return BaseResponse.fail("借书失败")
 
+#还书
 def retborrow(request):
     current_user = request.user
     today = dt.date.today()
@@ -42,6 +43,7 @@ def retborrow(request):
     else:
         return BaseResponse.fail("还书失败")
 
+#续借
 def renewborrow(request):
     current_user = request.user
     today = dt.date.today()

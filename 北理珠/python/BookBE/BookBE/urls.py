@@ -21,6 +21,5 @@ urlpatterns = [
     path('api/', include('api.urls')),
     path('api/User/', include('user.urls')),
     path('api/Borrow/', include('borrow.urls')),
-    path('api/Table/', include('table.urls')),
     path('api-auth/', include('rest_framework.urls')),
 ]

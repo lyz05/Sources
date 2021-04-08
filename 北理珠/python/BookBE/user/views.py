@@ -19,7 +19,6 @@ UserModel = ['username', 'password', 'locale']
 def login(request):
     username = request.POST['username']
     password = request.POST['password']
-    print(username, password)
     user = authenticate(request, username=username, password=password)
     if user is not None:
         auth.login(request, user)
@@ -69,7 +68,6 @@ def psdalter(request):
 def userinfo(request):
     current_user = request.user
     username = current_user.username
-    print(username)
     if not request.user.is_authenticated:
         return JsonResponse({'username': None, 'readername': None, 'role': None})
     if current_user.is_superuser:
