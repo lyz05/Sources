@@ -23,7 +23,7 @@ def down_file(url,dst):
     with open(dst, "wb") as code:
             code.write(requests.get(url).content)
 
-down_file('https://h5.cyol.com/special/daxuexi/ay4pxe01cr/images/end.jpg','end.jpg')
+down_file('https://h5.cyol.com/special/daxuexi/a4nr0x6flx/images/end.jpg','end.jpg')
 img = image_combine(Image.open(r'base.jpg'),Image.open(r'end.jpg'))
 # img = image_add_text(img,"\"青年大学习\"第十一季第四期",250,95,text_color=(0, 0, 0), text_size=45)
 img.show()

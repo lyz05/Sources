@@ -2,15 +2,15 @@
 {% load static %}
 
 {% block title %}
-    {{ productName }}
+    {{ newName }}
 {% endblock %}
 
 {% block content %}
-    <link href="{% static 'css/products.css' %}" rel="stylesheet">
+    <link href="{% static 'css/news.css' %}" rel="stylesheet">
     <!-- 广告横幅 -->
     <div class="container-fluid">
         <div class="row">
-            <img class="img-responsive model-img" src="{% static 'img/products.jpg' %}" alt="产品中心">
+            <img class="img-responsive model-img" src="{% static 'img/new.jpg' %}" alt="新闻动态">
         </div>
     </div>
     <div class="container">
@@ -18,18 +18,18 @@
             <!-- 侧边导航栏 -->
             <div class="col-md-3">
                 <div class="model-title">
-                    产品中心
+                    新闻动态
                 </div>
                 <div class="model-list">
                     <ul class="list-group">
-                        <li class="list-group-item" id="robot">
-                            <a href="{% url 'productsApp:products' 'robot' %}">家用机器人</a>
+                        <li class="list-group-item" id="company">
+                            <a href="{% url 'newsApp:news' 'company' %}">企业要闻</a>
                         </li>
-                        <li class="list-group-item" id="monitor">
-                            <a href="{% url 'productsApp:products' 'monitor' %}">智能监控</a>
+                        <li class="list-group-item" id="industry">
+                            <a href="{% url 'newsApp:news' 'industry' %}">行业新闻</a>
                         </li>
-                        <li class="list-group-item" id="face">
-                            <a href="{% url 'productsApp:products' 'face' %}">人脸识别解决方案</a>
+                        <li class="list-group-item" id="notice">
+                            <a href="{% url 'newsApp:news' 'notice' %}">通知公告</a>
                         </li>
                     </ul>
                 </div>
@@ -37,39 +37,26 @@
             <!-- 说明文字和图片 -->
             <div class="col-md-9">
                 <div class="model-details-title">
-                    {{ productName }}
+                    {{ newName }}
                 </div>
                 <!-- 此处填入产品列表内容 -->
                 <div class="model-details">
-                    {% for product in productList %}
-                        <div class="row">
-                            <div class="col-md-6">
-                                {% for img in product.productImgs.all %}
-                                    {% if forloop.first %}
-                                        <a href="#" class="thumbnail row-4">
-                                            <img class="img-responsive" src="{{ img.photo.url }}">
-                                        </a>
-                                    {% endif %}
-                                {% endfor %}
-                            </div>
-                            <div class="col-md-6">
-                                <h3>{{ product.title | truncatechars:"20" }}</h3>
-                                <p>
-                                    {{ product.description | truncatechars:"150" | linebreaks }}
-                                </p>
-                                <div class="thumbnail row-5">
-                                    <div class="caption">
-                                        <a href="{% url 'productsApp:productDetail' product.id %}" class="btn btn-primary" role="button">
-                                            查看详情
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                    {% for mynew in newList %}
+                        <div class="news-model">
+                            <img src="{% static 'img/newsicon.gif' %}">
+                            <a href="{% url 'newsApp:newDetail' mynew.id %}"><b>{{ mynew.title }}</b></a>
+                            <span>【{{ mynew.publishDate | date:"Y-m-d" }}】</span>
+                            <p>
+                                <!-- 添加新闻简要说明 -->
+                                {{ mynew.mytxt | truncatechars:"110" }}
+                                ...
+                            </p>
                         </div>
                     {% endfor %}
+
                     {% if pageData %}
                         <div class="paging">
-                            <ul id="pages" class="pagination pagination-sm pagination-xs">
+                            <ul id="pages" class="pagination">
                                 {% if pageData.first %}
                                     <li><a href="?page=1">1</a></li>
                                 {% endif %}
