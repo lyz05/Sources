@@ -59,9 +59,9 @@
                 <li class="dropdown nav-top" id='news'>
                     <a href="#" class="dropdown-toggle on" data-toggle="dropdown">新闻动态</a>
                     <ul class="dropdown-menu">
-                        <li><a href="{% url 'newsApp:company' %}">公司要闻</a></li>
-                        <li><a href="{% url 'newsApp:industry' %}">行业新闻</a></li>
-                        <li><a href="{% url 'newsApp:notice' %}">通知公告</a></li>
+                        <li><a href="{% url 'newsApp:news' 'company' %}">公司要闻</a></li>
+                        <li><a href="{% url 'newsApp:news' 'industry' %}">行业新闻</a></li>
+                        <li><a href="{% url 'newsApp:news' 'notice' %}">通知公告</a></li>
                     </ul>
                 </li>
                 <li class="dropdown nav-top" id='products'>

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    新闻详情
+{% endblock %}
+
+{% block content %}
+    <link href="{% static 'css/news.css' %}" rel="stylesheet">
+    <!-- 主体内容 -->
+    <div class="container">
+        <div class="model-details-product-title">
+            {{ mynew.title }}
+            <div class="model-foot">
+                发布时间:{{ mynew.publishDate | date:"Y-m-d" }} &nbsp; &nbsp;
+                浏览次数：{{ mynew.views }}
+            </div>
+        </div>
+        <div class="model-details">
+            {{ mynew.description | safe }}
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}

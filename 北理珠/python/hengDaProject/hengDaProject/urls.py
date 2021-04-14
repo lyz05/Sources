@@ -30,6 +30,7 @@ urlpatterns = [
     path('productsApp/', include('productsApp.urls'), name='products'),
     path('serviceApp/', include('serviceApp.urls'), name='service'),
     path('scienceApp/', include('scienceApp.urls'), name='science'),
+    path('ueditor/',include('DjangoUeditor.urls')),
 ]
 
 if settings.DEBUG:
