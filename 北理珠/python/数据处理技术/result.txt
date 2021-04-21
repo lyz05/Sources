@@ -1,0 +1,567 @@
+1 清华大学 Tsinghua University 北京 852.5 0
+2 北京大学 Peking University 北京 746.7 0
+3 浙江大学 Zhejiang University 浙江 649.2 0
+4 上海交通大学 Shanghai Jiao Tong University 上海 625.9 0
+5 南京大学 Nanjing University 江苏 566.1 2
+6 复旦大学 Fudan University 上海 556.7 -1
+7 中国科学技术大学 University of Science and Technology of China 安徽 526.4 -1
+8 华中科技大学 Huazhong University of Science and Technology 湖北 497.7 -1
+9 武汉大学 Wuhan University 湖北 488 3
+10 中山大学 Sun Yat-Sen University 广东 457.2 -1
+11 西安交通大学 Xi'an Jiaotong University 陕西 452.5 3
+12 哈尔滨工业大学 Harbin Institute of Technology 黑龙江 450.2 -2
+13 北京航空航天大学 Beihang University 北京 445.1 -2
+14 北京师范大学 Beijing Normal University 北京 440.9 8
+15 同济大学 Tongji University 上海 439 -2
+16 四川大学 Sichuan University 四川 435.7 -1
+17 东南大学 Southeast University 江苏 432.7 0
+18 中国人民大学 Renmin University of China 北京 409.7 13
+19 南开大学 Nankai University 天津 402.1 -1
+20 北京理工大学 Beijing Institute of Technology 北京 395.6 -4
+21 天津大学 Tianjin University 天津 390.3 -2
+22 山东大学 Shandong University 山东 387.9 1
+23 厦门大学 Xiamen University 福建 383.3 0
+24 吉林大学 Jilin University 吉林 379.5 1
+25 华南理工大学 South China University of Technology 广东 379.4 -5
+26 中南大学 Central South University 湖南 378.6 -5
+27 大连理工大学 Dalian University of Technology 辽宁 365.1 -1
+28 西北工业大学 Northwestern Polytechnical University 陕西 359.6 2
+29 华东师范大学 East China Normal University 上海 358 3
+30 中国农业大学 China Agricultural University 北京 351.5 12
+31 湖南大学 Hunan University 湖南 348.3 -3
+32 电子科技大学 University of Electronic Science and Technology of China 四川 334.8 -5
+33 北京科技大学 University of Science and Technology Beijing 北京 321.8 6
+34 重庆大学 Chongqing University 重庆 320.9 3
+35 南京航空航天大学 Nanjing University of Aeronautics and Astronautics 江苏 319.5 -2
+36 南京理工大学 Nanjing University of Science and Technology 江苏 317.1 2
+37 东北大学 Northeastern University 辽宁 314 3
+38 苏州大学 Soochow University (China) 江苏 306.8 -9
+39 华中农业大学 Huazhong Agricultural University 湖北 300.5 28
+40 兰州大学 Lanzhou University 甘肃 300.4 12
+41 西安电子科技大学 Xidian University 陕西 299.4 7
+42 华东理工大学 East China University of Science and Technology 上海 294.6 -6
+43 北京交通大学 Beijing jiaotong University 北京 293.6 3
+44 华中师范大学 Central China Normal University 湖北 292.4 2
+45 上海大学 Shanghai University 上海 290 -4
+46 南方科技大学 Southern University of Science and Technology 广东 289 -11
+47 南京农业大学 Nanjing Agricultural University 江苏 283.2 22
+48 暨南大学 Jinan University 广东 282.6 3
+49 中国海洋大学 Ocean University of China 山东 281.2 18
+50 南京师范大学 Nanjing Normal University 江苏 279.9 9
+51 哈尔滨工程大学 Harbin Engineering University 黑龙江 279.4 5
+52 武汉理工大学 Wuhan University of Technology 湖北 277.6 -7
+53 西南交通大学 Southwest Jiaotong University 四川 277.3 13
+54 中国地质大学（武汉） China University of Geosciences (Wuhan) 湖北 274.9 9
+55 北京邮电大学 Beijing University of Posts and Telecommunications 北京 273.7 -13
+56 东北师范大学 Northeast Normal University 吉林 272.5 20
+57 中国石油大学（北京） China University of Petroleum - Beijing 北京 272.4 30
+58 河海大学 Hohai University 江苏 271.8 21
+59 江南大学 Jiangnan University 江苏 271.5 0
+60 中国矿业大学 China University of Mining and Technology - Xuzhou 江苏 264.9 11
+61 西北大学 Northwest University 陕西 262.4 28
+62 上海科技大学 ShanghaiTech University 上海 261.5 None
+63 北京工业大学 Beijing University of Technology 北京 260.5 -2
+64 北京化工大学 Beijing University of Chemical Technology 北京 259.7 -14
+65 深圳大学 Shenzhen University 广东 259.1 -7
+66 西南大学 Southwest University 重庆 257.5 7
+67 华南师范大学 South China Normal University 广东 254.4 18
+68 西北农林科技大学 Northwest A&F University 陕西 251.1 13
+69 扬州大学 Yangzhou University 江苏 250.5 29
+70 中国地质大学（北京） China University of Geosciences (Beijing) 北京 248.8 2
+71 中国矿业大学（北京） China University of Mining and Technology - Beijing 北京 247 44
+72 江苏大学 Jiangsu University 江苏 245.9 13
+73 东华大学 Donghua University 上海 245.2 -21
+74 中国石油大学（华东） China University of Petroleum (Huadong) 山东 244.8 8
+75 宁波大学 Ningbo University 浙江 244.3 26
+76 福州大学 Fuzhou University 福建 243.8 -14
+77 北京林业大学 Beijing Forestry University 北京 242.3 14
+78 合肥工业大学 Hefei University of Technology 安徽 240.5 5
+79 陕西师范大学 Shaanxi Normal University 陕西 239.9 5
+80 华北电力大学 North China Electric Power University 北京 235.7 -24
+81 浙江工业大学 Zhejiang University of Technology 浙江 235.5 8
+82 南京工业大学 Nanjing Tech University 江苏 235.4 5
+83 郑州大学 Zhengzhou University 河南 234.9 43
+84 云南大学 Yunnan University 云南 234.1 49
+85 湖南师范大学 Hunan Normal University 湖南 233.4 6
+85 首都师范大学 Capital Normal University 北京 233.4 9
+87 南昌大学 Nanchang University 江西 228.4 52
+88 华南农业大学 South China Agricultural University 广东 227.1 34
+89 上海理工大学 University of Shanghai for Science and Technology 上海 221.4 17
+90 安徽大学 Anhui University 安徽 219.2 9
+91 长安大学 Chang'an University 陕西 218.9 15
+92 燕山大学 Yanshan University 河北 216.7 12
+93 南京信息工程大学 Nanjing University of Information Science & Technology 江苏 216.6 -13
+94 湖北大学 Hubei University 湖北 214.5 11
+95 广东工业大学 Guangdong University of Technology 广东 214.2 16
+96 南京邮电大学 Nanjing University of Posts and Telecommunications 江苏 213.9 -20
+97 河南大学 Henan University 河南 212.9 46
+98 上海师范大学 Shanghai Normal University 上海 212.8 22
+99 杭州电子科技大学 Hangzhou Dianzi University 浙江 211.6 -2
+100 广州大学 Guangzhou University 广东 211.1 39
+101 广西大学 Guangxi University 广西 210.9 32
+102 福建师范大学 Fujian Normal University 福建 210.2 50
+103 湘潭大学 Xiangtan University 湖南 210.1 12
+104 浙江师范大学 Zhejiang Normal University 浙江 209.8 -13
+105 山东师范大学 Shandong Normal University 山东 207.4 26
+106 河北工业大学 Hebei University of Technology 天津 203.4 8
+107 河北大学 Hebei University 河北 201.7 38
+108 青岛大学 Qingdao University 山东 201.4 11
+109 大连海事大学 Dalian Maritime University 辽宁 200.9 -1
+109 杭州师范大学 Hangzhou Normal University 浙江 200.9 19
+111 浙江理工大学 Zhejiang Sci-Tech University 浙江 200.3 0
+112 东北农业大学 Northeast Agricultural University - China 黑龙江 198.5 26
+112 太原理工大学 Taiyuan University of Technology 山西 198.5 -4
+114 武汉科技大学 Wuhan University of Science and Technology 湖北 197.9 17
+115 南京林业大学 Nanjing Forestry University 江苏 197 72
+116 山西大学 Shanxi University 山西 196.6 21
+117 东北林业大学 Northeast Forestry University - China 黑龙江 194.8 26
+118 北京建筑大学 Beijing University of Civil Engineering and Architecture 北京 194.1 57
+119 辽宁大学 Liaoning University 辽宁 192.9 4
+120 福建农林大学 Fujian Agriculture and Forestry University 福建 192.5 84
+121 江苏师范大学 Jiangsu Normal University 江苏 192.4 25
+122 华侨大学 Huaqiao University 福建 191.7 -22
+123 内蒙古大学 Inner Mongolia University 内蒙古 191.6 55
+124 汕头大学 Shantou University 广东 191.2 -29
+125 江西师范大学 Jiangxi Normal University 江西 188.8 77
+126 长沙理工大学 Changsha University of Science and Technology 湖南 188.3 24
+127 昆明理工大学 Kunming University of Science and Technology 云南 187.5 123
+128 西安理工大学 Xi'an University of Technology 陕西 187.2 30
+129 常州大学 Changzhou University 江苏 186.4 39
+130 黑龙江大学 Heilongjiang University 黑龙江 184.1 9
+130 湖北工业大学 Hubei University of Technology 湖北 184.1 33
+132 西安建筑科技大学 Xi'an University of Architecture and Technology 陕西 182.6 55
+133 西南石油大学 Southwest Petroleum University 四川 181.9 50
+134 贵州大学 Guizhou University 贵州 181.6 110
+135 河北师范大学 Hebei Normal University 河北 181.1 30
+136 安徽师范大学 Anhui Normal University 安徽 180.8 57
+137 重庆邮电大学 Chongqing University of Posts and Telecommunications 重庆 179.9 28
+138 中国计量大学 China Jiliang University 浙江 178.3 34
+139 济南大学 University of Jinan 山东 177.1 8
+140 辽宁师范大学 Liaoning Normal University 辽宁 176.7 76
+141 四川农业大学 Sichuan Agricultural University 四川 176.2 22
+142 江苏科技大学 Jiangsu University of Science and Technology 江苏 175.9 31
+143 河南师范大学 Henan Normal University 河南 175.7 22
+144 温州大学 Wenzhou University 浙江 175.5 17
+145 天津师范大学 Tianjin Normal University 天津 174.8 7
+146 南通大学 Nantong University 江苏 174.6 32
+147 上海海事大学 Shanghai Maritime University 上海 173.6 -17
+148 海南大学 Hainan University 海南 172.7 25
+149 山东科技大学 Shandong University of Science and Technology 山东 172.3 0
+150 天津工业大学 Tiangong University 天津 171.2 18
+151 广西师范大学 Guangxi Normal University 广西 170.8 10
+151 武汉工程大学 Wuhan Institute of Technology 湖北 170.8 -25
+153 新疆大学 Xinjiang University 新疆 170.3 115
+154 上海海洋大学 Shanghai Ocean University 上海 169.9 39
+155 河南农业大学 Henan Agricultural University 河南 169.7 105
+156 成都理工大学 Chengdu University of Technology 四川 168.3 60
+157 三峡大学 China Three Gorges University 湖北 167.9 -1
+158 国际关系学院 University of International Relations 北京 167.5 None
+159 浙江农林大学 Zhejiang A&F University 浙江 167 -1
+160 湖南农业大学 Hunan Agricultural University 湖南 165.9 33
+161 陕西科技大学 Shaanxi University of Science and Technology 陕西 165.2 45
+162 北方工业大学 North China University of Technology 北京 164.8 28
+163 西北师范大学 Northwest Normal University China 甘肃 164 77
+164 曲阜师范大学 Qufu Normal University 山东 163.3 -8
+164 石河子大学 Shihezi University 新疆 163.3 98
+166 山东农业大学 Shandong Agricultural University 山东 162.1 165
+167 云南师范大学 Yunnan Normal University 云南 162 53
+168 石家庄铁道大学 Shijiazhuang Tiedao University 河北 161.3 3
+169 安徽农业大学 Anhui Agricultural University 安徽 160.5 37
+170 安徽工业大学 Anhui University of Technology 安徽 160.4 8
+171 四川师范大学 Sichuan Normal University 四川 159.7 22
+172 青岛科技大学 Qingdao University of Science and Technology 山东 158.3 11
+173 湖南科技大学 Hunan University of Science and Technology 湖南 158.1 40
+174 重庆交通大学 Chongqing Jiaotong University 重庆 157.3 36
+175 河北农业大学 Hebei Agricultural University 河北 156.8 62
+176 长春理工大学 Changchun University of Science and Technology 吉林 156.7 34
+176 天津理工大学 Tianjin University of Technology 天津 156.7 28
+178 河南科技大学 Henan University of Science and Technology 河南 156.6 101
+179 武汉纺织大学 Wuhan Textile University 湖北 155.6 6
+180 中北大学 North University of China 山西 155 60
+181 齐鲁工业大学 Qilu University of Technology 山东 154.6 210
+182 北京信息科技大学 Beijing Information Science & Technology University 北京 154.5 58
+183 沈阳农业大学 Shenyang Agricultural University 辽宁 154.4 63
+184 宁夏大学 Ningxia University 宁夏 153.4 100
+185 天津科技大学 Tianjin University of Science and Technology 天津 153.3 44
+186 吉林农业大学 Jilin Agricultural University 吉林 151.2 133
+186 沈阳建筑大学 Shenyang Jianzhu University 辽宁 151.2 101
+186 苏州科技大学 Suzhou University of Science and Technology 江苏 151.2 43
+189 上海电力大学 Shanghai University of Electric Power 上海 151 1
+190 长江大学 Yangtze University 湖北 150.8 30
+191 西安科技大学 Xi'an University of Science and Technology 陕西 150.3 84
+191 浙江海洋大学 Zhejiang Ocean University 浙江 150.3 55
+193 哈尔滨师范大学 Harbin Normal University 黑龙江 148.9 0
+194 河南工业大学 Henan University of Technology 河南 148.8 32
+194 沈阳航空航天大学 Shenyang Aerospace University 辽宁 148.8 6
+196 哈尔滨理工大学 Harbin University of Science and Technology 黑龙江 148.6 41
+197 华东交通大学 East China Jiaotong University 江西 147.9 98
+198 上海工程技术大学 Shanghai University of Engineering Science 上海 147.4 77
+198 延边大学 Yanbian University 吉林 147.4 70
+200 河北科技大学 Hebei University of Science and Technology 河北 146.9 -10
+200 沈阳师范大学 Shenyang Normal University 辽宁 146.9 105
+202 西南科技大学 Southwest University of Science and Technology 四川 146.7 77
+202 中南林业科技大学 Central South University of Forestry & Technology 湖南 146.7 8
+204 大连工业大学 Dalian Polytechnic University 辽宁 146.6 96
+205 重庆师范大学 Chongqing Normal University 重庆 146.5 8
+206 南昌航空大学 Nanchang Hangkong University 江西 146.2 137
+207 河南理工大学 Henan Polytechnic University 河南 146.1 9
+208 南华大学 University of South China 湖南 145 11
+209 重庆理工大学 Chongqing University of Technology 重庆 144.9 11
+210 渤海大学 Bohai University 辽宁 142.5 -58
+211 华北理工大学 North China University of Science and Technology 河北 142.2 -24
+212 兰州理工大学 Lanzhou University of Technology 甘肃 142 52
+213 安徽理工大学 Anhui University of Science and Technology 安徽 141.9 55
+213 大连大学 Dalian University 辽宁 141.9 80
+215 海南师范大学 Hainan Normal University 海南 141.8 109
+216 东北电力大学 Northeast Electric Power University 吉林 141.1 41
+217 中国民航大学 Civil Aviation University of China 天津 141 -32
+218 大连交通大学 Dalian Jiaotong University 辽宁 140.7 55
+219 成都信息工程大学 Chengdu University of Information Technology 四川 140.6 91
+220 江西农业大学 Jiangxi Agricultural University 江西 140.1 192
+220 烟台大学 Yantai University 山东 140.1 48
+222 桂林电子科技大学 Guilin University of Electronic Technology 广西 139.5 35
+223 东莞理工学院 Dongguan University of Technology 广东 138.6 27
+224 郑州轻工业大学 Zhengzhou University of Light Industry 河南 138.4 89
+225 武汉轻工大学 Wuhan Polytechnic University 湖北 137.9 -5
+225 西藏大学 Tibet University 西藏 137.9 294
+227 北京农学院 Beijing University of Agriculture 北京 137.8 157
+228 佛山科学技术学院 Foshan University 广东 137.4 56
+229 北京电子科技学院 Beijing Electronic Science and Technology Institute 北京 137.1 None
+229 厦门理工学院 Xiamen University of Technology 福建 137.1 76
+231 上海应用技术大学 Shanghai Institute of Technology 上海 137 23
+232 鲁东大学 Ludong University 山东 136.7 133
+232 西安邮电大学 Xi'an University of Posts and Telecommunications 陕西 136.7 -6
+234 兰州交通大学 Lanzhou Jiaotong University 甘肃 136.6 -28
+235 沈阳工业大学 Shenyang University of Technology 辽宁 136.4 75
+236 东北石油大学 Northeast Petroleum University 黑龙江 136 26
+237 江汉大学 Jianghan University 湖北 135.9 -24
+238 内蒙古农业大学 Inner Mongolia Agricultural University 内蒙古 135.7 153
+239 山东建筑大学 Shandong Jianzhu University 山东 135.5 140
+240 东华理工大学 East China University of Technology 江西 135.2 245
+241 华北水利水电大学 North China University of Water Resources and Electric Power 河南 135.1 83
+242 桂林理工大学 Guilin University of Technology 广西 134.9 37
+243 集美大学 Jimei University 福建 134.8 -34
+243 沈阳化工大学 Shenyang University of Chemical Technology 辽宁 134.8 141
+245 青岛农业大学 Qingdao Agricultural University 山东 134.6 156
+246 贵州师范大学 Guizhou Normal University 贵州 133.9 212
+247 西华师范大学 China West Normal University 四川 133 -45
+248 青海大学 Qinghai University 青海 132.6 47
+249 辽宁工业大学 Liaoning University of Technology 辽宁 132.2 -50
+250 山东理工大学 Shandong University of Technology 山东 132 100
+251 青岛理工大学 Qingdao University of Technology 山东 131.6 24
+252 安徽建筑大学 Anhui jianzhu University 安徽 131.5 61
+253 江西理工大学 Jiangxi University of Science and Technology 江西 131.3 119
+254 信阳师范学院 Xinyang Normal University 河南 130.6 89
+255 西华大学 Xihua University 四川 130.5 69
+256 山西师范大学 Shanxi Normal University 山西 130.4 -27
+257 西安石油大学 Xi'an Shiyou University 陕西 130 67
+258 西安工程大学 Xi'an Polytechnic University 陕西 129.7 29
+259 湖南工业大学 Hunan University of Technology 湖南 129.5 -58
+260 内蒙古工业大学 Inner Mongolia University of Technology 内蒙古 129.2 71
+261 北京印刷学院 Beijing Institute of Graphic Communication 北京 128.9 44
+262 新疆师范大学 Xinjiang Normal University 新疆 128.3 139
+263 北京联合大学 Beijing Union University 北京 127.9 109
+263 西安工业大学 Xi'an Technological University 陕西 127.9 2
+265 湖州师范学院 Huzhou University 浙江 127.6 -39
+266 成都大学 Chengdu University 四川 127.4 96
+267 吉首大学 Jishou University 湖南 127 -30
+268 南京工程学院 Nanjing Institute of Technology 江苏 126.8 16
+269 北京石油化工学院 Beijing Institute of Petrochemical Technology 北京 126.6 161
+270 辽宁工程技术大学 Liaoning Technical University 辽宁 126.5 87
+271 吉林师范大学 Jilin Normal University 吉林 126 -37
+272 上海海关学院 Shanghai Customs College 上海 125.5 None
+273 绍兴文理学院 Shaoxing University 浙江 124.5 -17
+274 南宁师范大学 Guangxi Teachers Education University 广西 124.4 31
+275 合肥学院 Hefei University 安徽 124.3 137
+276 河北工程大学 Hebei University of Engineering 河北 123.8 11
+276 辽宁科技大学 University of Science and Technology Liaoning 辽宁 123.8 125
+278 湖北师范大学 Hubei Normal University 湖北 123.7 -28
+278 沈阳理工大学 Shenyang Ligong University 辽宁 123.7 104
+280 内蒙古师范大学 Inner Mongolia Normal University 内蒙古 123.4 189
+281 云南农业大学 Yunnan Agricultural University 云南 123.2 167
+282 聊城大学 Liaocheng University 山东 122.8 73
+283 长春工业大学 Changchun University of Technology 吉林 122.7 -4
+284 新疆农业大学 Xinjiang Agricultural University 新疆 122.5 219
+285 大连海洋大学 Dalian Ocean University 辽宁 122.2 51
+286 中原工学院 Zhongyuan University of Technology 河南 122.1 208
+287 安徽工程大学 Anhui Polytechnic University 安徽 121.8 70
+288 甘肃农业大学 Gansu Agricultural University 甘肃 121.7 103
+289 辽宁石油化工大学 Liaoning shihua University 辽宁 120.5 153
+290 景德镇陶瓷大学 Jingdezhen Ceramic Institute 江西 120.2 147
+291 山西农业大学 Shanxi Agricultural University 山西 119.6 52
+292 天津城建大学 Tianjin Chengjian University 天津 119.5 142
+292 浙江科技学院 Zhejiang University of Science and Technology 浙江 119.5 -27
+294 赣南师范大学 GanNan Normal University 江西 119.2 111
+295 广东技术师范大学 Guangdong Polytechnic Normal University 广东 119.1 -8
+296 安庆师范大学 Anqing Normal University 安徽 119 123
+297 江苏理工学院 Jiangsu University of Technology 江苏 118.5 16
+297 宁波工程学院 Ningbo University of Technology 浙江 118.5 27
+299 盐城师范学院 Yancheng Teachers University 江苏 118.3 58
+300 淮北师范大学 Huaibei Normal University 安徽 118.2 -54
+301 沈阳大学 Shenyang University 辽宁 118 111
+302 重庆科技学院 Chongqing University of Science and Technology 重庆 117.8 146
+303 嘉兴学院 Jiaxing University 浙江 117.7 -8
+304 西南林业大学 Southwest Forestry University 云南 117.3 144
+305 淮阴师范学院 Huaiyin Normal University 江苏 117.1 -26
+306 盐城工学院 Yancheng Institute of Technology 江苏 117 76
+307 五邑大学 Wuyi University 广东 116.5 29
+308 常熟理工学院 Changshu Institute of Technology 江苏 116.4 16
+309 广东海洋大学 Guangdong Ocean University 广东 116.1 39
+310 上海第二工业大学 Shanghai Second Polytechnic University 上海 115.9 -56
+311 福建工程学院 Fujian University of Technology 福建 115.6 51
+312 大理大学 Dali University 云南 115.2 -19
+313 四川轻化工大学 Sichuan University of Science and Engineering 四川 114.9 109
+314 黑龙江八一农垦大学 Heilongjiang Bayi Agricultural University 黑龙江 113.6 175
+314 内蒙古科技大学 Inner Mongolia University of Science & Technology 内蒙古 113.6 116
+316 延安大学 Yan'an University 陕西 113.5 15
+317 天津农学院 Tianjin Agricultural University 天津 113.3 141
+318 内蒙古民族大学 Inner Mongolia University for Nationalities 内蒙古 112.8 130
+318 天津职业技术师范大学 TianJin University of Technology and Education 天津 112.8 145
+320 闽江学院 Minjiang University 福建 112.3 -25
+321 湖南理工学院 Hunan Institute of Science and Technology 湖南 112.2 30
+322 淮阴工学院 Huaiyin Institute of Technology 江苏 111.9 94
+322 江西科技师范大学 Jiangxi Science and Technology Normal University 江西 111.9 50
+324 江苏海洋大学 Huaihai Institute of Technology 江苏 111.8 81
+324 闽南师范大学 Minnan Normal University 福建 111.8 -100
+326 黑龙江科技大学 Heilongjiang University of Science and Technology 黑龙江 111.6 43
+327 北华大学 Beihua University 吉林 111.5 30
+328 仲恺农业工程学院 Zhongkai University of Agriculture and Engineering 广东 111.4 73
+329 太原科技大学 Taiyuan University of Science and Technology 山西 111.2 -10
+330 南昌工程学院 Nanchang Institute of Technology 江西 110.5 133
+331 长江师范学院 Yangtze Normal University 重庆 110.4 106
+332 南京晓庄学院 Nanjing XiaoZhuang University 江苏 109.9 -45
+333 湖北科技学院 Hubei University of Science and Technology 湖北 109.7 36
+334 台州学院 Taizhou University 浙江 109.1 None
+335 重庆文理学院 Chongqing University of Arts and Science 重庆 108.8 6
+336 金陵科技学院 Jinling Institute of Technology 江苏 108.5 55
+337 临沂大学 Linyi University 山东 107.8 68
+338 湖北文理学院 Hubei University of Arts and Science 湖北 107.7 31
+338 吉林建筑大学 Jilin Jianzhu University 吉林 107.7 99
+340 齐齐哈尔大学 Qiqihar University 黑龙江 107.2 32
+341 河北科技师范学院 Hebei Normal University of Science and Technology 河北 107 -10
+342 青海师范大学 Qinghai Normal University 青海 106.6 118
+343 浙江万里学院 Zhejiang Wanli University 浙江 106.5 146
+344 安阳师范学院 Anyang Normal University 河南 105.7 86
+345 江苏第二师范学院 Jiangsu Second Normal University 江苏 105 27
+346 长沙学院 Changsha University 湖南 104.7 -73
+346 合肥师范学院 Hefei Normal University 安徽 104.7 114
+346 塔里木大学 Tarim University 新疆 104.7 178
+346 徐州工程学院 Xuzhou Institute of Technology 江苏 104.7 19
+350 湖北第二师范学院 Hubei University of Education 湖北 104.3 -116
+351 常州工学院 Changzhou Institute of Technology 江苏 104.2 97
+352 井冈山大学 Jinggangshan University 江西 104.1 119
+353 岭南师范学院 LingNan Normal University 广东 103.7 38
+354 广西科技大学 Guangxi University of Science and Technology 广西 103.1 89
+355 长春大学 Changchun University 吉林 102.9 24
+355 贵州师范学院 Guizhou Normal College 贵州 102.9 -14
+357 洛阳师范学院 Luoyang Normal University 河南 102.8 27
+358 佳木斯大学 Jiamusi University 黑龙江 102.3 61
+359 上海电机学院 Shanghai Dianji University 上海 102.2 32
+360 南阳师范学院 Nanyang Normal University 河南 102 -3
+361 河北建筑工程学院 Hebei University of Architecture 河北 101.3 None
+362 西藏农牧学院 Tibet Agriculture and Animal Husbandry University 西藏 101.1 None
+363 惠州学院 Huizhou University 广东 100.7 56
+364 北华航天工业学院 North China Institute of Aerospace Engineering 河北 100 -13
+365 广东第二师范学院 Guangdong University of Education 广东 99.6 -29
+366 广东石油化工学院 Guangdong University of Petrochemical Technology 广东 99.5 -42
+367 湖北汽车工业学院 Hubei University of Automotive Technology 湖北 99.3 -16
+368 衡阳师范学院 Hengyang Normal University 湖南 98.9 54
+369 黄冈师范学院 Huanggang Normal University 湖北 98.6 -82
+369 丽水学院 Lishui University 浙江 98.6 94
+371 洛阳理工学院 Luoyang Institute of Science and Technology 河南 98.5 8
+372 北部湾大学 Beibu Gulf University 广西 97.9 64
+372 湖南第一师范学院 Hunan First Normal University 湖南 97.9 -53
+374 肇庆学院 Zhaoqing University 广东 97.6 48
+375 重庆三峡学院 Chongqing Three Gorges University 重庆 97.4 123
+376 长春师范大学 Changchun Normal University 吉林 97.2 -57
+377 阜阳师范大学 Fuyang Normal University 安徽 96.9 None
+377 乐山师范学院 Leshan Normal University 四川 96.9 101
+379 湖北理工学院 Hubei Polytechnic University 湖北 96.1 37
+380 石家庄学院 Shijiazhuang University 河北 96 42
+381 湖北工程学院 Hubei Engineering University 湖北 95.9 -68
+381 中国民用航空飞行学院 Civil Aviation Flight University of China 四川 95.9 -26
+383 河南科技学院 Henan Institute of Science and Technology 河南 95.8 1
+384 沈阳工程学院 Shenyang Institute of Engineering 辽宁 95.7 38
+384 铜仁学院 Tongren University 贵州 95.7 136
+386 成都工业学院 Chengdu Technological University 四川 95.6 123
+387 防灾科技学院 Institute of Disaster Prevention 河北 95.4 107
+387 黑龙江工程学院 Heilongjiang Institute of Technology 黑龙江 95.4 -74
+387 曲靖师范学院 Qujing Normal University 云南 95.4 29
+390 陕西理工大学 Shaanxi University of Technology 陕西 95.1 -28
+390 玉林师范学院 Yulin Normal University 广西 95.1 -90
+392 九江学院 Jiujiang University 江西 94.9 122
+392 绵阳师范学院 Mianyang Teachers' College 四川 94.9 97
+392 唐山师范学院 Tangshan Normal University 河北 94.9 None
+395 华北科技学院 North China Institute of Science and Technology 河北 94.6 53
+396 泉州师范学院 Quanzhou Normal University 福建 94.5 9
+397 宝鸡文理学院 Baoji University of Arts and Sciences 陕西 93.5 -54
+398 重庆第二师范学院 Chongqing University of Education 重庆 93.3 65
+398 郑州师范学院 Zhengzhou Normal University 河南 93.3 -164
+400 安徽科技学院 Anhui Science and Technology University 安徽 93.2 129
+401 湖南文理学院 Hunan University of Arts and Science 湖南 93.1 -10
+402 湖南工程学院 Hunan Institute of Engineering 湖南 93 -53
+403 贵州理工学院 Guizhou Institute of Technology 贵州 92.6 131
+403 韩山师范学院 Hanshan Normal University 广东 92.6 70
+405 内江师范学院 Neijiang Normal University 四川 92.5 -21
+405 许昌学院 Xuchang University 河南 92.5 109
+407 滁州学院 Chuzhou University 安徽 92.2 121
+408 凯里学院 Kaili University 贵州 91.8 None
+409 莆田学院 Putian University 福建 91.6 135
+410 商丘师范学院 Shangqiu Normal University 河南 91.5 110
+411 韶关学院 Shaoguan University 广东 91.4 -39
+412 攀枝花学院 Panzhihua University 四川 91.1 126
+413 湖南城市学院 Hunan City University 湖南 91 -82
+413 宜春学院 Yichun University 江西 91 116
+415 衢州学院 Quzhou University 浙江 90.8 105
+416 泰州学院 Taizhou University 江苏 90.7 None
+416 浙江水利水电学院 Zhejiang University of Water Resources and Electric Power 浙江 90.7 82
+418 贵阳学院 Guiyang University 贵州 89.9 111
+419 吉林化工学院 Jilin Institute of Chemical Technology 吉林 89.7 18
+419 龙岩学院 Longyan University 福建 89.7 11
+419 太原师范学院 Taiyuan Normal University 山西 89.7 -100
+422 周口师范学院 Zhoukou Normal University 河南 89.6 75
+423 昆明学院 Kunming University 云南 89.5 55
+424 鞍山师范学院 Anshan Normal University Liaoning China 辽宁 89.4 -2
+425 南阳理工学院 Nanyang Institute of Technology 河南 89.3 82
+426 山西大同大学 Shanxi Datong University 山西 89.2 -83
+427 廊坊师范学院 Langfang Teachers University 河北 89.1 21
+427 营口理工学院 YingKou Institute of Technology 辽宁 89.1 None
+427 玉溪师范学院 Yuxi Normal University 云南 89.1 56
+430 保定学院 Baoding University 河北 88.7 None
+430 三明学院 Sanming University 福建 88.7 None
+432 安顺学院 Anshun University 贵州 88.5 None
+433 德州学院 Dezhou University 山东 88.2 104
+434 河南城建学院 Henan University of Urban Construction 河南 88 39
+434 牡丹江师范学院 Mudanjiang Normal University 黑龙江 88 55
+436 宜宾学院 Yibin University 四川 87.7 58
+437 遵义师范学院 Zunyi Normal University 贵州 87.4 None
+438 山东交通学院 Shandong Jiaotong University 山东 87.3 45
+438 唐山学院 Tangshan College 河北 87.3 -33
+440 长春工程学院 Changchun Institute of Technology 吉林 87.2 66
+441 潍坊学院 Weifang University 山东 86.9 88
+442 黄淮学院 Huanghuai University 河南 86.5 70
+443 嘉应学院 Jiaying University 广东 86.2 42
+444 哈尔滨学院 Harbin University 黑龙江 86.1 -1
+445 武夷学院 Wuyi University 福建 85.8 None
+446 上饶师范学院 Shangrao Normal University 江西 85.6 None
+446 新乡学院 Xinxiang University 河南 85.6 17
+448 辽东学院 Eastern Liaoning University 辽宁 85.1 55
+448 辽宁科技学院 Liaoning Institute of Science and Technology 辽宁 85.1 None
+450 成都师范学院 Chengdu Normal University 四川 85 None
+450 邢台学院 Xingtai University 河北 85 23
+452 邯郸学院 Handan College 河北 84.9 91
+453 呼伦贝尔学院 Hulunbuir University 内蒙古 84.8 None
+454 湖南科技学院 Hunan University of Science and Engineering 湖南 84.6 60
+454 四川旅游学院 Sichuan Tourism University 四川 84.6 None
+454 皖西学院 West AnHui University 安徽 84.6 -26
+457 赤峰学院 Chifeng University 内蒙古 84.5 50
+457 红河学院 Honghe University 云南 84.5 67
+459 黄山学院 Huangshan University 安徽 84.4 -31
+459 四川文理学院 Sichuan University of Arts and Science 四川 84.4 50
+461 滨州学院 Binzhou University 山东 84.3 44
+461 黔南民族师范学院 Qiannan Normal College for Nationalities 贵州 84.3 None
+463 内蒙古科技大学包头师范学院 Baotou Teachers' College 内蒙古 84.2 None
+464 宁德师范学院 Ningde Normal University 福建 84.1 None
+465 楚雄师范学院 Chuxiong Normal University 云南 83.8 69
+466 信阳农林学院 Xinyang Agriculture and Forestry University 河南 83.5 None
+467 吉林工程技术师范学院 Jilin Engineering Normal University 吉林 83.3 None
+468 宁夏师范学院 Ningxia Normal University 宁夏 82.7 None
+469 海南热带海洋学院 Hainan Tropical Ocean University 海南 82.6 75
+469 河北民族师范学院 Hebei Normal University for Nationalities 河北 82.6 None
+469 南昌师范学院 Nanchang Normal University 江西 82.6 None
+472 西昌学院 Xichang College 四川 82.5 None
+473 广西民族师范学院 Guangxi Normal University for Nationalities 广西 82.1 None
+473 伊犁师范大学 Yili Normal University 新疆 82.1 66
+475 沧州师范学院 Cangzhou Normal University 河北 81.9 None
+475 贵州工程应用技术学院 Guizhou University of Engineering Science 贵州 81.9 None
+477 六盘水师范学院 Liupanshui Normal University 贵州 81.6 None
+478 池州学院 Chizhou University 安徽 81.5 49
+479 淮南师范学院 Huainan Normal University 安徽 81.1 54
+480 广州航海学院 Guangzhou Maritime University 广东 80.8 None
+480 泰山学院 Taishan University 山东 80.8 18
+482 西安文理学院 Xi'an University 陕西 80.5 -110
+483 梧州学院 Wuzhou University 广西 80 None
+484 通化师范学院 Tonghua Normal University 吉林 79.9 -79
+485 邵阳学院 Shaoyang University 湖南 79.8 29
+486 平顶山学院 Pingdingshan University 河南 79.7 62
+487 荆楚理工学院 Jingchu University of Technology 湖北 79.6 -2
+488 大庆师范学院 Daqing Normal University 黑龙江 79.5 None
+488 宿州学院 Suzhou University 安徽 79.5 None
+490 蚌埠学院 Bengbu University 安徽 79.1 None
+491 衡水学院 Hengshui University 河北 79 None
+492 湘南学院 Xiangnan University 湖南 78.9 -44
+493 河南工程学院 Henan University of Engineering 河南 78.7 -59
+493 渭南师范学院 Weinan Normal University 陕西 78.7 -24
+495 喀什大学 Kashi University 新疆 78.5 None
+496 巢湖学院 Chaohu University 安徽 78.4 40
+496 齐鲁师范学院 Qilu Normal University 山东 78.4 -33
+498 贺州学院 Hezhou University 广西 78.2 -25
+499 黑河学院 Heihe University 黑龙江 78.1 None
+500 白城师范学院 Baicheng Normal University 吉林 77.9 None
+501 咸阳师范学院 Xianyang Normal University 陕西 77.4 -53
+502 河南牧业经济学院 Henan University of Animal Husbandry and Economy 河南 76.8 -31
+503 怀化学院 Huaihua University 湖南 76.4 21
+503 张家口学院 Zhangjiakou University 河北 76.4 None
+505 安阳工学院 Anyang Institute of Technology 河南 75.8 -27
+505 河池学院 Hechi University 广西 75.8 None
+507 桂林航天工业学院 Guilin University of Aerospace Technology 广西 75.6 13
+508 四川民族学院 Sichuan University for Nationalities 四川 75.4 None
+509 湖南工学院 Hunan Institute of Technology 湖南 75 5
+510 百色学院 Baise University 广西 74.7 None
+511 兰州城市学院 Lanzhou City University 甘肃 74.5 -146
+511 榆林学院 Yulin University 陕西 74.5 28
+513 兴义民族师范学院 Xingyi Normal University for Nationalities 贵州 74.4 None
+514 河西学院 HeXi University 甘肃 73.6 -36
+515 保山学院 Baoshan University 云南 73.3 None
+516 太原工业学院 Taiyuan Institute of Technology 山西 73.2 -73
+517 商洛学院 Shangluo University 陕西 73.1 -32
+518 湖南人文科技学院 Hunan University of Humanities, Science and Technology 湖南 73 None
+519 新余学院 Xinyu University 江西 72.8 None
+520 天水师范学院 Tianshui Normal University 甘肃 72.7 -11
+521 忻州师范学院 Xinzhou Teachers University 山西 72.6 -137
+522 吉林农业科技学院 Jilin Agricultural Science and Technology University 吉林 72.4 None
+523 枣庄学院 Zaozhuang University 山东 72.2 21
+524 普洱学院 Puer University 云南 72.1 None
+524 郑州工程技术学院 Zhengzhou Institute of Technology 河南 72.1 None
+526 河北环境工程学院 Hebei University of Environmental Engineering 河北 71.8 None
+527 山东青年政治学院 Shandong Youth University of Political Science 山东 71.7 None
+528 晋中学院 Jinzhong University 山西 71.6 None
+528 绥化学院 Suihua University 黑龙江 71.6 None
+530 安康学院 Ankang University 陕西 71.3 -125
+530 文山学院 Wenshan University 云南 71.3 None
+532 运城学院 Yuncheng University 山西 71.1 -148
+533 陇东学院 Long Dong University 甘肃 70.2 8
+534 景德镇学院 Jingdezhen University 江西 70.1 None
+535 滇西科技师范学院 West Yunnan University 云南 69.8 None
+536 长沙师范学院 Changsha Normal University 湖南 69.7 None
+537 兰州工业学院 Lanzhou Institute of Technology 甘肃 69.6 None
+538 济宁学院 Jining University 山东 69.2 -40
+539 琼台师范学院 Qiongtai Normal University 海南 69 None
+540 山东女子学院 Shandong Women's University 山东 68.9 None
+540 陕西学前师范学院 Shaanxi Xueqian Normal University 陕西 68.9 None
+542 豫章师范学院 Yuzhang Normal University 江西 68.6 None
+543 昭通学院 Zhaotong University 云南 68.5 None
+544 河南工学院 Henan Institute of Technology 河南 68.4 None
+545 新疆理工学院 Xinjiang Institute of Technology 新疆 68 None
+546 汉江师范学院 Hanjiang Normal University 湖北 67.8 None
+547 菏泽学院 Heze University 山东 67.1 None
+548 新疆工程学院 Xinjiang Institute of Engineering 新疆 66.6 None
+549 昌吉学院 Changji University 新疆 66.5 None
+550 鄂尔多斯应用技术学院 Ordos Institute of Technology 内蒙古 65.8 None
+550 萍乡学院 Pingxiang University 江西 65.8 None
+550 山西能源学院 Shanxi Institute of Energy 山西 65.8 None
+553 河套学院 Hetao University 内蒙古 65.7 None
+554 福建技术师范学院 Fujian Polytechnic Normal University 福建 65.5 None
+555 黑龙江工业学院 Heilongjiang University of Technology 黑龙江 65.4 None
+556 兰州文理学院 Lanzhou University of Arts and Science 甘肃 65.1 None
+557 长治学院 Changzhi University 山西 64.9 None
+558 山东管理学院 Shandong Management University 山东 64.1 None
+559 集宁师范学院 Jining Normal University 内蒙古 64 None
+559 吕梁学院 Luliang University 山西 64 None
+561 山西工程技术学院 Shanxi Institute of Technology 山西 63.6 None
+562 甘肃民族师范学院 Gansu Normal University for Nationalities 甘肃 63 None
+563 山东农业工程学院 Shandong Agriculture and Engineering University 山东 62.6 None
+564 西安航空学院 Xi'an Aeronautical University 陕西 62.4 -66
+565 太原学院 Taiyuan University 山西 60 None
+566 亳州学院 Bozhou University 安徽 58.9 None
+567 首钢工学院 Shougang Institute of Technology 北京 55.9 None

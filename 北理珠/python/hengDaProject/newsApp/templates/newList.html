@@ -38,6 +38,17 @@
             <div class="col-md-9">
                 <div class="model-details-title">
                     {{ newName }}
+                    <div class="col-md-7 hidden-xs model-details-title-search">
+                    <form method="get" action="{% url 'haystack_search' %}">
+                        {% csrf_token %}
+                        <div class="input-group">
+                            <input type="text" name="q" class="form-control" placeholder="请输入关键词" required>
+                            <span class="input-group-btn">
+                                <input type="submit" class="btn btn-default" value="查询">
+                            </span>
+                        </div>
+                    </form>
+                </div>
                 </div>
                 <!-- 此处填入产品列表内容 -->
                 <div class="model-details">

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    加入恒达
+{% endblock %}
+{% block content %}
+    <link href="{% static 'css/contact.css' %}" rel="stylesheet">
+    <div class="container">
+        <div class="row row-3">
+            {% include "base_sidebar_contact.html" %}
+            <div class="col-md-9">
+                <div class="model-details-title">
+                    加入恒达
+                </div>
+
+                <div class="model-details">
+                    <div class="panel-group" id="accordion">
+                        {% for ad in AdList %}
+                            <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="panel{{ ad.id }}">
+                                <h4 class="panel-title">
+                                    {% if forloop.first %}
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion"
+                                           href="#collapse{{ ad.id }}">
+                                    {% else %}
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
+                                           href="#collapse{{ ad.id }}">
+                                    {% endif %}
+                                    {{ ad.title }}
+                                    </a>
+                                </h4>
+                            </div>
+                            {% if forloop.first %}
+                                <div id="collapse{{ ad.id }}" class="panel-collapse collapse in">
+                            {% else %}
+                                <div id="collapse{{ ad.id }}" class="panel-collapse collapse">
+                            {% endif %}
+                        <div class="panel-body">
+                            <p>{{ ad.description }}</p>
+                        </div>
+                        </div>
+                        </div>
+                        {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block script %}
+
+{% endblock %}

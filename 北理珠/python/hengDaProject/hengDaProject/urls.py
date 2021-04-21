@@ -31,6 +31,7 @@ urlpatterns = [
     path('serviceApp/', include('serviceApp.urls'), name='service'),
     path('scienceApp/', include('scienceApp.urls'), name='science'),
     path('ueditor/',include('DjangoUeditor.urls')),
+    path('search/',include('haystack.urls'))
 ]
 
 if settings.DEBUG:

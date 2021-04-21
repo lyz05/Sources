@@ -33,3 +33,14 @@ def newDetail(request, id):
         'active_menu': 'news',
         'mynew': mynew,
     })
+
+
+def search(request):
+    keyword = request.GET.get('keyword')
+    newList = MyNew.objects.filter(title__icontains=keyword)
+    newName = '关于“{}”的搜索结果'.format(keyword)
+    return render(request, 'searchList.html', {
+        'active_menu': 'news',
+        'newName': newName,
+        'newList': newList,
+    })
