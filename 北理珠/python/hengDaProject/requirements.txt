@@ -2,3 +2,6 @@ Django==3.1.7
 Pillow==8.1.2
 django-utils-six==2.0
 pyquery==1.4.3
+whoosh==2.7.4
+django-haystack==3.0
+jieba==0.42.1

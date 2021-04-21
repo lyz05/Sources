@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% load static %}
+{% load highlight %}
+
+{% block title %}
+    新闻搜索
+{% endblock %}
+
+{% block content %}
+    <link href="{% static 'css/news.css' %}" rel="stylesheet">
+    <!-- 广告横幅 -->
+    <div class="container-fluid">
+        <div class="row">
+            <img class="img-responsive model-img" src="{% static 'img/new.jpg' %}" alt="新闻动态">
+        </div>
+    </div>
+    <div class="container">
+        <div class="row row-3">
+            <!-- 说明文字和图片 -->
+            <div class="model-details-title">
+                关于“{{ query }}”的搜索结果
+                <div class="col-md-7 hidden-xs model-details-title-search">
+                    <form method="get" action="{% url 'haystack_search' %}">
+                        {% csrf_token %}
+                        <div class="input-group">
+                            <input type="text" name="q" class="form-control" placeholder="请输入关键词" required>
+                            <span class="input-group-btn">
+                                <input type="submit" class="btn btn-default" value="查询">
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- 此处填入产品列表内容 -->
+            <div class="model-details">
+                {% for result in page.object_list %}
+                    <div class="news-model">
+                        <img src="{% static 'img/newsicon.gif' %}">
+                        <a href="{% url 'newsApp:newDetail' result.object.id %}">
+                            <b>{{ result.object.title }}</b>
+                        </a>
+                        <span>【{{ result.object.publishDate | date:"Y-m-d" }}】</span>
+                        <p class="news-search-model">
+                            <!-- 添加新闻简要说明 -->
+                            {% highlight result.object.description with query %}
+                        </p>
+                    </div>
+                    {% empty %}
+                    <p>没有找到相关新闻</p>
+                {% endfor %}
+            </div>
+            {% if page.has_previous or page.has_next %}
+            <div>
+                {% if page.has_previous %}
+                    <a href="?q={{ query }}&amp;page={{ page.previous_page_number }}">
+                {% endif %}&laquo; 上一页
+                {% if page.has_previous %}</a>{% endif %}
+                |
+                {% if page.has_next %}
+                    <a href="?q={{ query }}&amp;page={{ page.next_page_number }}">
+                {% endif %}下一页 &raquo;
+                {% if page.has_next %}</a>{% endif %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}

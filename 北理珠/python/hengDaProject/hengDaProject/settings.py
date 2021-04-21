@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'newsApp',
     'productsApp',
     'scienceApp',
-    'serviceApp'
+    'serviceApp',
+    'haystack' #添加搜索应用
 ]
 
 MIDDLEWARE = [
@@ -133,3 +134,12 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
+
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        'ENGINE': 'newsApp.whoosh_backend.WhooshEngine',
+        'PATH':os.path.join(BASE_DIR,'whoosh_index')
+    },
+}
+HAYSTACK_SEARCH_RESULTS_PER_PAGE = 4
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'

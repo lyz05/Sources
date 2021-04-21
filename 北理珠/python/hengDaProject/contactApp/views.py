@@ -1,11 +1,19 @@
-from django.shortcuts import HttpResponse
+from django.shortcuts import HttpResponse, render
+
+from contactApp.models import Ad
 
 
 def contact(request):
-    html='<html><body>欢迎咨询</body></html>'
-    return HttpResponse(html)
+    return render(request, 'contact.html', {
+        'active_menu': 'employ',
+        'sub_menu': 'contact'
+    })
 
 
 def recruit(request):
-    html = '<html><body>加入恒达</body></html>'
-    return HttpResponse(html)
+    AdList = Ad.objects.all().order_by('-publishDate')
+    return render(request, 'recruit.html', {
+        'active_menu': 'employ',
+        'sub_menu': 'recruit',
+        'AdList': AdList
+    })
