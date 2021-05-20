@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>计算器</title>
+		<style type="text/css">
+			#d1 {
+				width: 420px;
+				height: 450px;
+				position: absolute;
+				background-color: yellowgreen;
+				z-index: 0;
+			}
+
+			#d2 {
+				height: 60px;
+				width: 380px;
+				border: solid 1px;
+				z-index: 1;
+				position: absolute;
+				top: 50px;
+				left: 20px;
+				background-color: white;
+			}
+
+			#d3 {
+				height: 310px;
+				width: 380px;
+				z-index: 1;
+				position: absolute;
+				top: 115px;
+				left: 20px;
+			}
+
+			td {
+				border: solid 1px black;
+				width: 60px;
+				height: 40px;
+				margin: 10px;
+				/*设置鼠标指针变成手的形状*/
+				cursor: pointer;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="d1">
+			<img src="../picture/casio.bmp"></img>
+			<div id="d2"></div>
+			<div id="d3">
+				<table cellspacing="30" border="1">
+					<tr align="center">
+						<td>1</td>
+						<td>2</td>
+						<td>3</td>
+						<td>+</td>
+					</tr>
+					<tr align="center">
+						<td>4</td>
+						<td>5</td>
+						<td>6</td>
+						<td>-</td>
+					</tr>
+					<tr align="center">
+						<td>7</td>
+						<td>8</td>
+						<td>9</td>
+						<td>*</td>
+					</tr>
+					<tr align="center">
+						<td>0</td>
+						<td>=</td>
+						<td>CE</td>
+						<td>/</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>

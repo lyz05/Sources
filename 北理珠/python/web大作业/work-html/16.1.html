@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>猜字游戏</title>
+		<script type="text/javascript">
+			var flag;
+			var sum=0;
+			var ans=0;
+			var lastr;
+			var winrate=0;
+			function game()
+			{
+				var i;
+				ans++;
+				var str;
+				flag=false;
+				lastr="";
+				for(i=0;i<3;i++)
+				{
+					str=Math.floor(Math.random()*9)+1;
+					lastr+=str;
+					if(str=="8")
+					{
+						flag=true;
+					}
+				}
+				if(flag)
+				{
+					sum++;
+				}
+				winrate=Math.floor(100*(sum/ans));
+			}
+		</script>
+		
+	</head>
+	<body>
+		<script type="text/javascript">
+			while(true)
+			{
+				game();
+				k=confirm(lastr +"\n" +(flag?"赢":"输") + 
+				"\n您累计玩了"+ans+"次，赢了"+sum+"次，胜率"+winrate+"%,继续吗?" );
+				if(!k)
+				{
+					break;
+				}
+			}
+		</script>
+		
+	</body>
+</html>

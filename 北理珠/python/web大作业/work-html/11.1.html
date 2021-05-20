@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表格实验</title>
+		<style type="text/css">
+			#table {
+				border: 8px double #0000ff;
+			}
+
+			td {
+				border: 1px solid black;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<table id="table" width="300px" align="center" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>1</td>
+				<td rowspan="2">2</td>
+				<td>
+					<table border="1px" width="80%" align="center" bgcolor="#ffffee">
+						<tr>
+							<td>a</td>
+							<td rowspan="2">b</td>
+							<td>c</td>
+						</tr>
+						<tr>
+							<td>d</td>
+							<td>f</td>
+						</tr>
+						<tr>
+							<td>g</td>
+							<td>h</td>
+							<td>i</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table width="80%" height="100%" align="center" border="1px" bgcolor="#fefefe">
+						<tr>
+							<td>a</td>
+							<td colspan="2">b</td>
+						</tr>
+						<tr>
+							<td>d</td>
+							<td>e</td>
+							<td>f</td>
+						</tr>
+						<tr>
+							<td>g</td>
+							<td>h</td>
+							<td>i</td>
+						</tr>
+					</table>
+				</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+			</tr>
+		</table>
+	</body>
+</html>

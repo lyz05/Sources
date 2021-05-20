@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>留言页面</title>
+		<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+		<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+		 crossorigin="anonymous"> -->
+		<link rel="stylesheet" type="text/css" href="work-css/bootstrap.min.css"/>
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		 crossorigin="anonymous"></script> -->
+		<script type="text/javascript" src="work-js/bootstrap.min.js"></script>
+		<!-- jquery的cdn -->
+		<!-- <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> -->
+		<script src="work-js/jquery.min.js"></script>
+		<!-- canvas -->
+		<!-- <script src="work-js/sdasdasdcanvas.js"></script> -->
+		<style type="text/css">
+			h1 {
+				margin-bottom: 15px;
+				height: 100px;
+				line-height: 100px;
+				text-align: center;
+				font-size: 24px;
+				color: #fff;
+				background: #6c7eae;
+			}
+
+			#f1 {
+				margin-bottom: 15px;
+				padding-bottom: 15px;
+				border-bottom: 1px #d4d4d4 dashed;
+				height: 80px;
+			}
+
+			#comment p {
+				margin-bottom: 12px;
+				padding: 18px;
+				border-radius: 5px;
+			}
+
+			#comment p:nth-child(odd) {
+				border: 1px solid #5ccdcd;
+				background: #dafdf3;
+			}
+
+			#comment p:nth-child(even) {
+				border: 1px solid #5ccdcd;
+				background: #dafdf3;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="cas" style="position:absolute;z-index:-1;" ></canvas>
+		<h1>留言板</h1>
+		<form class="form-horizontal" >
+			<div class="form-group form-group-lg">
+				<label class="col-sm-3 control-label" for="name">昵称：</label>
+				<div class="col-sm-6" id="d1">
+					<input class="form-control" type="text" id="name" value="匿名发言">
+				</div>
+			</div>
+			<div class="form-group form-group-lg">
+				<label class="col-sm-3 control-label" for="infos">留言：</label>
+				<div class="col-sm-6" id="post">
+					<textarea class="form-control" rows="12" id="infos"></textarea>
+				</div>
+			</div>
+			<div class="form-group form-group-lg" id="f1">
+				<label class="col-sm-3 control-label"></label>
+				<div class="col-sm-6">
+					<button type="button" class="btn btn-primary btn-lg" id="tijiao">发布留言</button>
+					<button type="button" class="btn btn-danger btn-lg" id="qikong">清空留言</button>
+				</div>
+			</div>
+			<div class="form-group form-group-lg">
+				<label class="col-sm-3 control-label"></label>
+				<div class="col-sm-6">
+					<div id="comment"></div>
+				</div>
+			</div>
+		</form>
+		<script src="canvas.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function delete1(id) {
+				localStorage.removeItem(id);
+				this.Storage.writeData();
+			}
+			var Storage = {
+				saveData: function() //保存数据
+				{
+					var data = document.querySelector("#post textarea");
+					var name = document.querySelector("#d1 input");
+					if (data.value != "") {
+						//getTime是Date对象中的方法，作用是返回 1970年01月01日至今的毫秒数
+						var time = new Date().getTime() + Math.random() * 5; 
+						//将毫秒数存入Key值中，可以降低Key值重复率
+						localStorage.setItem(time, data.value + "|" + name.value + "|" + this.getDateTime());
+						data.value = "";
+						this.writeData();
+					} else {
+						alert("请填写您的留言！");
+					}
+				},
+				//输出数据
+				writeData: function() 
+				{
+					var data = "";
+					var dataHtml = "";
+					//效率更高的循环方法
+					for (var i = localStorage.length - 1; i >= 0; i--) 
+					{
+						data = localStorage.getItem(localStorage.key(i)).split("|");
+						dataHtml += "<span style=>" + data[1] + "<span style=\"float:right\">" + data[2] +
+							"</span><p><span class=\"msg\">" + data[0] +
+							"<input style=\"float:right;border:none;border-radius:5px;\" id=\"clearBt\" type=\"button\" onclick=\"delete1(" +
+							localStorage.key(i) + ");\" value=\"删除\"/>" + "</span></p>";
+					}
+					document.getElementById("comment").innerHTML = dataHtml;
+				},
+				clearData: function() //清空数据
+				{
+					if (localStorage.length > 0) {
+						if (window.confirm("清空后不能恢复，是否确认清空？")) {
+							localStorage.clear();
+							this.writeData();
+						}
+					} else {
+						alert("没有需要清空的数据！");
+					}
+				},
+				//获取日期时间，例如 2012-03-08 12:58:58
+				getDateTime: function() 
+				{
+					//自动补零
+					var isZero = function(num) 
+					{
+						if (num < 10) {
+							num = "0" + num;
+						}
+						return num;
+					}
+					var d = new Date();
+					return d.getFullYear() + "-" + isZero(d.getMonth() + 1) + "-" + isZero(d.getDate()) + " " + isZero(d.getHours()) +
+						":" + isZero(d.getMinutes()) + ":" + isZero(d.getSeconds());
+				}
+			}
+
+			window.onload = function() {
+				//当打开页面的时候，先将localStorage中的数据输出一遍，如果没有数据，则输出空
+				Storage.writeData(); 
+				//发表评论按钮添加点击事件，将localStorage中的数据输出
+				document.getElementById("tijiao").onclick = function() {
+					Storage.saveData();
+				} 
+				//清空所有已保存的数据
+				document.getElementById("qikong").onclick = function() {
+					Storage.clearData();
+				}
+			}
+		</script>
+		
+	</body>
+</html>

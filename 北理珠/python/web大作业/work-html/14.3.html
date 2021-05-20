@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>求表单里的最大值和平均值</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function avg()
+			{
+				var s=0;
+				var num=0;
+				for(i=0;i<myform.length;i++)
+				{
+					if(myform[i].value !="")
+					{
+						s=s+myform[i].value*1;
+						num+=1;
+					}
+				}
+				p1.innerHTML="平均值："+s/num;
+				
+			}
+			function mx()
+			{
+				var x=0;
+				for(i=0;i<myform.length;i++)
+				{
+					if(myform[i].value !="")
+					{
+						if(myform[i].value*1>x*1)
+						{
+							x=myform[i].value*1
+						}
+						
+					}
+				}
+				p2.innerHTML="最大值：" + x;
+			}
+		</script>
+		<div id="" align="center">
+			<form action="" method="post" name="myform">
+				数据1：<input type="text" name="" id="" value="" /><br>
+				数据2：<input type="text" name="" id="" value="" /><br>
+				数据3：<input type="text" name="" id="" value="" /><br>
+				数据4：<input type="text" name="" id="" value="" /><br>
+				数据5：<input type="text" name="" id="" value="" /><br>
+			</form>
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="button" name="" id="b1" value="平均值" onclick="avg()"/>
+			<input type="button" name="" id="b2" value="最大值" onclick="mx()"/>	
+		</div>
+		<p id="p1" align="center"></p>
+		<p id="p2" align="center"></p>
+	</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>答题页面</title>
+		<!-- jquery的cdn -->
+		<!-- <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> -->
+		<script src="work-js/jquery.min.js"></script>
+		<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+		<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+		 crossorigin="anonymous"> -->
+		<link rel="stylesheet" type="text/css" href="work-css/bootstrap.min.css" />
+		<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+		<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		 crossorigin="anonymous"></script> -->
+		<script type="text/javascript" src="work-js/bootstrap.min.js"></script>
+		<!-- canvas -->
+		<!-- <script src="work-js/sdasdasdcanvas.js"></script> -->
+		<!-- vue -->
+		<script src="work-js/vue.js"></script>
+		<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+		<style type="text/css">
+			h1 {
+				margin-bottom: 15px;
+				height: 100px;
+				line-height: 100px;
+				text-align: center;
+				font-size: 24px;
+				color: #000000;
+				background: #d9d0cb;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>Web小练习</h1>
+		<form>
+			<div class="row">
+				<div id="app1" class="col-md-offset-3 col-md-6">
+					<h4>一、单选题</h4>
+					<div v-for="(question, index) in questions">
+						{{index+1}}. {{question.desp}}<br>
+						<div class="radio" v-for="(item, index) in question.items">
+							<label>
+								<input type="radio" v-bind:value="item" v-model="question.useranswer" @change="judgeAnswer(question)">
+								{{ String.fromCharCode(index+65) }}、{{item}}
+							</label>
+						</div>
+						<!-- 显示答案 -->
+						<div v-if="seen" class="alert" v-bind:class="{ 'alert-success': question.isCorrect ,'alert-danger': !question.isCorrect}"
+						 class="alert alert-success" role="alert">
+							<p>我的答案：{{question.useranswer}}</p>
+							<p>正确答案：{{question.answer}}</p>
+						</div>
+						<br>
+					</div>
+				</div>
+				<div id="app2" class="col-md-offset-3 col-md-6">
+					<h4>二、判断题</h4>
+					<div v-for="(question, index) in questions">
+						{{index+1}}. {{question.desp}}<br>
+						<div class="radio">
+							<label class="radio-inline">
+								<input type="radio" value="true" v-model="question.useranswer" @change="judgeAnswer(question)"> √
+							</label>
+							<label class="radio-inline">
+								<input type="radio" value="false" v-model="question.useranswer" @change="judgeAnswer(question)"> ×
+							</label>
+						</div>
+						<!-- 显示答案 -->
+						<div v-if="seen" class="alert" v-bind:class="{ 'alert-success': question.isCorrect ,'alert-danger': !question.isCorrect}"
+						 class="alert alert-success" role="alert">
+							<p>我的答案：{{question.useranswer}}</p>
+							<p>正确答案：{{question.answer}}</p>
+						</div>
+						<br>
+					</div>
+				</div>
+				<div id="app3" class="col-md-offset-3 col-md-6">
+					<h4>三、多选题</h4>
+					<div v-for="(question, index) in questions">
+						{{index+1}}. {{question.desp}}
+						<br>
+						<div class="checkbox" v-for="(item, index) in question.items">
+							<label>
+								<input type="checkbox" v-bind:value="item" v-model="question.useranswer" @change="judgeAnswer(question)">
+								{{ String.fromCharCode(index+65) }}、{{item}}
+							</label>
+						</div>
+						<!-- 显示答案 -->
+						<div v-if="seen" class="alert" v-bind:class="{ 'alert-success': question.isCorrect ,'alert-danger': !question.isCorrect}"
+						 class="alert alert-success" role="alert">
+							<p>我的答案：{{question.useranswer}}</p>
+							<p>正确答案：{{question.answer}}</p>
+						</div>
+						<br>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-offset-3 col-md-6">
+						<button type="button" class="btn btn-primary" onclick="sub()">提交</button>
+					</div>
+				</div>
+			</div>
+		</form>
+		<script>
+			//随机抽取题库
+			function randomQuestions(arr, size) {
+				size = arr.length - size;
+				for (var i = 0, len = arr.length; i < size; i++, len = arr.length) {
+					var index = Math.floor(Math.random() * len);
+					//删除元素
+					arr.splice(index, 1);
+				}
+			}
+			//算每道题的成绩
+			function calcscore(vm) {
+				var cnt = 0;
+				var ans = vm.questions.length;
+				for (i in vm.questions) {
+					cnt += vm.questions[i].isCorrect
+				}
+				vm.score = 1.0 * cnt / ans;
+			}
+			//判断答题是否完成
+			function sub() {
+				if (isNaN(vm1.score) || isNaN(vm2.score) || isNaN(vm3.score)) {
+					alert("您还没有完成练习哦，请继续作答！");
+					return false;
+				} else {
+					vm1.$data.seen = true;
+					vm2.$data.seen = true;
+					vm3.$data.seen = true;
+					var score = (vm1.score + vm2.score + vm3.score) / 3 * 100;
+					alert("满分为100分\n您的成绩是：" + Math.round(score) + "分")
+					return false;
+				}
+			}
+			var vm1 = new Vue({
+				// id号
+				el: "#app1",
+				data: {
+					seen: false,
+					score: NaN,
+					questions: [{
+						desp: "以下事件中，不属于键盘事件的是",
+						items: ['KeyOver', 'KeyDown', 'KeyPress', 'KeyUp'],
+						answer: 'KeyOver',
+						useranswer: '',
+						isCorrect: false
+					}, {
+						desp: "在 HTML 文档中，引用外部样式表的正确位置是？",
+						items: ['<head>部分','文档的末尾', '文档的顶部', '<body>部分' ],
+						answer: '<head>部分',
+						useranswer: '',
+						isCorrect: false
+					}, {
+						desp: "JavaScript中，用于声明变量的关键字是",
+						items: ['function fun( ){ }', '@function fun( ){ }', 'function: fun( ){ }', 'fun( ){ }'],
+						answer: 'function fun( ){ }',
+						useranswer: '',
+						isCorrect: false
+					}, {
+						desp: "要引用外部show.js文件，正确的是",
+						items: ['<script src="show.js">', '<script href="show.js">', '<script name="show.js">',
+							'<script source="show.js">'
+						],
+						answer: '<script src="show.js">',
+						useranswer: '',
+						isCorrect: false
+					}, {
+						desp: "CSS 指的是？",
+						items: ['Cascading Style Sheets', 'Computer Style Sheets', 'Creative Style Sheets',
+							'Colorful Style Sheets'
+						],
+						answer: 'Cascading Style Sheets',
+						useranswer: '',
+						isCorrect: false
+					}, {
+						desp: "我们可以在下列哪个 HTML 元素中放置 Javascript 代码？",
+						items: ['<script>', '<javascript>', '<js>',
+							'<scripting>'
+						],
+						answer: '<script>',
+						useranswer: '',
+						isCorrect: false
+					}]
+				},
+				methods: {
+					judgeAnswer: function(question) {
+						question.isCorrect = question.useranswer == question.answer;
+						calcscore(this);
+					}
+				},
+				created: function() {
+					randomQuestions(this.questions, 2);
+				}
+			});
+			var vm2 = new Vue({
+				// id号
+				el: "#app2",
+				data: {
+					seen: false,
+					score: NaN,
+					questions: [{
+						desp: "confirm( )方法用于提示用户输入某个值，例如成绩。",
+						answer: false,
+						useranswer: '',
+						isCorrect: false
+					}, {
+						desp: "JavaScript代码可以放置在主体中。",
+						answer: true,
+						useranswer: '',
+						isCorrect: false
+					}, {
+						desp: "利用Canvas 标记可以绘制线段。lineTo()表示设置线段的起点；moveTo()表示设置线段的终点。",
+						answer: false,
+						useranswer: '',
+						isCorrect: false
+					}, {
+						desp: "eval() 函数的作用是判断两个字符串是否相等。 ",
+						answer: false,
+						useranswer: '',
+						isCorrect: false
+					}, {
+						desp: "execCommand( )方法是执行一个对当前文档，当前选择或者给出范围的命令。 ",
+						answer: true,
+						useranswer: '',
+						isCorrect: false
+					}, {
+						desp: "split() 方法用于把一个字符串分割成字符串数组。 ",
+						answer: true,
+						useranswer: '',
+						isCorrect: false
+					}, {
+						desp: "用循环  for (property in document){  }   可以访问document对象的属性。 ",
+						answer: true,
+						useranswer: '',
+						isCorrect: false
+					}, {
+						desp: "Math.floor(Math.random()*90+10)   用于产生10-90之间的随机数",
+						answer: false,
+						useranswer: '',
+						isCorrect: false
+					}]
+				},
+				methods: {
+					judgeAnswer(question) {
+						question.useranswer = question.useranswer === 'true';
+						question.isCorrect = question.useranswer == question.answer;
+						calcscore(this);
+					}
+				},
+				created: function() {
+					randomQuestions(this.questions, 2);
+				}
+			});
+			var vm3 = new Vue({
+				// id号
+				el: "#app3",
+				data: {
+					score: NaN,
+					questions: [{
+						desp: "我们想要将页面中的文本采用项目符号的形式予以显示，采用哪些标记组合可以达到我们的要求?",
+						items: ['<P>', '<UL>', '<BR>', '<LI>'],
+						answer: ['<LI>', '<UL>'],
+						useranswer: [],
+						isCorrect: false
+					}, {
+						desp: "RGB三原色的组成是哪三种颜色?",
+						items: ['红', '黄', '蓝', '绿'],
+						answer: ['红', '蓝', '绿'],
+						useranswer: [],
+						isCorrect: false
+					}, {
+						desp: "JavaScript中，不是用于声明变量的关键字是",
+						items: ['if','while','int','var'],
+						answer: ['if','while','int'],
+						useranswer: [],
+						isCorrect: false
+					}],
+					seen: false
+				},
+				methods: {
+					// 多选题的判分
+					judgeAnswer(question) {
+						function isArrayEqual(value1 = [], value2 = []) {
+							let hash = JSON.parse(JSON.stringify(value2));
+							//选的个数要一样
+							if (value1.length === value2.length) {
+								//选的内容要一致
+								for (let i = 0; i < value1.length; i++) {
+									const index = hash.indexOf(value1[i]);
+									if (index > -1) {
+										hash.splice(index, 1);
+									} else {
+										return false;
+									}
+								}
+								return true;
+							}
+							return false;
+						}
+						question.isCorrect = isArrayEqual(question.useranswer, question.answer);
+						calcscore(this);
+					}
+				},
+				// 随机选题
+				created: function() {
+					randomQuestions(this.questions, 2);
+				}
+			});
+		</script>
+	</body>
+
+</html>

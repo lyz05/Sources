@@ -1,0 +1,161 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+a {
+	color: #000;
+	text-decoration: none;
+}
+.menus.menus1 h1 {
+	vertical-align: sub;
+	float: left;
+	margin-top: 30px;
+	font-size: 54px;
+	text-transform: none;
+	font-family: "华文行楷";
+	font-weight: lighter;
+	color: #F89165;
+}
+.banenr {
+	height: 80px;
+	width: auto;
+	background-color: #eb4537;
+}
+.banenr .banner-bg h3 {
+	font-size: 36px;
+	font-weight: lighter;
+	float: left;
+	margin-top: 20px;
+	color: #f1f1f1;
+
+}
+
+.banner-bg {
+	margin: auto;
+	width: 1100px;
+	height: 80px;
+	padding-left: 0px;
+}
+
+
+
+li {
+    list-style: none;
+}
+.clear {
+    clear: both;
+}
+.menus {
+	width: 1100px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	height: 100px;
+}
+.menus ul {
+	width: 700px;
+	position: relative;
+	float: right;
+	margin-top: 20px;
+	font-style: italic;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-bottom-color: #ff5a5a;
+}
+.menus li {
+	float: left;
+	width: 100px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	cursor: pointer;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+	font-size: 24px;
+}
+.menus li:nth-child(2) {
+    color: #fff;
+}
+.menus .bg {
+	width: 100px;
+	height: 40px;
+	position:absolute;
+	left: 0;
+	top: 0;
+	z-index: -1;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	-ms-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+	background-image: url(../images/index/ban.png);
+}
+
+.tab {
+    width: 750px;
+    height: 500px;
+    border: 1px solid #000;
+    margin-top: 20px;
+    font-size: 40px;
+    line-height: 500px;
+    text-align: center;
+    color: #888;
+    font-weight: bold;
+    display: none;
+}
+.show {
+    display: block;
+}
+
+#footer {
+	text-align: center;
+	vertical-align: middle;
+	height: 150px;
+	padding-top: 50px;
+	color: #FFF;
+	background-color: #333;
+	font-size: 16px;
+}
+body {
+	margin: 0px;
+}
+.zpc {
+	padding: 10px;
+	height: 700px;
+	width: 1100px;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#zpc-text-line {
+	font-family: "微软雅黑";
+	font-size: 36px;
+	height: 40px;
+	width: auto;
+	border-left-width: 7px;
+	border-left-style: solid;
+	border-left-color: #6F3;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #F00;
+	padding-bottom: 0px;
+}
+.banner-x{
+	width:auto;
+	height:500px;}
+.jrcd {
+	height: 125px;
+	width: 1100px;
+	margin-top: 5px;
+	margin-right: auto;
+	margin-bottom: 5px;
+	margin-left: auto;
+}
