@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>应聘页面</title>
+		<style type="text/css">
+			body {
+				text-align: center;
+			}
+
+			#tab1 {
+				text-align: left;
+			}
+
+			#tab2 {
+				text-align: left;
+			}
+
+			.txt {
+				font-size: 18px;
+				font-weight: bold;
+			}
+
+			#t1 {
+				padding-top: 110px;
+			}
+		</style>
+	</head>
+	<body>
+		<form>
+			<table id="tab1">
+				<tr>
+					<td class="txt">希望工作地点：</td>
+					<td>
+						<select name="">
+							<option value="北京">北京</option>
+							<option value="广州">广州</option>
+							<option value="深圳">深圳</option>
+							<option value="上海">上海</option>
+						</select>
+					</td>
+					<td class="txt">月薪要求：</td>
+					<td>
+						<input type="text" name="yx" />
+						<input type="checkbox" name="ask1" />要求提供过渡住房
+					</td>
+				</tr>
+			</table>
+			<table id="tab2" align="left">
+				<tr>
+					<td class="txt">请选择应聘行业：</td>
+				</tr>
+				<tr>
+					<td>
+						<select name="job" size="8" multiple>
+							<option value="c1">计算机软件</option>
+							<option value="c2">计算机硬件</option>
+							<option value="c3">计算机服务</option>
+							<option value="c4">通信/电信/网络设备</option>
+							<option value="c5">互联网/电子商务</option>
+							<option value="c6">网络游戏</option>
+							<option value="c7">电子技术/半导体/集成电路</option>
+							<option value="c8">仪器仪表/工业自动化</option>
+						</select>
+					</td>
+					<td id="t1">
+						<input id="bt1" type="submit" name="btnOk1" value="提交" />
+						<input id="bt2" type="submit" name="btnOk2" value="重置" />
+					</td>
+				</tr>
+			</table>
+		</form>
+	</body>
+</html>

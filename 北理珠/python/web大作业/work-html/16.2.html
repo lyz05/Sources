@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>随机产生20个4位整数并从小到大进行排序</title>
+		<script type="text/javascript">
+			var num=new Array();
+			function $(id){
+				return document.getElementById(id);
+			}
+			function createnum(){
+				for(var i=0;i<20;i++){
+					num[i]=Math.floor(Math.random()*9000)+1000;
+				}
+				$("t1").value="随机产生20个4位整数，分别如下："+"\n"+num.join(",");
+				$("t1").value+="\n从小到大排序后结果为：\n"+num.sort();
+			} 
+			function findnum(){
+				var num1=new Array();
+				var j=0;
+				for(var i=0;i<num.length;i++){
+					if(num[i]%5==0){
+						num1[j]=num[i];
+						j++;
+					}
+				}
+				$("t1").value+="\n能被5整除的整数有：\n"+num1.join(",");
+			}
+		</script>
+	</head>
+	<body>
+		<form action="" method="post" id="f1" align="center">
+			<textarea id="t1" rows="30" cols="92"></textarea><br><br>
+			<input type="button" name="" id="" value="随机产生20个整数" onclick="createnum();"/>
+			<input type="button" name="" id="" value="找出能被5整除的整数" onclick="findnum();"/>
+			<input type="reset" />
+		</form>
+	</body>
+</html>

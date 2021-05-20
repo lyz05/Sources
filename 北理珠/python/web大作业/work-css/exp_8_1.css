@@ -1,0 +1,15 @@
+#d1{
+    width:600px;
+    height:400px;
+    background-color:lightyellow;
+}
+#d2{
+	font-family: "黑体";
+    font-size:20px;
+}
+.a{
+    font-weight:bold;
+    text-decoration:underline;
+    color:black;
+}
+.it{font-style:italic;font-size:24px;font-weight:bold;}

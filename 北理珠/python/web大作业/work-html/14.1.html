@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>删除成绩</title>
+		<style type="text/css">
+			div
+			{
+				border: 2px solid skyblue
+			}
+		</style>
+		<script type="text/javascript">
+			flag=0;
+			function del()
+			{
+				flag=0
+				for(i=0;i<myform.length-1;i++)
+				{
+					if(myform[i].checked==true)
+					{
+						flag=1	
+					}
+				}	
+				if(flag==1)
+				{
+					var s=confirm("你真的要删除吗？");
+					if (s==true)
+					{
+						for(i=0;i<myform.length-1;i++)
+						{
+							if(myform[i].checked==true)
+							{
+								a=myform[i].parentNode;
+								a.parentNode.removeChild(a);
+								i--;
+							}
+						}		
+					}
+					else
+					{
+						alert("取消删除成绩!");
+					}
+				}	
+				else
+				{
+					alert("请选择要删除的成绩!");
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="" align="center" >
+			<form  action="" method="post" name="myform" >
+				<p>语文：90<input type="checkbox" name="n1" id="c1" value="" /></p><br>
+				<p>数学：99<input type="checkbox" name="n1" id="c1" value="" /></p><br>
+				<p>英语：90<input type="checkbox" name="n1" id="c1" value="" /></p><br>
+				<p><input type="button" name="" id="" value="删除" onclick="del()"/></p>
+			</form>
+		</div>
+	</body>
+</html>

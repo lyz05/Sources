@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>登录注册界面</title>
+		<!-- 登录注册界面样式 login-register.css -->
+		<link rel="stylesheet" type="text/css" href="work-css/login-register.css" />
+		<!-- jquery的cdn -->
+		<!-- CDN公共库是指将常用的JS库存放在CDN节点，以方便广大开发者直接调用。将JS库存放在服务器单机上相比，CDN公共库更加稳定、高速。 -->
+		<!-- <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> -->
+		<script src="work-js/jquery.min.js"></script>
+	</head>
+	<body>
+		<div>
+			<div class="login-page">
+				<div id="login_form" class="form">
+					<form class="register-form">
+						<input type="text" placeholder="用户名" id="r_user_name" />
+						<input type="password" placeholder="密码" id="r_password" />
+						<input type="text" placeholder="电子邮件" id="r_email"/>
+						<button id="create">创建账户</button>
+						<p class="message">已经有账户了? <a href="#">立即登录</a></p>
+					</form>
+					<form class="login-form">
+						<input type="text" placeholder="用户名" id="user_name" />
+						<input type="password" placeholder="密码" id="password" />
+						<button id="login" >登　录</button>
+						<p class="message">还没有账户? <a href="#">立即创建</a></p>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			function check_login() {
+				var name = $("#user_name").val();
+				var pass = $("#password").val();
+				if (name != "" && pass != "") {
+					alert("登录成功！");
+					$("#user_name").val("");
+					$("#password").val("");
+					// Jquery跳转方式
+					window.location.href = "index.html";
+				} else {
+					// 抖动窗口
+					// 从所有匹配的元素中删除全部或者指定的类
+					$("#login_form").removeClass('effect');		
+					setTimeout(function() {
+						// 从所有匹配的元素中添加全部或者指定的类
+						$("#login_form").addClass('effect')
+					}, 1);
+					if(name == ""){
+						alert("用户名不能为空！");
+						$("#user_name").focus();
+					}else{
+						if(pass.length == "")
+						{
+							alert("密码不能为空！");
+							$("#password").focus();
+						}
+					}
+				}
+			}
+
+			function check_register() {
+				var name = $("#r_user_name").val();
+				var pass = $("#r_password").val();
+				var email = $("#r_email").val();
+				if (email != "" && name != "" && pass != "") {
+					alert("注册成功！");
+					$("#r_user_name").val("");
+					$("#r_password").val("");
+					$("#r_email").val("");
+					//让显隐性互换
+					$('form').animate({
+						// height设置为toggle就表示点击后，高度先为0再最大
+						height: 'toggle',
+						// opacity:透明度，设置为toggle就表示点击后，先透明然后不透明
+						opacity: 'toggle'
+					}, 'slow');
+				} else {
+					$("#login_form").removeClass('effect');
+					setTimeout(function() {
+						$("#login_form").addClass('effect')
+					}, 1);
+					if(name == ""){
+						alert("用户名不能为空！");
+						$("#r_user_name").focus();
+					}else{
+						if(pass == "")
+						{
+							alert("密码不能为空！");
+							$("#r_password").focus();
+						}
+						else{
+							if(email == ""){
+								alert("邮箱不能为空！");
+								$("#r_email").focus();
+							}
+						}
+					}
+				}
+			}
+			$(function() {
+				$("#create").click(function() {
+					check_register();
+					return false;
+				})
+				$("#login").click(function() {
+					check_login();
+					return false;
+				})
+				// 执行 CSS 属性集的自定义动画效果（在600毫秒内切换段落的高度和透明度）
+				$('.message a').click(function() {
+					//让显隐性互换
+					$('form').animate({
+						// height设置为toggle就表示点击后，高度先为0再最大
+						height: 'toggle',
+						// opacity:透明度，设置为toggle就表示点击后，先透明然后不透明
+						opacity: 'toggle'
+					}, 'slow');
+				});
+			})
+		</script>
+	</body>
+</html>

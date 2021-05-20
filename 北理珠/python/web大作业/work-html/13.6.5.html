@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CSS3 2D转换-扭曲、缩放</title>
+		<style type="text/css">
+			div {
+				width: 100px;
+				height: 50px;
+				background: #dadada;
+				border: 1px solid #00cc66;
+			}
+
+			#div1 {
+				transform: scale(1.5, 1.5);
+				margin: 10px auto;
+			}
+
+			#div2 {
+				transform: skew(30deg, 30deg);
+				margin: 10px auto;
+			}
+
+			#div3 {
+				transform: matrix(0.866, 0.5, -0.5, 0.866, 20, 20);
+			}
+
+			/*x轴、Y轴缩放0.866;x轴、y轴扭曲0.5和-0.5；x轴、Y轴位移20px*/
+			td {
+				text-align: left;
+				vertical-align: top;
+			}
+		</style>
+	</head>
+	<body>
+		<h3>CSS3 2D转换-缩放、扭曲、矩阵</h3>
+		<table border="1px" bordercolor="red" width="750px" height="200px">
+			<tr>
+				<td>
+					<div id="" class="">
+						<p>这是原div</p>
+					</div>
+					<div id="div1" class="">
+						<p>这是div缩放1.5倍</p>
+					</div>
+				</td>
+				<td>
+					<div id="" class="">
+						<p>这是原div</p>
+					</div>
+					<div id="div2" class="">
+						<p>这是div扭曲方法</p>
+					</div>
+				</td>
+				<td>
+					<div id="" class="">
+						<p>这是原div</p>
+					</div>
+					<div id="div3" class="">
+						<p>这是div采用matrix方法</p>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
