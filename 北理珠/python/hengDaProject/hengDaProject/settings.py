@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -27,7 +26,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -37,7 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'DjangoUeditor',     #添加富文本应用
+    'DjangoUeditor',  # 添加富文本应用
     'homeApp',
     'aboutApp',
     'contactApp',
@@ -45,7 +43,8 @@ INSTALLED_APPS = [
     'productsApp',
     'scienceApp',
     'serviceApp',
-    'haystack' #添加搜索应用
+    'haystack',  # 添加搜索应用
+    'widget_tweaks',  # 添加模型表单组件定制化渲染应用
 ]
 
 MIDDLEWARE = [
@@ -79,7 +78,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'hengDaProject.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
@@ -89,7 +87,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -109,7 +106,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
@@ -123,7 +119,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
@@ -133,13 +128,19 @@ STATICFILES_DIRS = (
 )
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 HAYSTACK_CONNECTIONS = {
     'default': {
         'ENGINE': 'newsApp.whoosh_backend.WhooshEngine',
-        'PATH':os.path.join(BASE_DIR,'whoosh_index')
+        'PATH': os.path.join(BASE_DIR, 'whoosh_index')
     },
 }
 HAYSTACK_SEARCH_RESULTS_PER_PAGE = 4
 HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_PORT = 25
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = True

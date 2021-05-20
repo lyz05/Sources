@@ -72,11 +72,11 @@
                         <li><a href="{% url 'productsApp:products' 'face' %}">人脸识别解决方案</a></li>
                     </ul>
                 </li>
-                <li class="dropdown nav-top">
+                <li class="dropdown nav-top" id='service'>
                     <a href="#" class="dropdown-toggle on" data-toggle="dropdown">服务支持</a>
                     <ul class="dropdown-menu">
-                        <li><a href="{% url 'serviceApp:download' %}">资料下载</a></li>
-                        <li><a href="{% url 'serviceApp:platform' %}">人脸识别开放平台</a></li>
+                        <li><a href="{% url 'serviceApp:service' 'download' %}">资料下载</a></li>
+                        <li><a href="{% url 'serviceApp:service' 'platform' %}">人脸识别开放平台</a></li>
                     </ul>
                 </li>
                 <li class="nav-top" id='science'>
@@ -119,8 +119,8 @@
         <div class="col-md-2">
             <dl>
                 <dt>服务支持</dt>
-                <dd><a href="{% url 'serviceApp:download' %}">资料下载</a></dd>
-                <dd><a href="{% url 'serviceApp:platform' %}">人脸识别开放平台</a></dd>
+                <li><a href="{% url 'serviceApp:service' 'download' %}">资料下载</a></li>
+                <li><a href="{% url 'serviceApp:service' 'platform' %}">人脸识别开放平台</a></li>
             </dl>
         </div>
         <div class="col-md-2">
