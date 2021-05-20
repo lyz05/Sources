@@ -5,3 +5,8 @@ pyquery==1.4.3
 whoosh==2.7.4
 django-haystack==3.0
 jieba==0.42.1
+django-widget-tweaks==1.4.8
+docxtpl==0.11.4
+opencv_python==4.5.2.52
+python-docx==0.8.10
+opencv-python==4.5.2.52

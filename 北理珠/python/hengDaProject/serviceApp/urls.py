@@ -1,11 +1,11 @@
 from django.urls import path
-from .import views
+from . import views
 
+app_name = 'serviceApp'
 
-app_name='serviceApp'
-
-
-urlpatterns=[
-    path('download/',views.download,name='download'), #资料下载
-    path('platform/',views.platform,name='platform'), #人脸识别开放平台
+urlpatterns = [
+    path('service/<str:serviceName>/', views.service, name='service'),  # 资料下载
+    path('getDoc/<int:id>/', views.getDoc, name='getDoc'),
+    path('facedetect/', views.facedetect, name='facedetect'),
+    path('facedetectDemo/', views.facedetectDemo, name='facedetectDemo')
 ]
