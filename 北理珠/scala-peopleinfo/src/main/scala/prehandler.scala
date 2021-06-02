@@ -176,7 +176,7 @@ object prehandler {
       .save("file:///D:/bigdata/combine")
     //val df = readDF("file:///D:/combine")
     df.printSchema()
-    df.show(30)
+    df.show(10,10)
 
 
     //    println("计算每个字段中元素出现的次数")
