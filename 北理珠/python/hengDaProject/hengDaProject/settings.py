@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     'serviceApp',
     'haystack',  # 添加搜索应用
     'widget_tweaks',  # 添加模型表单组件定制化渲染应用
+    'xadmin',
+    'crispy_forms',
+    'reversion',
 ]
 
 MIDDLEWARE = [

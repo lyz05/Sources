@@ -19,10 +19,10 @@ from homeApp.views import home
 from django.conf.urls import include
 from django.conf import settings
 from django.conf.urls.static import static
-
+import xadmin
 
 urlpatterns = [
-    path('admin/',admin.site.urls),
+    path('admin/',xadmin.site.urls),
     path('', home, name='home'),
     path('aboutApp/', include('aboutApp.urls'), name='about'),
     path('contactApp/', include('contactApp.urls'), name='contact'),
