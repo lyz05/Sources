@@ -35,7 +35,7 @@ def post(url,payload):
         return r.text
 
 # 登录
-payload = {'account':'180021104890','password':'150850'}
+payload = {'account':'180021104890','password':os.getenv('password')}
 html = post("https://jm.jf.zhbit.com/front/tologin",payload)
 list = re.findall(r"\"token\", \"(.*?)\"", html)
 payload = {'token':list[0]}
