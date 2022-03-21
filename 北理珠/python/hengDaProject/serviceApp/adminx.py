@@ -1,6 +1,6 @@
-from django.contrib import admin
+import xadmin
 
 # Register your models here.
 from serviceApp.models import Doc
 
-admin.site.register(Doc)
+xadmin.site.register(Doc)

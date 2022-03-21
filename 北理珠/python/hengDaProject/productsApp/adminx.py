@@ -1,12 +1,12 @@
-from django.contrib import admin
+import xadmin
 
 # Register your models here.
 from productsApp.models import Product, ProductImg
 
-class ProductImgInline(admin.StackedInline):
+class ProductImgInline(object):
     model = ProductImg
     extra = 1   #默认显示的条数数量
 
-class ProductAdmin(admin.ModelAdmin):
+class ProductAdmin(object):
     inlines = [ProductImgInline,]
-admin.site.register(Product,ProductAdmin)
+xadmin.site.register(Product,ProductAdmin)
