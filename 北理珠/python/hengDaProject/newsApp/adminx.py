@@ -1,10 +1,10 @@
-from django.contrib import admin
+import xadmin
 
 # Register your models here.
 from newsApp.models import MyNew
 
 
-class MyNewAdmin(admin.ModelAdmin):
+class MyNewAdmin(object):
     style_fields = {'description':'ueditor'}
 
-admin.site.register(MyNew,MyNewAdmin)
+xadmin.site.register(MyNew,MyNewAdmin)

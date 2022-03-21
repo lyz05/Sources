@@ -10,3 +10,5 @@ docxtpl==0.11.4
 opencv_python==4.5.2.52
 python-docx==0.8.10
 opencv-python==4.5.2.52
+attrs==19.2.0
+xadmin-x==0.7.4
