@@ -21,7 +21,7 @@ public class tmp1 {
 			return new ArrayList(Arrays.asList(l)){
 				@Override
 				public String toString() {
-					//ÖØĞ´toString()
+					//é‡å†™toString()
 					return ""+this.get(0);
 				}
 			};
