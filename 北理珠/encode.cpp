@@ -70,6 +70,8 @@ char* decodeInp(char *input)
 
 int main()
 {
+	int *pi = new int[10];
+	int val; const int *pi = new int(val);
 	char xh[100],*encode,*decode,res[100]="encoded=";
 	scanf("%s",xh);
 	encode = encodeInp(xh);
